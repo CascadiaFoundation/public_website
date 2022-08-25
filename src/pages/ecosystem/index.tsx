@@ -101,6 +101,31 @@ const Ecosystem = () => {
         </div>
       </div>
       {/* end: Section 4 */}
+      
+      {/* begin: Section 5 */}
+      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
+        <div>
+          <Typography variant="h3">
+            Developers
+          </Typography>
+          <Typography color="text.secondary" className="py-6">
+            Cascadia runs in concert with Ethereum, Polkadot, Cosmos, and more, allowing for the free flow of assets and communication between networks for the betterment of all.
+          </Typography>
+          <div className="flex flex-col gap-2">
+            <Link to="#" className="text-primary">
+              Aurora: Ethereum Bridge & EVM
+            </Link>
+            <Link to="#" className="text-primary">
+              Octopus Network: App Chain Interoperability
+            </Link>
+            <Link to="#" className="text-primary">
+              Allbridge: Bridge from Solana, Terra, Celo & More
+            </Link>
+          </div>
+        </div>
+        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+      </div>
+      {/* end: Section 5 */}
     </>
   );
 };
