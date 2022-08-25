@@ -24,6 +24,49 @@ const Ecosystem = () => {
         </div>
       </div>
       {/* end: Section 1 */}
+
+      {/* begin: Section 2 */}
+      <div className="px-[5%] mt-24 grid grid-cols-4 gap-5">
+        <div className="col-span-2">
+          <Typography variant="h1" className="pb-4">
+            Reimagine your world
+          </Typography>
+          <Typography color="text.secondary">
+            Through simple, secure, and scalable technology, NEAR empowers millions to invent and explore new experiences. Business, creativity, and community are being reimagined for a more sustainable and inclusive future.
+          </Typography>
+        </div>
+        <div>
+          <Typography color="text.secondary" className="uppercase">
+            This week
+          </Typography>
+          <Typography variant="h4" className="py-1">
+            Ecosystem Panel: Helping the Climate with Web3
+          </Typography>
+          <Typography color="text.secondary" className="pb-6">
+            Town halls are taking on a new format with a transition into Ecosystem Panels. <br/>
+            Join us this Friday for the first one.
+          </Typography>
+          <Button variant="outlined" color="secondary">
+            Develop with Cascadia
+          </Button>
+        </div>
+        <div>
+          <Typography color="text.secondary" className="uppercase">
+            Featured
+          </Typography>
+          <Typography variant="h4" className="py-1">
+            Early Bird Tickets for NEARCON are live
+          </Typography>
+          <Typography color="text.secondary" className="pb-6">
+            Join the Sophon community, Web3 ecosystem, and 200+ hackers IRL in Lisbon, Portugal from Sept 11-14. Immerse yourself in talks, networking, workshops, and more. Prices increase after July 31st.
+          </Typography>
+          <Button variant="outlined" color="secondary">
+            Register Today
+          </Button>
+        </div>
+      </div>
+      {/* end: Section 2 */}
+      
     </>
   );
 };

@@ -10,6 +10,10 @@ export default function themePalette(theme) {
     },
     secondary: {
       main: theme.colors.secondary.main
+    },
+    text: {
+      primary: theme.colors.text.primary,
+      seconadry: theme.colors.text.seconadry
     }
   };
 };
