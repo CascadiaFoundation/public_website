@@ -9,7 +9,7 @@ export default  function themeTypography(theme) {
     h2: {
       fontSize: '1.5rem',
       lineHeight: '34px',
-      fontWeight: 700
+      fontWeight: 600
     },
     h3: {
       fontSize: '1.25rem',

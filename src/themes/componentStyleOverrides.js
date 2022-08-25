@@ -1,15 +1,23 @@
 export default function componentStyleOverrides(theme) {
   return {
     MuiButton: {
+      defaultProps: {
+        disableRipple: true
+      },
       styleOverrides: {
         root: {
           borderRadius: 0,
+          boxShadow: 'none',
           textTransform: 'capitalize',
           '&.MuiButton-containedSecondary': {
             backgroundColor: theme.colors?.dark.main
           },
+          '&:hover': {
+            boxShadow: 'none'
+          }
         },
         text: {
+          textAlign: 'left',
           padding: 0,
           '&.font-bold': {
             fontWeight: 700

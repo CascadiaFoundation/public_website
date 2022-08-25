@@ -10,14 +10,20 @@ const colors = {
     main: '#18191A',
     dark: '#101010'
   },
-  light: {
-    light: '#E4E6EB',
-    main: '#DCDFE7',
-    dark: '#B0B3B8'
+  text: {
+    primary: "#18191A",
+    secondary: "#616771"
+  },
+  background: {
+    "light": "#FFFFFF",
+    "main": "#F6F7F8",
+    "dark": "#E9EBEE"
   },
   primary: {
-    light: '#4267B2',
-    dark: '#1778F2'
+    main: "#4267B3"
+  },
+  secondary: {
+    main: "#18191A"
   }
 };
 

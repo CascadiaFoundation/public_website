@@ -1,8 +1,21 @@
+import { BrowserRouter as Router } from 'react-router-dom'
+import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+
+import themes from './themes';
+import Layout from './layouts';
+// import AppRouter from './routes';
+
 const App = () => {
   return (
-    <div className="App">
-      This is App Page.    
-    </div>
+    <ThemeProvider theme={themes()}>
+      <CssBaseline />
+      <Router>
+        <Layout>
+          <p>This is content</p>
+        </Layout>
+      </Router>
+    </ThemeProvider>
   );
 }
 
