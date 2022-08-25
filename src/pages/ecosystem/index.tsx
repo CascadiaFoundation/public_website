@@ -84,6 +84,23 @@ const Ecosystem = () => {
         <div className="w-full h-[300px] bg-[#E9EBEE]" />
       </div>
       {/* end: Section 3 */}
+      
+      {/* begin: Section 4 */}
+      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
+        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+        <div>
+          <Typography variant="h3">
+            Creators
+          </Typography>
+          <Typography color="text.secondary" className="py-6">
+            Cascadia is eliminating the barriers to Web 3 adoption. With high speeds, low fees, and progressive UX, Cascadia's climate-neutral blockchain is ready for explosive growth.
+          </Typography>
+          <Link to="#" className="text-primary">
+            Follow progress on sharding
+          </Link>
+        </div>
+      </div>
+      {/* end: Section 4 */}
     </>
   );
 };
