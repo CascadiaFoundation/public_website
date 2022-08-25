@@ -6,9 +6,7 @@ const Layout = (props: any) => {
     <div className='flex flex-col min-h-screen h-full'>
       <div className='flex-1'>
         <Navbar />
-        <div className="mx-[5%]">
-          {props.children}
-        </div>
+        {props.children}
       </div>
       <Footer />
     </div>

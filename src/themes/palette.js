@@ -5,7 +5,8 @@ export default function themePalette(theme) {
       paper: theme.colors.background.light
     },
     primary: {
-      main: theme.colors.primary.main
+      main: theme.colors.primary.main,
+      contrastText: theme.colors.background.main
     },
     secondary: {
       main: theme.colors.secondary.main
