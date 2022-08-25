@@ -6,6 +6,7 @@ export default function componentStyleOverrides(theme) {
       },
       styleOverrides: {
         root: {
+          fontWeight: 400,
           borderRadius: 0,
           boxShadow: 'none',
           textTransform: 'capitalize',
@@ -28,5 +29,14 @@ export default function componentStyleOverrides(theme) {
         }
       }
     },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          '&.bg-primary': {
+            backgroundColor: theme.colors.primary.main
+          }
+        }
+      }
+    }
   };
 };

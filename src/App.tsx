@@ -4,7 +4,7 @@ import { CssBaseline } from '@mui/material';
 
 import themes from './themes';
 import Layout from './layouts';
-// import AppRouter from './routes';
+import AppRouter from './routes';
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <CssBaseline />
       <Router>
         <Layout>
-          <p>This is content</p>
+          <AppRouter />
         </Layout>
       </Router>
     </ThemeProvider>
