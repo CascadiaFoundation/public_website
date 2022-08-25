@@ -1,4 +1,5 @@
 import { Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Ecosystem = () => {
   return (
@@ -26,7 +27,7 @@ const Ecosystem = () => {
       {/* end: Section 1 */}
 
       {/* begin: Section 2 */}
-      <div className="px-[5%] mt-24 grid grid-cols-4 gap-5">
+      <div className="px-[5%] mt-24 grid grid-cols-4 gap-10">
         <div className="col-span-2">
           <Typography variant="h1" className="pb-4">
             Reimagine your world
@@ -39,7 +40,7 @@ const Ecosystem = () => {
           <Typography color="text.secondary" className="uppercase">
             This week
           </Typography>
-          <Typography variant="h4" className="py-1">
+          <Typography variant="h4" className="py-2">
             Ecosystem Panel: Helping the Climate with Web3
           </Typography>
           <Typography color="text.secondary" className="pb-6">
@@ -54,7 +55,7 @@ const Ecosystem = () => {
           <Typography color="text.secondary" className="uppercase">
             Featured
           </Typography>
-          <Typography variant="h4" className="py-1">
+          <Typography variant="h4" className="py-2">
             Early Bird Tickets for NEARCON are live
           </Typography>
           <Typography color="text.secondary" className="pb-6">
@@ -67,6 +68,22 @@ const Ecosystem = () => {
       </div>
       {/* end: Section 2 */}
       
+      {/* begin: Section 3 */}
+      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
+        <div>
+          <Typography variant="h3">
+            Founders
+          </Typography>
+          <Typography color="text.secondary" className="py-6">
+            The Creator Economy requires robust infrastructure including a set of intuitive developer tools, and an engaged, decentralized community.
+          </Typography>
+          <Link to="#" className="text-primary">
+            Learn aboutthe Creator Ecosystem on Cascadia
+          </Link>
+        </div>
+        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+      </div>
+      {/* end: Section 3 */}
     </>
   );
 };
