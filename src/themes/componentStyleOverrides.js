@@ -29,5 +29,14 @@ export default function componentStyleOverrides(theme) {
         }
       }
     },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          '&.bg-primary': {
+            backgroundColor: theme.colors.primary.main
+          }
+        }
+      }
+    }
   };
 };

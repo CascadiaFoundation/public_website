@@ -9,7 +9,8 @@ export default function themePalette(theme) {
       contrastText: theme.colors.background.main
     },
     secondary: {
-      main: theme.colors.secondary.main
+      main: theme.colors.secondary.main,
+      contrastText: theme.colors.background.main
     },
     text: {
       primary: theme.colors.text.primary,
