@@ -36,7 +36,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="mx-[5%] flex items-center py-6 gap-20">
+    <div className="mx-[5%] flex items-center py-6 gap-20 md:justify-start justify-between">
       <Button variant='text' component={NavLink} to='/'>
         <Typography variant='h3' color='primary'>Cascadia</Typography>
       </Button>
@@ -55,8 +55,8 @@ const Navbar = () => {
           ))
         }      
       </div>
-      <div className="block md:hidden">
-        <IconButton onClick={toggleDrawer(true)}>
+      <div className="block md:hidden justify-self-end">
+        <IconButton onClick={toggleDrawer(true)} size="small">
           <FontAwesomeIcon icon={faBars} />
         </IconButton>
         <SwipeableDrawer
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <ListItem key={key} disablePadding>
                   <NavLink to={item.link}
                     className={({ isActive })=>
-                      isActive ? "text-lg text-light-light w-full text-center p-4 bg-dark-dark" : "text-lg text-light-dark w-full text-center p-4 bg-dark-light" 
+                      isActive ? "text-grey-light w-full text-center p-4 bg-grey-dark" : "text-light-dark w-full text-center p-4 bg-grey-light" 
                     }
                   >
                     {item.label}

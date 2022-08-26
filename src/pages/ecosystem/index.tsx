@@ -8,14 +8,14 @@ const Ecosystem = () => {
     <>
       {/* begin: Section 1 */}
       <div className="bg-primary bg-opacity-10 px-[5%] mt-[-76px] pt-[140px]">
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2 sm:w-3/4">
           <Typography variant="h1">
             A <span className="text-primary">Better Future</span> requires a <span className="text-primary">Better Foundation</span>
           </Typography>
           <Typography className="py-6">
             Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.
           </Typography>
-          <div className="flex gap-6 mt-3 pb-16">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-3 pb-16">
             <Button variant="contained">
               Develop with Cascadia
             </Button>
@@ -28,41 +28,41 @@ const Ecosystem = () => {
       {/* end: Section 1 */}
 
       {/* begin: Section 2 */}
-      <div className="px-[5%] mt-24 grid grid-cols-4 gap-10">
-        <div className="col-span-2">
-          <Typography variant="h1" className="pb-4">
+      <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="sm:col-span-2">
+          <Typography variant="h1" className="pb-4 text-center md:text-left">
             Reimagine your world
           </Typography>
-          <Typography color="text.secondary">
-            Through simple, secure, and scalable technology, NEAR empowers millions to invent and explore new experiences. Business, creativity, and community are being reimagined for a more sustainable and inclusive future.
+          <Typography color="text.secondary" className="text-center md:text-left">
+            Through simple, secure, and scalable technology, Cascadia empowers millions to invent and explore new experiences. Business, creativity, and community are being reimagined for a more sustainable and inclusive future.
           </Typography>
         </div>
-        <div>
+        <div className="flex flex-col">
           <Typography color="text.secondary" className="uppercase">
             This week
           </Typography>
           <Typography variant="h4" className="py-2">
             Ecosystem Panel: Helping the Climate with Web3
           </Typography>
-          <Typography color="text.secondary" className="pb-6">
+          <Typography color="text.secondary" className="pb-6 flex-auto">
             Town halls are taking on a new format with a transition into Ecosystem Panels. <br/>
             Join us this Friday for the first one.
           </Typography>
-          <Button variant="outlined" color="secondary">
+          <Button variant="outlined" color="secondary" className="w-full sm:w-fit">
             Develop with Cascadia
           </Button>
         </div>
-        <div>
+        <div className="flex flex-col">
           <Typography color="text.secondary" className="uppercase">
             Featured
           </Typography>
           <Typography variant="h4" className="py-2">
-            Early Bird Tickets for NEARCON are live
+            Early Bird Tickets for CascadiaCON are live
           </Typography>
-          <Typography color="text.secondary" className="pb-6">
+          <Typography color="text.secondary" className="pb-6 flex-auto">
             Join the Sophon community, Web3 ecosystem, and 200+ hackers IRL in Lisbon, Portugal from Sept 11-14. Immerse yourself in talks, networking, workshops, and more. Prices increase after July 31st.
           </Typography>
-          <Button variant="outlined" color="secondary">
+          <Button variant="outlined" color="secondary" className="w-full sm:w-fit">
             Register Today
           </Button>
         </div>
@@ -70,7 +70,7 @@ const Ecosystem = () => {
       {/* end: Section 2 */}
       
       {/* begin: Section 3 */}
-      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
+      <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
         <div>
           <Typography variant="h3">
             Founders
@@ -82,13 +82,13 @@ const Ecosystem = () => {
             Learn aboutthe Creator Ecosystem on Cascadia
           </Link>
         </div>
-        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+        <div className="w-full h-[300px] bg-[#E9EBEE] hidden sm:block" />
       </div>
       {/* end: Section 3 */}
       
       {/* begin: Section 4 */}
-      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
-        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+      <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+        <div className="w-full h-[300px] bg-[#E9EBEE] hidden sm:block " />
         <div>
           <Typography variant="h3">
             Creators
@@ -104,7 +104,7 @@ const Ecosystem = () => {
       {/* end: Section 4 */}
       
       {/* begin: Section 5 */}
-      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
+      <div className="px-[5%] my-12 sm:my-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
         <div>
           <Typography variant="h3">
             Developers
@@ -124,12 +124,12 @@ const Ecosystem = () => {
             </Link>
           </div>
         </div>
-        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+        <div className="w-full h-[300px] bg-[#E9EBEE] hidden sm:block" />
       </div>
       {/* end: Section 5 */}
 
       {/* begin: Section 6 */}
-      <div className="mx-[5%] my-24 grid grid-cols-4 gap-x-10 relative">
+      {/* <div className="mx-[5%] my-24 grid grid-cols-4 gap-x-10 relative">
         <div className="col-start-3 col-span-2">
           <Typography variant="h1">
             Create an account & choose a path
@@ -188,7 +188,7 @@ const Ecosystem = () => {
         <div className="absolute top-0 left-0 -z-10 w-1/2 h-full pr-10">
           <div className="w-full h-full bg-[#E9EBEE]" />
         </div>
-      </div>
+      </div> */}
       {/* end: Section 6 */}
     </>
   );
