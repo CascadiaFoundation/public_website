@@ -7,8 +7,8 @@ const Footer = () => {
   
   return (
     <div className="px-[5%] bg-primary">
-      <div className="grid grid-cols-6 my-16">
-        <div>
+      <div className="grid grid-cols-6 my-16 gap-y-8 lg:gap-y-0">
+        <div className="col-span-2 lg:col-span-1">
           <Typography color="white" variant="h2" className="pb-6">Cascadia</Typography>
           <div className="flex flex-col gap-1">
             <Link to="#" className="text-grey-light hover:text-white">
@@ -25,7 +25,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <Typography color="white" variant="h4" className="pb-4">Learn</Typography>
           <div className="flex flex-col gap-1">
             <Link to="#" className="text-grey-light hover:text-white">
@@ -51,7 +51,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <Typography color="white" variant="h4" className="pb-4">Build</Typography>
           <div className="flex flex-col gap-1">
             <Link to="#" className="text-grey-light hover:text-white">
@@ -74,7 +74,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <Typography color="white" variant="h4" className="pb-4">Grow</Typography>
           <div className="flex flex-col gap-1">
             <Link to="#" className="text-grey-light hover:text-white">
@@ -88,7 +88,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <Typography color="white" variant="h4" className="pb-4">Belong</Typography>
           <div className="flex flex-col gap-1">
             <Link to="#" className="text-grey-light hover:text-white">
@@ -108,7 +108,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <Typography color="white" variant="h4" className="pb-4">Choose a Path</Typography>
           <div className="flex flex-col gap-1">
             <Link to="#" className="text-grey-light hover:text-white">
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center bg-white w-1/2 p-[2px] mx-auto mb-6">
+      <div className="flex items-center bg-white w-full md:w-1/2 p-[2px] mx-auto mb-6">
         <FontAwesomeIcon icon={faEnvelope} className="text-grey-dark p-2" />
         <InputBase placeholder="Receive email updates" className="flex-auto"/>
         <Button variant="contained">Subscribe</Button>
