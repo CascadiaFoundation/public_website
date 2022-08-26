@@ -70,7 +70,7 @@ const Ecosystem = () => {
       {/* end: Section 2 */}
       
       {/* begin: Section 3 */}
-      <div className="px-[5%] mt-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+      <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
         <div>
           <Typography variant="h3">
             Founders
@@ -87,8 +87,8 @@ const Ecosystem = () => {
       {/* end: Section 3 */}
       
       {/* begin: Section 4 */}
-      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
-        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+      <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
+        <div className="w-full h-[300px] bg-[#E9EBEE] hidden sm:block " />
         <div>
           <Typography variant="h3">
             Creators
