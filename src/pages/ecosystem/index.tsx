@@ -28,41 +28,41 @@ const Ecosystem = () => {
       {/* end: Section 1 */}
 
       {/* begin: Section 2 */}
-      <div className="px-[5%] mt-24 grid grid-cols-4 gap-10">
-        <div className="col-span-2">
-          <Typography variant="h1" className="pb-4">
+      <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="sm:col-span-2">
+          <Typography variant="h1" className="pb-4 text-center md:text-left">
             Reimagine your world
           </Typography>
-          <Typography color="text.secondary">
-            Through simple, secure, and scalable technology, NEAR empowers millions to invent and explore new experiences. Business, creativity, and community are being reimagined for a more sustainable and inclusive future.
+          <Typography color="text.secondary" className="text-center md:text-left">
+            Through simple, secure, and scalable technology, Cascadia empowers millions to invent and explore new experiences. Business, creativity, and community are being reimagined for a more sustainable and inclusive future.
           </Typography>
         </div>
-        <div>
+        <div className="flex flex-col">
           <Typography color="text.secondary" className="uppercase">
             This week
           </Typography>
           <Typography variant="h4" className="py-2">
             Ecosystem Panel: Helping the Climate with Web3
           </Typography>
-          <Typography color="text.secondary" className="pb-6">
+          <Typography color="text.secondary" className="pb-6 flex-auto">
             Town halls are taking on a new format with a transition into Ecosystem Panels. <br/>
             Join us this Friday for the first one.
           </Typography>
-          <Button variant="outlined" color="secondary">
+          <Button variant="outlined" color="secondary" className="w-fit">
             Develop with Cascadia
           </Button>
         </div>
-        <div>
+        <div className="flex flex-col">
           <Typography color="text.secondary" className="uppercase">
             Featured
           </Typography>
           <Typography variant="h4" className="py-2">
-            Early Bird Tickets for NEARCON are live
+            Early Bird Tickets for CascadiaCON are live
           </Typography>
-          <Typography color="text.secondary" className="pb-6">
+          <Typography color="text.secondary" className="pb-6 flex-auto">
             Join the Sophon community, Web3 ecosystem, and 200+ hackers IRL in Lisbon, Portugal from Sept 11-14. Immerse yourself in talks, networking, workshops, and more. Prices increase after July 31st.
           </Typography>
-          <Button variant="outlined" color="secondary">
+          <Button variant="outlined" color="secondary" className="w-fit">
             Register Today
           </Button>
         </div>
