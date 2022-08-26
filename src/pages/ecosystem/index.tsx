@@ -48,7 +48,7 @@ const Ecosystem = () => {
             Town halls are taking on a new format with a transition into Ecosystem Panels. <br/>
             Join us this Friday for the first one.
           </Typography>
-          <Button variant="outlined" color="secondary" className="w-fit">
+          <Button variant="outlined" color="secondary" className="w-full sm:w-fit">
             Develop with Cascadia
           </Button>
         </div>
@@ -62,7 +62,7 @@ const Ecosystem = () => {
           <Typography color="text.secondary" className="pb-6 flex-auto">
             Join the Sophon community, Web3 ecosystem, and 200+ hackers IRL in Lisbon, Portugal from Sept 11-14. Immerse yourself in talks, networking, workshops, and more. Prices increase after July 31st.
           </Typography>
-          <Button variant="outlined" color="secondary" className="w-fit">
+          <Button variant="outlined" color="secondary" className="w-full sm:w-fit">
             Register Today
           </Button>
         </div>
@@ -70,7 +70,7 @@ const Ecosystem = () => {
       {/* end: Section 2 */}
       
       {/* begin: Section 3 */}
-      <div className="px-[5%] mt-24 grid grid-cols-2 gap-10 items-center">
+      <div className="px-[5%] mt-24 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
         <div>
           <Typography variant="h3">
             Founders
@@ -82,7 +82,7 @@ const Ecosystem = () => {
             Learn aboutthe Creator Ecosystem on Cascadia
           </Link>
         </div>
-        <div className="w-full h-[300px] bg-[#E9EBEE]" />
+        <div className="w-full h-[300px] bg-[#E9EBEE] hidden sm:block" />
       </div>
       {/* end: Section 3 */}
       
