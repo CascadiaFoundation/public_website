@@ -1,11 +1,11 @@
-import Navbar from './Navbar';
+import Header from './Header';
 import Footer from './Footer';
 
 const Layout = (props: any) => {
   return (
     <div className='flex flex-col min-h-screen h-full'>
       <div className='flex-1'>
-        <Navbar />
+        <Header />
         {props.children}
       </div>
       <Footer />

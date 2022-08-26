@@ -6,27 +6,6 @@ import { Link } from "react-router-dom";
 const Ecosystem = () => {
   return (
     <>
-      {/* begin: Section 1 */}
-      <div className="bg-primary bg-opacity-10 px-[5%] mt-[-76px] pt-[140px]">
-        <div className="w-full md:w-1/2 sm:w-3/4">
-          <Typography variant="h1">
-            A <span className="text-primary">Better Future</span> requires a <span className="text-primary">Better Foundation</span>
-          </Typography>
-          <Typography className="py-6">
-            Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.
-          </Typography>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-3 pb-16">
-            <Button variant="contained">
-              Develop with Cascadia
-            </Button>
-            <Button variant="outlined">
-              Explore solutions
-            </Button>
-          </div>
-        </div>
-      </div>
-      {/* end: Section 1 */}
-
       {/* begin: Section 2 */}
       <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="sm:col-span-2">
