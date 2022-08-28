@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Button, InputBase, Typography } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { Typography } from '@mui/material';
 
 const Footer = () => {
   
@@ -124,13 +122,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center bg-white w-full md:w-1/2 p-[2px] mx-auto mb-6">
-        <FontAwesomeIcon icon={faEnvelope} className="text-grey-dark p-2" />
-        <InputBase placeholder="Receive email updates" className="flex-auto"/>
-        <Button variant="contained">Subscribe</Button>
-      </div>
-
-      <div className="py-6 flex items-center justify-between">
+      <div className="pb-6 flex items-center justify-between">
         <Typography className="text-grey-light">@ 2022 Cascadia</Typography>
         <div className="flex items-center gap-6">
           <Link to="#" className="text-grey-light hover:text-white">Privacy Policy</Link>

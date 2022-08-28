@@ -88,10 +88,10 @@ const Header = () => {
 
       <div className="bg-primary bg-opacity-10 px-[5%] mt-[-76px] pt-[140px]">
         <div className="w-full md:w-1/2 sm:w-3/4">
-          <Typography variant="h1">
+          <Typography variant="h1" className="text-center sm:text-left">
             A <span className="text-primary">Better Future</span> requires a <span className="text-primary">Better Foundation</span>
           </Typography>
-          <Typography className="py-6">
+          <Typography className="py-6 text-center sm:text-left">
             Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.
           </Typography>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-3 pb-16">

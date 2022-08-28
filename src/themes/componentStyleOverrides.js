@@ -37,6 +37,13 @@ export default function componentStyleOverrides(theme) {
           }
         }
       }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0
+        }
+      }
     }
   };
 };
