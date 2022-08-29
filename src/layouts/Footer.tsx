@@ -123,7 +123,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="block sm:hidden mb-8">
+      <div className="block sm:hidden mb-8 mx-[-5%]">
         <Accordion className="bg-primary before:bg-transparent">
           <AccordionSummary
             expandIcon={<FontAwesomeIcon icon={faChevronDown} color="white" size="sm" />}
