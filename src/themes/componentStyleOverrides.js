@@ -37,6 +37,26 @@ export default function componentStyleOverrides(theme) {
           }
         }
       }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 0
+        }
+      }
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          boxShadow: 'none',
+          '&.Mui-expanded': {
+            margin: 0,
+          },
+          '&::before': {
+            opacity: 0.5,
+          }
+        }
+      }
     }
   };
 };

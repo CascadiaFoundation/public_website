@@ -1,32 +1,9 @@
-import { faImages } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Avatar, Button, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Ecosystem = () => {
   return (
     <>
-      {/* begin: Section 1 */}
-      <div className="bg-primary bg-opacity-10 px-[5%] mt-[-76px] pt-[140px]">
-        <div className="w-full md:w-1/2 sm:w-3/4">
-          <Typography variant="h1">
-            A <span className="text-primary">Better Future</span> requires a <span className="text-primary">Better Foundation</span>
-          </Typography>
-          <Typography className="py-6">
-            Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.
-          </Typography>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-3 pb-16">
-            <Button variant="contained">
-              Develop with Cascadia
-            </Button>
-            <Button variant="outlined">
-              Explore solutions
-            </Button>
-          </div>
-        </div>
-      </div>
-      {/* end: Section 1 */}
-
       {/* begin: Section 2 */}
       <div className="px-[5%] mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="sm:col-span-2">
@@ -126,70 +103,7 @@ const Ecosystem = () => {
         </div>
         <div className="w-full h-[300px] bg-[#E9EBEE] hidden sm:block" />
       </div>
-      {/* end: Section 5 */}
-
-      {/* begin: Section 6 */}
-      {/* <div className="mx-[5%] my-24 grid grid-cols-4 gap-x-10 relative">
-        <div className="col-start-3 col-span-2">
-          <Typography variant="h1">
-            Create an account & choose a path
-          </Typography>
-          <Typography color="text.secondary" className="py-6">
-            The best way to stake your claim in the Sophon verse is by creating an account (wallet). Then, choose the first step in your journey.
-          </Typography>
-          <Button variant="contained" color="secondary">
-            Create an Account
-          </Button>
-        </div>
-        <div className="col-start-2 col-span-3 bg-white p-6 grid grid-cols-3 gap-6 mt-8">
-          <div className="flex flex-col">
-            <div className="flex items-center gap-4">
-              <Avatar className="bg-primary" color="primary">
-                <FontAwesomeIcon icon={faImages} className="text-grey-light"/>
-              </Avatar>
-              <Typography variant="h2">Build</Typography>
-            </div>
-            <Typography color="text.secondary" className="py-4">
-              Build decentralized apps on a developer-friendly platform that features low fees, high speeds, and infinite scalability.
-            </Typography>
-            <Button variant="outlined" color="secondary" className="w-fit">
-              I'm a Developer
-            </Button>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-4">
-              <Avatar className="bg-primary" color="primary">
-                <FontAwesomeIcon icon={faImages} className="text-grey-light"/>
-              </Avatar>
-              <Typography variant="h2">Grow</Typography>
-            </div>
-            <Typography color="text.secondary" className="py-4 flex-auto">
-              Startup or grow up on a platform that sets you up for success. Investors, partners, and users are waiting.
-            </Typography>
-            <Button variant="outlined" color="secondary" className="w-fit">
-              I'm a Founder / Creator
-            </Button>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-4">
-              <Avatar className="bg-primary" color="primary">
-                <FontAwesomeIcon icon={faImages} className="text-grey-light"/>
-              </Avatar>
-              <Typography variant="h2">Develop</Typography>
-            </div>
-            <Typography color="text.secondary" className="py-4 flex-auto">
-              When you find your purpose, you find your people. Pick a wallet, create an account, and start contributing today.
-            </Typography>
-            <Button variant="outlined" color="secondary" className="w-fit">
-              Explore Community
-            </Button>
-          </div>
-        </div>
-        <div className="absolute top-0 left-0 -z-10 w-1/2 h-full pr-10">
-          <div className="w-full h-full bg-[#E9EBEE]" />
-        </div>
-      </div> */}
-      {/* end: Section 6 */}
+      {/* end: Section 5 */}      
     </>
   );
 };
