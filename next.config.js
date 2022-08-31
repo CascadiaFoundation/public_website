@@ -6,6 +6,10 @@ module.exports = {
 
   reactStrictMode: true,
 
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
   // Uncoment to add domain whitelist
   // images: {
   //   domains: [

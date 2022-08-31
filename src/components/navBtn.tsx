@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -22,9 +23,7 @@ const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
     };
 
   return (
-    <a
-      key={name}
-      href={href}
+    <div
       className={clsx(
         pathname === '/'
           ? current
@@ -38,8 +37,8 @@ const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
       aria-current={current ? 'page' : undefined}
       onClick={handleClick(onClick)}
     >
-      {name}
-    </a>
+      <Link href={href}>{name}</Link>
+    </div>
   );
 };
 export default NavBtn;

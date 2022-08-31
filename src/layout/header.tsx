@@ -67,7 +67,7 @@ const Header = (): JSX.Element => {
         <Disclosure as='nav' className='bg-transparent backdrop-blur-md'>
           {({ open }: { open: boolean }) => (
             <>
-              <div className='mx-auto w-full px-4 sm:px-6 md:max-w-7xl lg:px-8'>
+              <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
                   <div className='flex items-center'>
                     <div className='flex-shrink-0'>

@@ -47,7 +47,7 @@ const Footer = (): JSX.Element => {
   };
   return (
     <div className='bg-main-900 px-8 pt-16 pb-6 sm:px-16 md:px-32'>
-      <div className='hidden justify-items-stretch sm:grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6'>
+      <div className='hidden justify-items-stretch gap-10 sm:grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6'>
         <div className='flex flex-col items-start justify-start'>
           <div className='pb-6 text-2xl text-white'>Cascadia</div>
           <ul className='capitaliz text-base text-white-100'>
@@ -88,6 +88,7 @@ const Footer = (): JSX.Element => {
           {itemList.map((item, index) => (
             <AccordionItem
               key={item.title}
+              className='py-2 font-semibold text-white'
               title={item.title}
               collapse={collapsedIndex === index}
               onClick={() => handleCollapse(index)}

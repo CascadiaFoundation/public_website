@@ -13,11 +13,13 @@ module.exports = {
         dark: '#222222',
         'main-900': '#4267B3',
         'white-100': '#E9EBEE',
+        'white-200': '#F6F7F8',
         'black-500': '#616771',
         'black-900': '#18191A',
       },
       backgroundImage: {
-        'header-background': "url('/images/header/background.png')",
+        'home-background': "url('/images/header/home.png')",
+        'learning-background': "url('/images/header/learning.png')",
       },
       keyframes: {
         flicker: {
@@ -39,12 +41,16 @@ module.exports = {
         home: ['image image title title', 'image content content content'],
       },
       gridTemplateColumns: {
-        home: 'auto auto',
+        home: 'auto auto auto auto',
       },
       gridTemplateRows: {
-        home: 'auto auto',
+        home: 'auto auto auto auto',
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
+    require('@savvywombat/tailwindcss-grid-areas'),
+  ],
 };
