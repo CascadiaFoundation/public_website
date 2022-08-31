@@ -46,32 +46,32 @@ const Footer = (): JSX.Element => {
     setCollapsedIndex((prev) => (prev === index ? undefined : index));
   };
   return (
-    <div className='bg-main-900 p-[5%]'>
-      <div className='grind-cols-2 my-8 grid gap-y-8 sm:my-16 sm:grid-cols-6 lg:gap-y-0'>
+    <div className='bg-main-900 p-[5%] pb-0'>
+      <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-6 lg:gap-y-0'>
         <div className='grid grid-cols-2 sm:col-span-2 sm:block lg:col-span-1'>
           <div className='pb-6 text-2xl text-white'>Cascadia</div>
           <div className='capitaliz flex flex-col gap-1 text-base text-secondary-100'>
             <a
               href='#'
-              className='text-grey-light text-right hover:text-white sm:text-left'
+              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
             >
               wallet
             </a>
             <a
               href='#'
-              className='text-grey-light text-right hover:text-white sm:text-left'
+              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
             >
               Explorer
             </a>
             <a
               href='#'
-              className='text-grey-light text-right hover:text-white sm:text-left'
+              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
             >
               Cascadia Bridge
             </a>
             <a
               href='#'
-              className='text-grey-light text-right hover:text-white sm:text-left'
+              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
             >
               Brand Toolkit
             </a>
@@ -85,7 +85,10 @@ const Footer = (): JSX.Element => {
             <div className='pb-4 text-base text-white'>{item.title}</div>
             <ul className='capitaliz text-base text-secondary-100'>
               {item.list.map((li) => (
-                <li key={li} className='text-grey-light hover:text-white'>
+                <li
+                  key={li}
+                  className='py-[2px] text-base font-normal text-secondary-100/80 hover:text-white'
+                >
                   {li}
                 </li>
               ))}
@@ -115,12 +118,16 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-between pt-12 text-secondary-100 sm:flex-row'>
-        <div className='flex items-center justify-center'>
-          <div className='mr-7'>Privacy Policy</div>
-          <div className=''>Terms of Use</div>
+      <div className='flex flex-col items-center justify-between gap-4 pt-8 pb-6 sm:flex-row sm:gap-0'>
+        <div className='flex items-center  gap-6'>
+          <a href='#' className='text-secondary-100 hover:text-white'>
+            Privacy Policy
+          </a>
+          <a href='#' className='text-secondary-100 hover:text-white'>
+            Terms of Use
+          </a>
         </div>
-        <div className='pt-5 sm:pt-0'>@ 2022 Cascadia Protocal</div>
+        <div className='text-secondary-100'>contact@cascadia.foundation</div>
       </div>
     </div>
   );

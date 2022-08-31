@@ -42,7 +42,7 @@ const Learning = (): JSX.Element => {
   return (
     <Layout>
       <div className='m-auto md:px-10 lg:px-32'>
-        <div className='flex flex-col sm:mt-12 md:mt-24 '>
+        <div className='flex flex-col sm:my-12 md:my-24 '>
           {list.map((item: itemProps, index: number) => {
             const direction =
               index % 2 === 0
@@ -54,9 +54,9 @@ const Learning = (): JSX.Element => {
                 className={`${direction} flex items-center justify-between`}
               >
                 <div className='m-0 flex w-full flex-col items-start justify-center p-6 sm:p-8 md:mx-4 md:my-8 md:w-1/2'>
-                  <div className='text-2xl font-bold text-primary-900'>
+                  <h2 className='text-2xl font-bold text-primary-900'>
                     {item.title}
-                  </div>
+                  </h2>
                   <div className='py-6 text-base text-primary-500'>
                     {item.content}
                   </div>

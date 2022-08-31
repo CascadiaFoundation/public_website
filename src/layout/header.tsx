@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import NavBtn, { btnProps } from '@/components/navBtn';
 
@@ -11,11 +11,6 @@ type userProps = {
   name: string;
   email: string;
   imageUrl: string;
-};
-
-type userNavigationProps = {
-  name: string;
-  href: string;
 };
 
 const user: userProps = {
@@ -53,34 +48,22 @@ const navigation: btnProps[] = [
   },
 ];
 
-const userNavigation: userNavigationProps[] = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-];
-
 const Header = (): JSX.Element => {
-  const router = useRouter();
   return (
     <>
-      <div className='sticky top-0 z-10 h-0 min-h-full'>
-        <Disclosure as='nav' className='bg-transparent backdrop-blur-md'>
+      <div className='z-10 h-0 min-h-full'>
+        <Disclosure as='nav' className='bg-transparent'>
           {({ open }: { open: boolean }) => (
             <>
               <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
                   <div className='flex items-center'>
                     <div className='flex-shrink-0'>
-                      <div
-                        className={clsx(
-                          'text-xl font-semibold',
-                          router.pathname === '/'
-                            ? 'text-white'
-                            : 'text-main-900'
-                        )}
-                      >
-                        Cascadia
-                      </div>
+                      <Link href='/'>
+                        <div className='text-xl font-semibold text-white'>
+                          Cascadia
+                        </div>
+                      </Link>
                     </div>
                     <div className='hidden md:block'>
                       <div className='ml-10 flex items-baseline space-x-4'>
@@ -92,7 +75,7 @@ const Header = (): JSX.Element => {
                   </div>
                   <div className='-mr-2 flex md:hidden'>
                     {/* Mobile menu button */}
-                    <Disclosure.Button className='hover:text-main-900/400 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-main-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-1 focus:ring-offset-main-900'>
+                    <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-transparent p-2 text-white hover:text-main-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-1 focus:ring-offset-main-900'>
                       <span className='sr-only'>Open main menu</span>
                       {open ? (
                         <XMarkIcon
@@ -110,7 +93,7 @@ const Header = (): JSX.Element => {
                 </div>
               </div>
 
-              <Disclosure.Panel className='md:hidden'>
+              <Disclosure.Panel className='backdrop-blur-lg md:hidden'>
                 <div className='space-y-1 px-2 pt-2 pb-3 sm:px-3'>
                   {navigation.map((item) => (
                     <Disclosure.Button
@@ -156,7 +139,7 @@ const Header = (): JSX.Element => {
                       <BellIcon className='h-6 w-6' aria-hidden='true' />
                     </button>
                   </div>
-                  <div className='mt-3 space-y-1 px-2'>
+                  {/* <div className='mt-3 space-y-1 px-2'>
                     {userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
@@ -167,7 +150,7 @@ const Header = (): JSX.Element => {
                         {item.name}
                       </Disclosure.Button>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </Disclosure.Panel>
             </>

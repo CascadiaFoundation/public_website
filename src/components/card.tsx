@@ -29,7 +29,7 @@ const Card = ({
       <div className='home-content-base flex-1 py-4'>{content}</div>
       <Btn
         label={button}
-        className='w-full border-primary-900 text-primary-900'
+        className='w-full border-primary-900 bg-transparent text-primary-900 hover:bg-primary-900/10'
       />
     </div>
   );

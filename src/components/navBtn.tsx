@@ -1,6 +1,4 @@
-import clsx from 'clsx';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React from 'react';
 
 export type btnProps = {
@@ -11,8 +9,6 @@ export type btnProps = {
 };
 
 const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
-  const { pathname } = useRouter();
-
   const handleClick =
     (onClick: (() => void) | undefined) =>
     (e: React.MouseEvent<HTMLElement>) => {
@@ -24,16 +20,7 @@ const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
 
   return (
     <div
-      className={clsx(
-        pathname === '/'
-          ? current
-            ? 'text-secondary-100'
-            : 'text-white'
-          : current
-          ? 'text-primary-900'
-          : 'text-primary-500',
-        'rounded-md px-3 py-2 text-base font-normal'
-      )}
+      className='rounded-md px-3 py-2 text-base font-normal text-secondary-200 hover:text-secondary-100'
       aria-current={current ? 'page' : undefined}
       onClick={handleClick(onClick)}
     >

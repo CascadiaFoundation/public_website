@@ -9,12 +9,12 @@ interface LayoutProps {
 }
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <>
+    <div className='bg-background'>
       <Header />
       <SubHeader />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -4,20 +4,10 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 import Layout from '@/layout';
-
-const slide = [1, 2, 3, 4, 5];
-
-import Image from 'next/image';
-import { Autoplay, Pagination } from 'swiper';
-
-import SlideCard from '@/components/slideCard';
 
 const Esg = (): JSX.Element => {
   return (
@@ -203,58 +193,24 @@ const Esg = (): JSX.Element => {
         </div>
 
         <div className='my-20 flex flex-col items-center justify-center p-6 md:p-0'>
-          <div className='text-4xl font-bold text-primary-900'>
+          <div className='text-center text-4xl font-bold text-primary-900'>
             ESG on Cascadia is the Future
           </div>
-          <div className='my-6 max-w-[900px] text-center text-base font-normal text-primary-500'>
+          <div className='relative my-12 h-[240px] w-full p-6 md:w-[400px] md:p-0'>
+            <Image
+              className='absolute'
+              src='./images/no_image.png'
+              alt=''
+              layout='fill'
+            />
+          </div>
+          <div className='max-w-[900px] text-center text-base font-normal text-primary-500'>
             The 3 pillars that make up ESG initiatives are never going away and
             will only become more important as time passes. While the criteria
             from an investment standpoint is relatively new, the principles are
             not. Environmental impact, social responsibility and transparent
             governance offer the economic advantages and stability necessary for
             the world to thrive.
-          </div>
-          <div className='my-6 flex w-full items-center justify-center'>
-            <Swiper
-              slidesPerView={4}
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              loop={true}
-              loopFillGroupWithBlank={true}
-              modules={[Autoplay, Pagination]}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 4,
-                  spaceBetween: 10,
-                },
-              }}
-              className='mySwiper'
-            >
-              {slide.map((item) => {
-                return (
-                  <SwiperSlide
-                    key={item}
-                    className='flex items-center justify-center'
-                  >
-                    <SlideCard />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
           </div>
         </div>
       </div>
