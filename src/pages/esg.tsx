@@ -4,7 +4,6 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -15,6 +14,7 @@ import Layout from '@/layout';
 
 const slide = [1, 2, 3, 4, 5];
 
+import Image from 'next/image';
 import { Autoplay, Pagination } from 'swiper';
 
 import SlideCard from '@/components/slideCard';
@@ -23,8 +23,8 @@ const Esg = (): JSX.Element => {
   return (
     <Layout>
       <div className='m-auto md:px-10 lg:px-32'>
-        <div className='my-20 flex flex-col items-center justify-center'>
-          <div className='text-4xl font-bold text-primary-900'>
+        <div className='my-20 flex flex-col items-center justify-center p-6 md:p-0'>
+          <div className='text-center text-4xl font-bold text-primary-900 md:text-left'>
             What is ESG and Why does it matter?
           </div>
           <div className='my-6 max-w-[900px] text-center text-base font-normal text-primary-500'>
@@ -33,27 +33,27 @@ const Esg = (): JSX.Element => {
             investing. ESG is used to identify risks that may be missed through
             traditional forms of analysis.
           </div>
-          <div className='my-6 flex items-center justify-center'>
-            <div className=' flex flex-col items-center justify-center text-main-900'>
+          <div className='my-6 flex flex-col items-center justify-center md:flex-row'>
+            <div className=' mt-5 flex flex-col items-center justify-center text-main-900'>
               <FontAwesomeIcon icon={faShieldHeart} className='p-4 text-5xl' />
               <div className='text-base'>Environmental</div>
             </div>
-            <div className=' flex flex-col items-center justify-center px-28 text-main-900'>
+            <div className=' mt-5 flex flex-col items-center justify-center px-0 text-main-900 md:px-16 lg:px-28'>
               <FontAwesomeIcon icon={faUserGroup} className='p-4 text-5xl' />
               <div className='text-base'>Social</div>
             </div>
-            <div className=' flex flex-col items-center justify-center text-main-900'>
+            <div className=' mt-5 flex flex-col items-center justify-center text-main-900'>
               <FontAwesomeIcon icon={faImage} className='p-4 text-5xl' />
               <div className='text-base'>Governance</div>
             </div>
           </div>
         </div>
 
-        <div className='my-20'>
+        <div className='m-0 p-6 md:my-20 md:p-0'>
           <div className='p-5 pb-8 text-center text-2xl font-semibold text-main-900'>
             Environmental
           </div>
-          <div className='p-5 pb-8 text-base text-primary-500'>
+          <div className='p-5 pb-8 text-center text-base text-primary-500 md:text-left'>
             <p className='pb-5'>
               A recent analysis found that Cascadia’s energy consumption
               estimates are lower than any major competitor, even Visa! Beyond
@@ -70,7 +70,7 @@ const Esg = (): JSX.Element => {
               industry.
             </p>
           </div>
-          <div className='flex items-start justify-between'>
+          <div className='flex flex-col items-start justify-between md:flex-row'>
             <div className='flex w-full items-center justify-center p-5 md:w-1/2'>
               <div className='relative h-[300px] w-full'>
                 <Image
@@ -78,7 +78,6 @@ const Esg = (): JSX.Element => {
                   src='./images/no_image.png'
                   alt=''
                   layout='fill'
-                  objectFit='cover'
                 />
               </div>
             </div>
@@ -101,11 +100,11 @@ const Esg = (): JSX.Element => {
           </div>
         </div>
 
-        <div className='my-20'>
+        <div className='m-0 p-6 md:my-20 md:p-0'>
           <div className='p-5 pb-8 text-center text-2xl font-semibold text-main-900'>
             Social
           </div>
-          <div className='p-5 pb-8 text-base text-primary-500'>
+          <div className='p-5 pb-8 text-center text-base text-primary-500 md:text-left'>
             <p className='pb-5'>
               A recent analysis found that Cascadia’s energy consumption
               estimates are lower than any major competitor, even Visa! Beyond
@@ -122,7 +121,7 @@ const Esg = (): JSX.Element => {
               industry.
             </p>
           </div>
-          <div className='flex items-start justify-between'>
+          <div className='flex flex-col-reverse items-start justify-between md:flex-row'>
             <div className='flex w-full flex-col items-start justify-center p-5 text-primary-500 md:w-1/2'>
               <p className='pb-5'>
                 Consuming less energy or even going carbon neutral isn’t enough
@@ -146,18 +145,17 @@ const Esg = (): JSX.Element => {
                   src='./images/no_image.png'
                   alt=''
                   layout='fill'
-                  objectFit='cover'
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className='my-20'>
+        <div className='m-0 p-6 md:my-20 md:p-0'>
           <div className='p-5 pb-8 text-center text-2xl font-semibold text-main-900'>
             Governance
           </div>
-          <div className='p-5 pb-8 text-base text-primary-500'>
+          <div className='p-5 pb-8 text-center text-base text-primary-500 md:text-left'>
             <p className='pb-5'>
               A recent analysis found that Cascadia’s energy consumption
               estimates are lower than any major competitor, even Visa! Beyond
@@ -174,7 +172,7 @@ const Esg = (): JSX.Element => {
               industry.
             </p>
           </div>
-          <div className='flex items-start justify-between'>
+          <div className='flex flex-col items-start justify-between md:flex-row'>
             <div className='flex w-full items-center justify-center p-5 md:w-1/2'>
               <div className='relative h-[300px] w-full'>
                 <Image
@@ -182,7 +180,6 @@ const Esg = (): JSX.Element => {
                   src='./images/no_image.png'
                   alt=''
                   layout='fill'
-                  objectFit='cover'
                 />
               </div>
             </div>
@@ -205,7 +202,7 @@ const Esg = (): JSX.Element => {
           </div>
         </div>
 
-        <div className='my-20 flex flex-col items-center justify-center'>
+        <div className='my-20 flex flex-col items-center justify-center p-6 md:p-0'>
           <div className='text-4xl font-bold text-primary-900'>
             ESG on Cascadia is the Future
           </div>
