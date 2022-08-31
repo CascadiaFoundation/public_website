@@ -27,11 +27,11 @@ const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
       className={clsx(
         pathname === '/'
           ? current
-            ? 'text-white-100'
+            ? 'text-secondary-100'
             : 'text-white'
           : current
-          ? 'text-black-900'
-          : 'text-black-500',
+          ? 'text-primary-900'
+          : 'text-primary-500',
         'rounded-md px-3 py-2 text-base font-normal'
       )}
       aria-current={current ? 'page' : undefined}

@@ -26,10 +26,10 @@ const Card = ({
         </div>
         <div className='home-title-base'>{title}</div>
       </div>
-      <div className='flex-1 py-4'>{content}</div>
+      <div className='home-content-base flex-1 py-4'>{content}</div>
       <Btn
         label={button}
-        className='w-full border-black-900 text-black-900 sm:w-fit'
+        className='w-full border-primary-900 text-primary-900'
       />
     </div>
   );

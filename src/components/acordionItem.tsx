@@ -38,7 +38,7 @@ const AccordionItem = ({
     <div className={className}>
       <div
         className={
-          'z-10 flex items-center justify-between border-white-100 p-2 ' +
+          'z-10 flex items-center justify-between border-secondary-100 p-2 ' +
           borderBottom
         }
         onClick={handleClick}

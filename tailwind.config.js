@@ -12,14 +12,18 @@ module.exports = {
       colors: {
         dark: '#222222',
         'main-900': '#4267B3',
-        'white-100': '#E9EBEE',
-        'white-200': '#F6F7F8',
-        'black-500': '#616771',
-        'black-900': '#18191A',
+        'secondary-100': '#E9EBEE',
+        'secondary-200': '#F6F7F8',
+        'primary-500': '#616771',
+        'primary-900': '#18191A',
       },
       backgroundImage: {
         'home-background': "url('/images/header/home.png')",
         'learning-background': "url('/images/header/learning.png')",
+      },
+      boxShadow: {
+        cardShadow:
+          '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)',
       },
       keyframes: {
         flicker: {

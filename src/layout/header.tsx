@@ -63,7 +63,7 @@ const Header = (): JSX.Element => {
   const router = useRouter();
   return (
     <>
-      <div className='sticky top-0 h-0 min-h-full'>
+      <div className='sticky top-0 z-10 h-0 min-h-full'>
         <Disclosure as='nav' className='bg-transparent backdrop-blur-md'>
           {({ open }: { open: boolean }) => (
             <>
