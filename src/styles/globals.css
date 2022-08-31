@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .container {
+    @apply min-h-screen w-full px-32 py-24;
+  }
+
+  .home-title {
+    @apply text-4xl font-bold text-black-900;
+  }
+
+  .home-content-normal {
+    @apply text-base font-normal text-black-500;
+  }
+
+  .home-content-normal {
+    @apply text-base font-normal text-black-500;
+  }
+
+  .home-content-bold {
+    @apply text-base font-medium text-black-900;
+  }
+}
