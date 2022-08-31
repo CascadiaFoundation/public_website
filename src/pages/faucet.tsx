@@ -18,17 +18,19 @@ const Faucet = (): JSX.Element => {
   };
   return (
     <Layout>
-      <div className='p-4 md:p-10 lg:px-32 lg:py-20'>
+      <div className='m-auto md:px-10 lg:px-32'>
         <div className='p-4 shadow-md shadow-primary-500/20 sm:px-6 sm:py-5 md:px-8 md:py-7'>
           <div className='grid grid-rows-4 place-items-center gap-y-2 text-center sm:gap-y-4 md:gap-y-8'>
             <div className='flex w-full items-center justify-between'>
-              <div className='text-xl font-bold md:text-2xl'>Faucet</div>
-              <button className='text-black-100 flex items-center bg-primary-900 px-3 py-2'>
+              <div className='text-xl font-bold text-primary-900 md:text-2xl'>
+                Faucet
+              </div>
+              <button className='flex items-center bg-primary-900 px-3 py-2 text-secondary-100'>
                 <FontAwesomeIcon icon={faWallet} className='mr-3 text-xl' />
                 <span>Connect Wallet</span>
               </button>
             </div>
-            <div className='w-full max-w-[900px] text-primary-900'>
+            <div className='w-full max-w-[900px] font-normal text-primary-900'>
               This faucet is a community project where you can currently request
               up to 20Ⓝ testnet Cascadia every hour. It is run on donations so
               if you have any unused tokens please consider sharing them with

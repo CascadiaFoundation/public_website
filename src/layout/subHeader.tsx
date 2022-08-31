@@ -28,7 +28,21 @@ const SubHeader = (): JSX.Element => {
       defaultColor = 'text-primary-900';
       contentColor = 'text-primary-900';
 
-      leftBtnTextColor = 'text-white-200';
+      leftBtnTextColor = 'text-secondary-200';
+      leftBtnBorderColor = 'border-main-900';
+      leftBtnBGColor = 'bg-main-900';
+
+      rightBtnTextColor = 'text-main-900';
+      rightBtnBorderColor = 'border-main-900';
+      rightBtnBGColor = 'bg-transparent';
+      break;
+    case '/faucet':
+      background = 'bg-learning-background';
+      textColor = 'text-main-900';
+      defaultColor = 'text-primary-900';
+      contentColor = 'text-primary-900';
+
+      leftBtnTextColor = 'text-secondary-200';
       leftBtnBorderColor = 'border-main-900';
       leftBtnBGColor = 'bg-main-900';
 
