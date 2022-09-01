@@ -42,12 +42,12 @@ const Ecosystem = (): JSX.Element => {
   return (
     <Layout>
       <div className='m-auto md:px-10 lg:px-32'>
-        <div className='flex flex-col sm:my-12 md:my-24 '>
+        <div className='my-4 flex flex-col sm:my-12 md:my-24 '>
           {list.map((item: itemProps, index: number) => {
             const direction =
               index % 2 === 0
-                ? 'flex-col-reverse md:flex-row'
-                : 'flex-col-reverse md:flex-row-reverse';
+                ? 'flex-col md:flex-row'
+                : 'flex-col md:flex-row-reverse';
             return (
               <div
                 key={index}
