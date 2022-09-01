@@ -63,7 +63,7 @@ const Header = (): JSX.Element => {
                         </div>
                       </Link>
                     </div>
-                    <div className='ml-10 flex h-full items-baseline space-x-4'>
+                    <div className='ml-10 hidden h-full items-baseline space-x-4 md:flex'>
                       {navigation.map((item: btnProps) => (
                         <NavBtn key={item.name} {...item} />
                       ))}
