@@ -57,7 +57,7 @@ const Footer = (): JSX.Element => {
               href='#'
               className='text-right text-secondary-100/80 hover:text-white sm:text-left'
             >
-              wallet
+              Wallet
             </a>
             <a
               href='#'

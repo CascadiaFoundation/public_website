@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import NavBtn, { btnProps } from '@/components/navBtn';
 
@@ -24,31 +25,28 @@ const navigation: btnProps[] = [
   {
     name: 'Learning',
     href: '/learning',
-    current: true,
   },
   {
     name: 'Ecosystem',
     href: '/ecosystem',
-    current: false,
   },
   {
     name: 'ESG',
     href: '/esg',
-    current: false,
   },
   {
     name: 'Community',
     href: '/community',
-    current: false,
   },
   {
     name: 'Blog',
     href: '/blog',
-    current: false,
   },
 ];
 
 const Header = (): JSX.Element => {
+  const { pathname } = useRouter();
+
   return (
     <>
       <div className='z-10 h-0 min-h-full'>
@@ -57,7 +55,7 @@ const Header = (): JSX.Element => {
             <>
               <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
-                  <div className='flex items-center'>
+                  <div className='flex h-full items-center'>
                     <div className='flex-shrink-0'>
                       <Link href='/'>
                         <div className='text-xl font-semibold text-white'>
@@ -65,12 +63,10 @@ const Header = (): JSX.Element => {
                         </div>
                       </Link>
                     </div>
-                    <div className='hidden md:block'>
-                      <div className='ml-10 flex items-baseline space-x-4'>
-                        {navigation.map((item: btnProps) => (
-                          <NavBtn key={item.name} {...item} />
-                        ))}
-                      </div>
+                    <div className='ml-10 flex h-full items-baseline space-x-4'>
+                      {navigation.map((item: btnProps) => (
+                        <NavBtn key={item.name} {...item} />
+                      ))}
                     </div>
                   </div>
                   <div className='-mr-2 flex md:hidden'>
@@ -101,12 +97,9 @@ const Header = (): JSX.Element => {
                       as='a'
                       href={item.href}
                       className={clsx(
-                        item.current
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'block rounded-md px-3 py-2 text-base font-medium'
+                        'block rounded-md px-3 py-2 text-base font-medium text-secondary-100 hover:bg-gray-700 hover:text-white',
+                        pathname === item.href && 'text-white'
                       )}
-                      aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
                     </Disclosure.Button>
