@@ -27,7 +27,7 @@ const SubHeader = (): JSX.Element => {
         <div className='pb-7 text-3xl font-bold text-white md:text-4xl'>
           {title}
         </div>
-        <div className='pb-9 text-base text-white'>{content}</div>
+        <div className='pb-9 text-base text-secondary-100'>{content}</div>
         <div className='flex flex-col items-center justify-start md:flex-row'>
           <Btn
             className='mb-4 w-full border-white bg-white text-primary-900 transition-all hover:border-white/40 hover:bg-white/40 md:mr-4 md:w-[200px]'
