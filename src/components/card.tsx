@@ -19,7 +19,7 @@ const Card = ({
   button,
 }: itemProps): JSX.Element => {
   return (
-    <div className={clsx('flex flex-col', className)}>
+    <div className={clsx('flex flex-col bg-white', className)}>
       <div className='flex items-center gap-4'>
         <div className='rounded-full bg-main-900 p-2'>
           <FontAwesomeIcon icon={faImages} className='h-6 w-6 text-white' />
