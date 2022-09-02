@@ -41,7 +41,7 @@ const Header = (): JSX.Element => {
             <>
               <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
-                  <div className='z-10 flex h-full items-center'>
+                  <div className='flex h-full items-center'>
                     <div className='flex-shrink-0'>
                       <Link href='/'>
                         <div className='cursor-pointer text-xl font-semibold text-white'>
@@ -57,7 +57,7 @@ const Header = (): JSX.Element => {
                   </div>
                   <div className='-mr-2 flex md:hidden'>
                     {/* Mobile menu button */}
-                    <Disclosure.Button className='z-10 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-white hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
+                    <Disclosure.Button className='z-30 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-white hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
                       <span className='sr-only'>Open main menu</span>
                       {open ? (
                         <XMarkIcon
@@ -76,7 +76,7 @@ const Header = (): JSX.Element => {
               </div>
 
               <Transition
-                className='absolute inset-0'
+                className='fixed inset-0 z-10'
                 enter='transition duration-200 ease-out'
                 enterFrom='transform  opacity-0'
                 enterTo='transform opacity-100'
@@ -90,7 +90,7 @@ const Header = (): JSX.Element => {
                 ></div>
               </Transition>
               <Transition
-                className='absolute inset-0'
+                className='absolute inset-x-0 top-0 z-20'
                 enter='transition duration-200 ease-out'
                 enterFrom='transform -translate-y-full h-0 opacity-0'
                 enterTo='transform translate-y-0 h-fit opacity-100'
