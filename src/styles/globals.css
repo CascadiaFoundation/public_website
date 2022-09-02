@@ -27,6 +27,6 @@ body {
   }
 
   .home-content-bold {
-    @apply text-base font-medium text-primary-900;
+    @apply text-base font-bold text-primary-900;
   }
 }
