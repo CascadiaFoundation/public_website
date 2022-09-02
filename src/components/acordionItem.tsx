@@ -25,7 +25,9 @@ const AccordionItem = ({
   }, [collapse, open, collapsable]);
 
   const borderBottom = collapsed ? 'border-b-0' : 'border-b-[1px]';
-  const hidden = collapsed ? 'h-full opacity-100' : 'h-0 opacity-0';
+  const hidden = collapsed
+    ? 'opacity-100 h-full duration-1000'
+    : 'opacity-0 h-0 duration-100';
 
   const handleClick = useCallback(() => {
     if (onClick) {
@@ -38,7 +40,7 @@ const AccordionItem = ({
     <div className={className}>
       <div
         className={
-          'z-10 flex items-center justify-between border-secondary-100 p-2 ' +
+          'z-10 flex items-center justify-between border-secondary-200/40 p-2 ' +
           borderBottom
         }
         onClick={handleClick}
@@ -54,7 +56,6 @@ const AccordionItem = ({
           </div>
         )}
       </div>
-
       <div className={'overflow-hidden transition-all ' + hidden}>
         {children}
       </div>

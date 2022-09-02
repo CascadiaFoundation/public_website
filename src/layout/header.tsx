@@ -42,7 +42,7 @@ const Header = (): JSX.Element => {
               <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
                   <div className='flex h-full items-center'>
-                    <div className='flex-shrink-0'>
+                    <div className='z-30 flex-shrink-0'>
                       <Link href='/'>
                         <div className='cursor-pointer text-xl font-semibold text-white'>
                           Cascadia
@@ -101,15 +101,16 @@ const Header = (): JSX.Element => {
                 <Disclosure.Panel className='duration-3000 h-full w-full bg-main-900 transition-all md:hidden'>
                   <div className='space-y-1 px-2 pt-14 pb-3 sm:px-3'>
                     {navigation.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        className={clsx(
-                          'block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900',
-                          pathname === item.href && 'text-white'
-                        )}
-                      >
-                        <Link href={item.href}>{item.name}</Link>
-                      </Disclosure.Button>
+                      <Link key={item.name} href={item.href}>
+                        <Disclosure.Button
+                          className={clsx(
+                            'block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900',
+                            pathname === item.href && 'text-white'
+                          )}
+                        >
+                          {item.name}
+                        </Disclosure.Button>
+                      </Link>
                     ))}
                   </div>
                 </Disclosure.Panel>
