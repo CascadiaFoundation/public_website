@@ -58,7 +58,7 @@ const Header = (): JSX.Element => {
                   <div className='z-10 flex h-full items-center'>
                     <div className='flex-shrink-0'>
                       <Link href='/'>
-                        <div className='text-xl font-semibold text-white'>
+                        <div className='cursor-pointer text-xl font-semibold text-white'>
                           Cascadia
                         </div>
                       </Link>
