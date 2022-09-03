@@ -52,29 +52,17 @@ const Footer = (): JSX.Element => {
           <div className='cursor-pointer pb-6 text-2xl text-white'>
             Cascadia
           </div>
-          <div className='capitaliz flex flex-col gap-1 text-base text-secondary-100'>
-            <a
-              href='#'
-              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
-            >
+          <div className='capitaliz flex flex-col gap-1 text-right text-base text-secondary-100/80'>
+            <a href='#' className='hover:text-white sm:text-left'>
               Wallet
             </a>
-            <a
-              href='#'
-              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
-            >
+            <a href='#' className='hover:text-white sm:text-left'>
               Explorer
             </a>
-            <a
-              href='#'
-              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
-            >
+            <a href='#' className='hover:text-white sm:text-left'>
               Cascadia Bridge
             </a>
-            <a
-              href='#'
-              className='text-right text-secondary-100/80 hover:text-white sm:text-left'
-            >
+            <a href='#' className='hover:text-white sm:text-left'>
               Brand Toolkit
             </a>
           </div>
@@ -91,7 +79,7 @@ const Footer = (): JSX.Element => {
               {item.list.map((li) => (
                 <li
                   key={li}
-                  className='py-[2px] text-base font-normal text-secondary-100/80 hover:text-white'
+                  className='py-[2px] text-base text-secondary-100/80 hover:text-white'
                 >
                   <a href='#'>{li}</a>
                 </li>
@@ -109,9 +97,12 @@ const Footer = (): JSX.Element => {
                 collapse={collapsedIndex === index}
                 onClick={() => handleCollapse(index)}
               >
-                <ul className='pl-8 text-left text-secondary-100'>
+                <ul className='pl-6 text-left'>
                   {item.list.map((li) => (
-                    <li key={li} className='py-2'>
+                    <li
+                      key={li}
+                      className='py-2 text-base font-thin text-secondary-100/80 hover:text-white'
+                    >
                       <a href='#'>{li}</a>
                     </li>
                   ))}
