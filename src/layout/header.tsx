@@ -1,81 +1,63 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Disclosure } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Disclosure, Transition } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import NavBtn, { btnProps } from '@/components/navBtn';
-
-type userProps = {
-  name: string;
-  email: string;
-  imageUrl: string;
-};
-
-const user: userProps = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-};
 
 const navigation: btnProps[] = [
   {
     name: 'Learning',
     href: '/learning',
-    current: true,
   },
   {
     name: 'Ecosystem',
     href: '/ecosystem',
-    current: false,
   },
   {
     name: 'ESG',
     href: '/esg',
-    current: false,
   },
   {
     name: 'Community',
     href: '/community',
-    current: false,
   },
   {
     name: 'Blog',
     href: '/blog',
-    current: false,
   },
 ];
 
 const Header = (): JSX.Element => {
+  const { pathname } = useRouter();
+
   return (
     <>
       <div className='z-10 h-0 min-h-full'>
         <Disclosure as='nav' className='bg-transparent'>
-          {({ open }: { open: boolean }) => (
+          {({ open, close }: { open: boolean; close: () => void }) => (
             <>
               <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
-                  <div className='flex items-center'>
-                    <div className='flex-shrink-0'>
+                  <div className='flex h-full items-center'>
+                    <div className='z-30 flex-shrink-0'>
                       <Link href='/'>
-                        <div className='text-xl font-semibold text-white'>
+                        <div className='cursor-pointer text-xl font-semibold text-white'>
                           Cascadia
                         </div>
                       </Link>
                     </div>
-                    <div className='hidden md:block'>
-                      <div className='ml-10 flex items-baseline space-x-4'>
-                        {navigation.map((item: btnProps) => (
-                          <NavBtn key={item.name} {...item} />
-                        ))}
-                      </div>
+                    <div className='ml-10 hidden h-full items-baseline space-x-4 md:flex'>
+                      {navigation.map((item: btnProps) => (
+                        <NavBtn key={item.name} {...item} />
+                      ))}
                     </div>
                   </div>
                   <div className='-mr-2 flex md:hidden'>
                     {/* Mobile menu button */}
-                    <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-transparent p-2 text-white hover:text-main-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-1 focus:ring-offset-main-900'>
+                    <Disclosure.Button className='z-30 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-white hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
                       <span className='sr-only'>Open main menu</span>
                       {open ? (
                         <XMarkIcon
@@ -93,66 +75,46 @@ const Header = (): JSX.Element => {
                 </div>
               </div>
 
-              <Disclosure.Panel className='backdrop-blur-lg md:hidden'>
-                <div className='space-y-1 px-2 pt-2 pb-3 sm:px-3'>
-                  {navigation.map((item) => (
-                    <Disclosure.Button
-                      key={item.name}
-                      as='a'
-                      href={item.href}
-                      className={clsx(
-                        item.current
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'block rounded-md px-3 py-2 text-base font-medium'
-                      )}
-                      aria-current={item.current ? 'page' : undefined}
-                    >
-                      {item.name}
-                    </Disclosure.Button>
-                  ))}
-                </div>
-                <div className='border-t border-gray-700 pt-4 pb-3'>
-                  <div className='flex items-center px-5'>
-                    <div className='flex-shrink-0'>
-                      <Image
-                        width={40}
-                        height={40}
-                        className='rounded-full'
-                        src={user.imageUrl}
-                        alt=''
-                      />
-                    </div>
-                    <div className='ml-3'>
-                      <div className='text-base font-medium leading-none text-white'>
-                        {user.name}
-                      </div>
-                      <div className='text-sm font-medium leading-none text-gray-400'>
-                        {user.email}
-                      </div>
-                    </div>
-                    <button
-                      type='button'
-                      className='ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
-                    >
-                      <span className='sr-only'>View notifications</span>
-                      <BellIcon className='h-6 w-6' aria-hidden='true' />
-                    </button>
-                  </div>
-                  {/* <div className='mt-3 space-y-1 px-2'>
-                    {userNavigation.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as='a'
-                        href={item.href}
-                        className='block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white'
-                      >
-                        {item.name}
-                      </Disclosure.Button>
+              <Transition
+                className='fixed inset-0 z-10'
+                enter='transition duration-200 ease-out'
+                enterFrom='transform  opacity-0'
+                enterTo='transform opacity-100'
+                leave='transition duration-100 ease-out'
+                leaveFrom='transform opacity-100'
+                leaveTo='transform opacity-0'
+              >
+                <div
+                  className='h-full w-full bg-black/30'
+                  onClick={close}
+                ></div>
+              </Transition>
+              <Transition
+                className='absolute inset-x-0 top-0 z-20'
+                enter='transition duration-200 ease-out'
+                enterFrom='transform -translate-y-full h-0 opacity-0'
+                enterTo='transform translate-y-0 h-fit opacity-100'
+                leave='transition duration-100 ease-out'
+                leaveFrom='transform translate-y-0 h-fit opacity-100'
+                leaveTo='transform -translate-y-full h-0 opacity-0'
+              >
+                <Disclosure.Panel className='duration-3000 h-full w-full bg-main-900 transition-all md:hidden'>
+                  <div className='space-y-1 px-2 pt-14 pb-3 sm:px-3'>
+                    {navigation.map((item) => (
+                      <Link key={item.name} href={item.href}>
+                        <Disclosure.Button
+                          className={clsx(
+                            'block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900',
+                            pathname === item.href && 'text-white'
+                          )}
+                        >
+                          {item.name}
+                        </Disclosure.Button>
+                      </Link>
                     ))}
-                  </div> */}
-                </div>
-              </Disclosure.Panel>
+                  </div>
+                </Disclosure.Panel>
+              </Transition>
             </>
           )}
         </Disclosure>

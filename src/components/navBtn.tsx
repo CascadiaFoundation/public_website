@@ -1,14 +1,16 @@
+import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 export type btnProps = {
   name: string;
   href: string;
-  current: boolean;
   onClick?: () => void;
 };
 
-const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
+const NavBtn = ({ name, href, onClick }: btnProps): JSX.Element => {
+  const { pathname } = useRouter();
   const handleClick =
     (onClick: (() => void) | undefined) =>
     (e: React.MouseEvent<HTMLElement>) => {
@@ -19,12 +21,20 @@ const NavBtn = ({ name, href, current, onClick }: btnProps): JSX.Element => {
     };
 
   return (
-    <div
-      className='rounded-md px-3 py-2 text-base font-normal text-secondary-200 hover:text-secondary-100'
-      aria-current={current ? 'page' : undefined}
-      onClick={handleClick(onClick)}
-    >
-      <Link href={href}>{name}</Link>
+    <div className='h-full px-3'>
+      <div className='relative h-full'>
+        <button
+          className={clsx(
+            "hover:text-red inline-flex h-full cursor-pointer items-center text-base font-normal before:absolute before:top-0 before:h-[2px] before:w-full before:-translate-y-full before:rounded-sm before:bg-white before:opacity-0 before:transition-all before:content-[''] hover:before:translate-y-0 hover:before:opacity-100",
+            pathname === href
+              ? 'text-white before:translate-y-0 before:opacity-100'
+              : 'text-secondary-100'
+          )}
+          onClick={handleClick(onClick)}
+        >
+          <Link href={href}>{name}</Link>
+        </button>
+      </div>
     </div>
   );
 };
