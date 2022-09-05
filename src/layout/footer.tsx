@@ -5,38 +5,23 @@ import AccordionItem from '@/components/acordionItem';
 
 const itemList = [
   {
-    title: 'Learn',
-    list: [
-      'Platform',
-      'Blog',
-      'Technology',
-      'Use Cases',
-      'Education',
-      'About',
-      'Careers',
-    ],
+    title: 'RESOURCES',
+    list: ['Whitepaper', 'Technology', 'FAQs', 'Academy'],
   },
   {
-    title: 'Build',
-    list: [
-      'Documentation',
-      'Platform',
-      'Office Hours',
-      'Example',
-      'Bounties',
-      'Security Report',
-    ],
+    title: 'DEVELOPERS',
+    list: ['Documentation', 'Github', 'Office Hours', 'Grants', 'Bug Bounty'],
   },
   {
-    title: 'Grow',
-    list: ['Work with Us', 'Grants & Funding', 'Join the  Accelerator'],
+    title: 'FOUNDATION',
+    list: ['About', 'Ecosystem', 'Careers', 'Contact Us'],
   },
   {
-    title: 'Belong',
-    list: ['Open Web Sandbox', 'Guilds', 'DAOs', 'Events', 'Community Blog'],
+    title: 'YOUR PATH',
+    list: ['Developer', 'Founder / Creator', 'Community'],
   },
   {
-    title: 'Choose a Path',
+    title: 'SOCIAL',
     list: ['Developer Path', 'Founder Path', 'Community Path'],
   },
 ];
@@ -49,21 +34,21 @@ const Footer = (): JSX.Element => {
     <div className='bg-main-900 p-[5%] pb-0'>
       <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-6 lg:gap-y-0'>
         <div className='grid grid-cols-2 sm:col-span-2 sm:block lg:col-span-1'>
-          <div className='cursor-pointer pb-6 text-2xl text-white'>
-            Cascadia
+          <div className='cursor-pointer pb-6 text-2xl uppercase text-white'>
+            CASCADIA
           </div>
           <div className='capitaliz flex flex-col gap-1 text-right text-base text-secondary-100/80'>
             <a href='#' className='hover:text-white sm:text-left'>
-              Wallet
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Explorer
+              Block Explorer
             </a>
             <a href='#' className='hover:text-white sm:text-left'>
               Cascadia Bridge
             </a>
             <a href='#' className='hover:text-white sm:text-left'>
-              Brand Toolkit
+              Sophon Chain
+            </a>
+            <a href='#' className='hover:text-white sm:text-left'>
+              Governance
             </a>
           </div>
         </div>
@@ -72,7 +57,7 @@ const Footer = (): JSX.Element => {
             key={item.title}
             className='col-span-2 hidden sm:block lg:col-span-1'
           >
-            <div className='cursor-pointer pb-4 text-base text-white'>
+            <div className='cursor-pointer pb-4 text-base uppercase text-white'>
               {item.title}
             </div>
             <ul className='capitaliz text-base text-secondary-100'>
@@ -113,7 +98,7 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-between gap-4 pt-10 pb-6 sm:flex-row sm:gap-0'>
+      <div className='flex flex-col items-center justify-between gap-4 pt-20 pb-6 sm:flex-row sm:gap-0'>
         <div className='flex items-center  gap-6'>
           <a href='#' className='text-secondary-100 hover:text-white'>
             Privacy Policy
@@ -123,7 +108,7 @@ const Footer = (): JSX.Element => {
           </a>
         </div>
         <div className='cursor-pointer text-secondary-100'>
-          contact@cascadia.foundation
+          Cascadia Foundation
         </div>
       </div>
     </div>

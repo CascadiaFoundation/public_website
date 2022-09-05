@@ -19,7 +19,12 @@ const Card = ({
   button,
 }: itemProps): JSX.Element => {
   return (
-    <div className={clsx('flex flex-col bg-white', className)}>
+    <div
+      className={clsx(
+        'flex flex-col bg-white p-6 shadow-cardShadow md:p-4 lg:p-2 lg:shadow-none',
+        className
+      )}
+    >
       <div className='flex items-center gap-4'>
         <div className='rounded-full bg-main-900 p-2'>
           <FontAwesomeIcon icon={faImages} className='h-6 w-6 text-white' />
@@ -29,7 +34,7 @@ const Card = ({
       <div className='home-content-base flex-1 py-4'>{content}</div>
       <Btn
         label={button}
-        className='w-full border-primary-900 bg-transparent text-primary-900 hover:bg-primary-900/10'
+        className='w-full border-primary-900 bg-transparent text-base text-primary-900 hover:bg-primary-900/10 lg:w-fit'
       />
     </div>
   );

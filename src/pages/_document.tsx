@@ -16,7 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head></Head>
-        <body>
+        <body className='scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400'>
           <Main />
           <NextScript />
         </body>
