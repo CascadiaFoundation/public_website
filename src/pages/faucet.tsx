@@ -19,7 +19,7 @@ const Faucet = (): JSX.Element => {
   return (
     <Layout>
       <div className='m-auto md:px-10 md:py-6 lg:px-32 lg:py-14'>
-        <div className='p-4 shadow-md shadow-primary-500/20 sm:px-6 sm:py-5 md:px-8 md:py-7'>
+        <div className='bg-white p-4 shadow-md shadow-primary-500/20 sm:px-6 sm:py-5 md:px-8 md:py-7'>
           <div className='grid grid-rows-4 place-items-center gap-y-2 text-center sm:gap-y-4 md:gap-y-8'>
             <div className='flex w-full items-center justify-between'>
               <h2 className='text-xl font-bold text-primary-900 md:text-2xl'>
