@@ -2,10 +2,22 @@
 module.exports = {
   eslint: {
     dirs: ['src'],
+    ignoreDuringBuilds: true,
   },
 
   reactStrictMode: true,
 
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
   // Uncoment to add domain whitelist
   // images: {
   //   domains: [

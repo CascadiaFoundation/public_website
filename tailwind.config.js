@@ -10,20 +10,22 @@ module.exports = {
         primary: ['Inter', ...fontFamily.sans],
       },
       colors: {
-        primary: {
-          // Customize it on globals.css :root
-          50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
-          100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
-          200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
-          300: 'rgb(var(--tw-color-primary-300) / <alpha-value>)',
-          400: 'rgb(var(--tw-color-primary-400) / <alpha-value>)',
-          500: 'rgb(var(--tw-color-primary-500) / <alpha-value>)',
-          600: 'rgb(var(--tw-color-primary-600) / <alpha-value>)',
-          700: 'rgb(var(--tw-color-primary-700) / <alpha-value>)',
-          800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
-          900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
-        },
         dark: '#222222',
+        background: '#F6F7F8',
+        'main-900': '#4267B3',
+        'secondary-100': '#E9EBEE',
+        'secondary-200': '#F6F7F8',
+        'primary-500': '#616771',
+        'primary-900': '#18191A',
+      },
+      backgroundImage: {
+        'home-background': "url('/images/header/home.png')",
+        'learning-background': "url('/images/header/learning.png')",
+      },
+      boxShadow: {
+        cardShadow:
+          '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)',
+        slideCardShadow: '0px 2px 5px 3px rgb(0 0 0 / 20%)',
       },
       keyframes: {
         flicker: {
@@ -37,20 +39,24 @@ module.exports = {
             filter: 'none',
           },
         },
-        shimmer: {
-          '0%': {
-            backgroundPosition: '-700px 0',
-          },
-          '100%': {
-            backgroundPosition: '700px 0',
-          },
-        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
-        shimmer: 'shimmer 1.3s linear infinite',
+      },
+      gridTemplateAreas: {
+        home: ['image image title title', 'image content content content'],
+      },
+      gridTemplateColumns: {
+        home: 'auto auto auto auto',
+      },
+      gridTemplateRows: {
+        home: 'auto auto auto auto',
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
+    require('@savvywombat/tailwindcss-grid-areas'),
+  ],
 };
