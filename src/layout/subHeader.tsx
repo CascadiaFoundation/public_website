@@ -11,6 +11,10 @@ const SubHeader = (): JSX.Element => {
 
   switch (pathname) {
     case '/':
+      title =
+        'A platform for builders, a platform for everyone. Cascadia Foundation';
+      content =
+        'What if you had it all? A Layer 1 EVM built for fairness, speed and sustainability. Cascadia Foundation offers a unified solution to cross-chain communication that satisfies the needs of platform developers and application builders.';
       break;
     case '/esg':
       title = 'Cascadia is the ESG Blockchain';
@@ -23,7 +27,7 @@ const SubHeader = (): JSX.Element => {
 
   return (
     <div className='flex h-full w-full items-center justify-center bg-home-background bg-cover bg-center px-7 pt-40 pb-20 md:justify-start md:px-20 lg:px-32'>
-      <div className='w-full max-w-[500px] text-center md:text-left'>
+      <div className='w-full max-w-[600px] text-center md:text-left'>
         <div className='pb-7 text-3xl font-bold text-white md:text-4xl'>
           {title}
         </div>
