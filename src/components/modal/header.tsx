@@ -29,7 +29,11 @@ const ModalHeader: FC<ModalHeaderProps> = ({
           className='text-high-emphesis flex items-center gap-3'
         >
           {onBack && (
-            <FontAwesomeIcon icon={faArrowAltCircleLeft} className='text-2xl' />
+            <FontAwesomeIcon
+              icon={faArrowAltCircleLeft}
+              className='text-2xl'
+              onClick={onBack}
+            />
           )}
           {header}
         </Typography>
