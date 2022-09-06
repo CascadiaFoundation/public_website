@@ -5,30 +5,34 @@ import Layout from '@/layout';
 
 type itemProps = {
   title: string;
-  content: string;
+  content: string[];
   links: string[];
   img: string;
 };
 
 const list: itemProps[] = [
   {
-    title: 'Founders',
-    content:
-      'The Creator Economy requires robust infrastructure including a set of intuitive developer tools, and an engaged, decentralized community.',
+    title: 'What is Cascadia?',
+    content: [
+      'In order to integrate the greatest aspects of cryptocurrency solutions, we are creating an open-sourced blockchain ecosystem of services and goods. It entails investigating cutting-edge encryption methods, creating consensus mechanisms, and designing software applications that are simple to use. This allows developers, creators, organizations, and people all over the world to join an ecosystem for Web 3.0 that is easy to reach, transparent, and governed by the community.',
+    ],
     links: ['Learn about the Creator Economy on Cascadia'],
     img: './images/no_image.png',
   },
   {
-    title: 'Creators',
-    content:
-      'Cascadia is eliminating the barriers to Web 3 adoption. With high speeds, low fees, and progressive UX, Cascadia’s climate-neutral blockchain is ready for explosive growth.',
+    title: 'Developers / Creators',
+    content: [
+      'The Cascadia Foundation is based on the same security and incentive framework that fueled the development of new Layer 1 application platforms.',
+      'Any-to-any communication across blockchains is made possible by Cascadia, regardless of the message`s payload or consensus algorithm. Cascadia paves the path forward and welcomes all developers and creators. It is based on Solana`s POH, supports all smart contracts developed on the Ethereum Blockchain & has secure, instant, low-cost transaction costs.',
+    ],
     links: ['Follow progress on sharding'],
     img: './images/no_image.png',
   },
   {
-    title: 'Developers',
-    content:
-      'NEAR runs in concert with Ethereum, Polkadot, Cosmos, and more, allowing for the free flow of assets and communication between networks for the betterment of all.',
+    title: 'Our Vision & Mission',
+    content: [
+      'We are perfecting a network that anyone can use. We strive to be adaptable in order to innovate in the space, but we cannot and will not compromise on the security and trust that constitute our basic layer. We build a self-governing, decentralized future that is guided by the group intelligence of the community.',
+    ],
     links: [
       'Aurora: Ethereum Bridge & EVM',
       'Octopus Network: App Chain Interoperability',
@@ -58,7 +62,11 @@ const Ecosystem = (): JSX.Element => {
                     {item.title}
                   </h2>
                   <div className='py-6 text-base text-primary-500'>
-                    {item.content}
+                    {item.content.map((p: string, index: number) => (
+                      <p key={index} className='pb-5 last-of-type:pb-0'>
+                        {p}
+                      </p>
+                    ))}
                   </div>
                   <div className='text-base text-main-900'>
                     {item.links.map((link) => (
