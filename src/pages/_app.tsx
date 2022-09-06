@@ -6,6 +6,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 
 import '@/styles/globals.css';
 import '@/styles/colors.css';
+import '@/styles/font.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // import Font Awesome CSS
 config.autoAddCss = false;
 
