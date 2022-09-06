@@ -42,11 +42,11 @@ const Faucet = (): JSX.Element => {
     fetch(`/api/getFaucet/${inputAddress}`)
       .then((res) => res.json())
       .then((res) => {
-        notify(res.success, res.message);
+        notify('dark', res.message);
         setLoading(false);
       })
       .catch(() => {
-        notify('error', 'Error');
+        notify('dark', 'Network Error');
         setLoading(false);
       });
   }, [checkedAddress, inputAddress, notify]);

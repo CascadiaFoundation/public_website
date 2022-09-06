@@ -9,13 +9,13 @@ const Esg = (): JSX.Element => {
       <div className='m-auto px-5 md:px-10 lg:px-32'>
         <div className='flex flex-col items-center justify-center py-20'>
           <div className='text-center text-4xl font-bold text-primary-900 md:text-left'>
-            What is ESG and Why does it matter?
+            Why does it matter?
           </div>
-          <div className='my-6 max-w-[900px] text-center text-base font-normal text-primary-500'>
-            The acronym ESG stands for Environmental, Social and Governance.
-            It’s a criterion which is popular in the world of business and
-            investing. ESG is used to identify risks that may be missed through
-            traditional forms of analysis.
+          <div className='my-6 max-w-[850px] text-center text-base font-normal text-primary-500'>
+            Cascadia embraced the ESG framework, which has now grown into a
+            comprehensive framework with important components relating to
+            environmental and social impact as well as how governance structures
+            may be adjusted to optimize stakeholder well-being.
           </div>
           <div className='flex flex-row items-center justify-center px-2 py-6'>
             <div className='mt-10 flex flex-col items-center justify-center px-2 text-main-900 sm:mt-0 sm:px-12'>
