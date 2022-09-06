@@ -39,21 +39,21 @@ const Footer = (): JSX.Element => {
             CASCADIA
           </div>
           <div className='capitaliz flex flex-col gap-1 text-right text-base text-secondary-100/80'>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Block Explorer
-            </a>
-            <a className='hover:text-white sm:text-left'>
+            <div className='hover:text-white sm:text-left'>
+              <Link href='#'>Block Explorer</Link>
+            </div>
+            <div className='hover:text-white sm:text-left'>
               <Link href='/faucet'>Cascadia Faucet</Link>
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Cascadia Bridge
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Sophon Chain
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Governance
-            </a>
+            </div>
+            <div className='hover:text-white sm:text-left'>
+              <Link href='/faucet'>Cascadia Bridge</Link>
+            </div>
+            <div className='hover:text-white sm:text-left'>
+              <Link href='/faucet'>Sophon Chain</Link>
+            </div>
+            <div className='hover:text-white sm:text-left'>
+              <Link href='/faucet'>Governance</Link>
+            </div>
           </div>
         </div>
         {itemList.map((item) => (
