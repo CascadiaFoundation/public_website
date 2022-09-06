@@ -15,14 +15,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <Head>
-          <link
-            rel='preload'
-            href='/fonts/Manrope//Manrope-VariableFont_wght.ttf'
-            as='font'
-            crossOrigin=''
-          />
-        </Head>
+        <Head></Head>
         <body className='scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400'>
           <Main />
           <NextScript />

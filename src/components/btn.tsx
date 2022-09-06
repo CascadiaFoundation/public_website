@@ -11,7 +11,7 @@ const Btn = ({ label, className, onClick }: btnProps): JSX.Element => {
   return (
     <button
       className={clsx(
-        'border px-4 py-2 text-base font-normal transition-all',
+        'border px-3 py-2 text-base font-normal transition-all',
         className
       )}
       onClick={onClick}
