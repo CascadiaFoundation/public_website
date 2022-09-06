@@ -60,13 +60,12 @@ function MyApp({ Component, pageProps }) {
             height={4}
             showOnShallow={true}
           />
-          {/* <Web3Provider> */}
           <Web3ReactProvider getLibrary={getLibrary}>
             <Web3ProviderNetwork getLibrary={getLibrary}>
               <Web3ReactManager>
                 <ReduxProvider store={store}>
                   <PersistGate
-                    loading={<Dots>loading</Dots>}
+                    loading={<Dots>Loading</Dots>}
                     persistor={persistor}
                   >
                     <RecoilRoot>
@@ -79,7 +78,6 @@ function MyApp({ Component, pageProps }) {
                     </RecoilRoot>
                   </PersistGate>
                 </ReduxProvider>
-                {/* </Web3Provider> */}
               </Web3ReactManager>
             </Web3ProviderNetwork>
           </Web3ReactProvider>
@@ -90,7 +88,7 @@ function MyApp({ Component, pageProps }) {
             hideProgressBar={true}
             newestOnTop={false}
             draggable={false}
-            closeOnClick
+            closeOnClick={false}
             pauseOnHover
           />
         </>

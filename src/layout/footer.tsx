@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 import Accordion from '@/components/accordion';
@@ -40,6 +41,9 @@ const Footer = (): JSX.Element => {
           <div className='capitaliz flex flex-col gap-1 text-right text-base text-secondary-100/80'>
             <a href='#' className='hover:text-white sm:text-left'>
               Block Explorer
+            </a>
+            <a className='hover:text-white sm:text-left'>
+              <Link href='/faucet'>Cascadia Faucet</Link>
             </a>
             <a href='#' className='hover:text-white sm:text-left'>
               Cascadia Bridge

@@ -17,7 +17,7 @@ function Web3StatusInner() {
       <button
         onClick={toggleWalletModal}
         disabled
-        className='flex cursor-pointer items-center bg-primary-900 px-3 py-2 text-secondary-100 transition-all hover:bg-primary-900/60'
+        className='flex cursor-not-allowed items-center bg-primary-900 px-3 py-2 text-secondary-100 transition-all'
       >
         {/* <span>{shortenString(account, 25)}</span> */}
         <span>Connected wallet</span>

@@ -16,10 +16,21 @@ const SubHeader = (): JSX.Element => {
       content =
         'What if you had it all? A Layer 1 EVM built for fairness, speed and sustainability. Cascadia Foundation offers a unified solution to cross-chain communication that satisfies the needs of platform developers and application builders.';
       break;
-    case '/esg':
-      title = 'Cascadia is the ESG Blockchain';
+    case '/ecosystem':
+      title =
+        'A Foundation for Developers, A Decentralized Network for Everyone';
       content =
-        'The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.';
+        'Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
+      break;
+    case '/esg':
+      title = 'Cascadia adheres the ECG model';
+      content =
+        'The ideal way to define ESG is as a framework for stakeholders to understand how an organization is handling opportunities and risks connected to environmental, social, and governance criteria.';
+      break;
+    case '/faucet':
+      title = 'Faucet “Activated”';
+      content =
+        'Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
       break;
     default:
       break;
