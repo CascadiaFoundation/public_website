@@ -21,6 +21,11 @@ const SubHeader = (): JSX.Element => {
       content =
         'The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.';
       break;
+    case '/faucet':
+      title = 'Faucet “Activated”';
+      content =
+        'Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
+      break;
     default:
       break;
   }

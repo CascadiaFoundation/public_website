@@ -65,7 +65,7 @@ const Faucet = (): JSX.Element => {
           <div className='grid grid-rows-4 place-items-center gap-y-2 text-center sm:gap-y-4 md:gap-y-8'>
             <div className='flex w-full items-center justify-between'>
               <h2 className='text-xl font-bold text-primary-900 md:text-2xl'>
-                Faucet
+                Cascadia Faucet
               </h2>
               <div className='flex items-center justify-end'>
                 {/* {library && library.provider.isMetaMask && (
@@ -108,8 +108,8 @@ const Faucet = (): JSX.Element => {
               )}
             </div>
             <div className='text-sm text-primary-500'>
-              Once you are done with the testing, feel free to send the
-              remaining coins to the following faucet address.
+              Feel free to send the residual coins to the following faucet
+              address once you have finished testing.
             </div>
             {account && (
               <div className='flex items-center justify-center'>
