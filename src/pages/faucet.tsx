@@ -1,21 +1,56 @@
-import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import { faCheck, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import React, { useState } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import React, { useCallback, useEffect, useState } from 'react';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+import Copy from '@/components/accountDetails/copy';
+import toast from '@/components/toast';
+import Typography from '@/components/typography';
+import Web3Status from '@/components/web3Status';
 
 import Layout from '@/layout';
+import { useActiveWeb3React } from '@/services/web3';
 
 const Faucet = (): JSX.Element => {
-  const [copiedText, setCopiedText] = useState<boolean>(false);
+  const { account }: any = useActiveWeb3React();
+  const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const notify = React.useCallback((type: string, message: string) => {
+    toast({ type, message });
+  }, []);
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+
     if (value.includes('0x') && value.length === 42) setCheckedAddress(true);
     else setCheckedAddress(false);
+
+    setInputAddress(value);
   };
+
+  const handleSubmit = useCallback(() => {
+    if (!checkedAddress) return notify('error', 'Invaild wallet address');
+
+    setLoading(true);
+
+    fetch('/api/get-faucet')
+      .then(() => {
+        notify('success', 'Successfully sent tokens.');
+      })
+      .then(() => setLoading(false));
+  }, [checkedAddress, notify]);
+
+  useEffect(() => {
+    if (account) {
+      setInputAddress(account);
+      setCheckedAddress(true);
+    }
+  }, [account]);
+
   return (
     <Layout>
       <div className='m-auto md:px-10 md:py-6 lg:px-32 lg:py-14'>
@@ -25,10 +60,14 @@ const Faucet = (): JSX.Element => {
               <h2 className='text-xl font-bold text-primary-900 md:text-2xl'>
                 Faucet
               </h2>
-              <button className='flex items-center bg-primary-900 px-3 py-2 text-secondary-100 transition-all hover:bg-primary-900/60'>
-                <FontAwesomeIcon icon={faWallet} className='mr-3 text-xl' />
-                <span>Connect Wallet</span>
-              </button>
+              <div className='flex items-center justify-end'>
+                {/* {library && library.provider.isMetaMask && (
+                  <div className="hidden sm:inline-block">
+                    <Web3Network />
+                  </div>
+                )} */}
+                <Web3Status />
+              </div>
             </div>
             <div className='w-full max-w-[900px] font-normal text-primary-900'>
               This faucet is a community project where you can currently request
@@ -36,41 +75,42 @@ const Faucet = (): JSX.Element => {
               if you have any unused tokens please consider sharing them with
               our fellow testnetters.
             </div>
-            <div className='relative h-10 w-full max-w-[600px] border border-primary-900'>
+            <div className='relative mt-4 h-10 w-full max-w-[600px] border border-primary-900'>
               <input
-                className='h-full w-full p-2 placeholder:text-primary-500 focus:outline-none'
+                className='t- h-full w-full bg-background p-2 placeholder:text-primary-500/60 focus:outline-none'
                 placeholder='Hexadecimal Address (0x...)'
                 onChange={handleChangeInput}
                 maxLength={42}
+                value={inputAddress}
               />
-              <FontAwesomeIcon
-                icon={faCheck}
-                className={clsx(
-                  'absolute inset-y-0 right-2 m-auto text-xl',
-                  checkedAddress ? 'text-primary-900' : 'text-gray-300'
-                )}
-              />
+              {loading ? (
+                <FontAwesomeIcon
+                  icon={faSpinner}
+                  className='absolute inset-y-0 right-2 m-auto animate-spin cursor-pointer text-xl text-primary-900'
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheck}
+                  onClick={handleSubmit}
+                  className={clsx(
+                    'absolute inset-y-0 right-2 m-auto cursor-pointer text-xl',
+                    checkedAddress ? 'text-primary-900' : 'text-primary-500/50'
+                  )}
+                />
+              )}
             </div>
-            <div className='text-primary-500'>
+            <div className='text-sm text-primary-500'>
               Once you are done with the testing, feel free to send the
               remaining coins to the following faucet address.
             </div>
-            <div className='flex items-center justify-center'>
-              <div className='w-full break-all text-primary-500'>
-                0x2352D20fC81225c8ECD8f6FaA1B37F24FEd450c9
+            {account && (
+              <div className='flex items-center justify-center'>
+                <Typography variant='sm' className='w-full text-primary-500'>
+                  {account}
+                </Typography>
+                <Copy toCopy={account} className='ml-2 text-primary-500'></Copy>
               </div>
-              <CopyToClipboard
-                text='0x2352D20fC81225c8ECD8f6FaA1B37F24FEd450c9'
-                onCopy={() => setCopiedText(true)}
-              >
-                <FontAwesomeIcon
-                  icon={faCopy}
-                  className='mx-3 text-base text-primary-500'
-                />
-              </CopyToClipboard>
-
-              {copiedText ? <span>Copied.</span> : null}
-            </div>
+            )}
           </div>
         </div>
       </div>
