@@ -72,7 +72,7 @@ const Ecosystem = (): JSX.Element => {
                     {item.links.map((link) => (
                       <a
                         key={link}
-                        className='w-full overflow-hidden text-ellipsis whitespace-nowrap py-1 text-right md:text-left'
+                        className='w-full overflow-hidden text-ellipsis whitespace-nowrap py-1 text-right hover:underline md:text-left'
                         href='#'
                       >
                         {link}
