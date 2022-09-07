@@ -60,6 +60,7 @@ function MyApp({ Component, pageProps }) {
             stopDelayMs={200}
             height={4}
             showOnShallow={true}
+            options={{ showSpinner: false }}
           />
           <Web3ReactProvider getLibrary={getLibrary}>
             <Web3ProviderNetwork getLibrary={getLibrary}>

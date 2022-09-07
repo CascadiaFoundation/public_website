@@ -14,13 +14,13 @@ const cardList = [
     title: 'Ready to Build?',
     content:
       'The Cascadia network is covered by an application development layer, which is utilized by developers to  enjoy low fees, high speeds, and infinite scalabilities without having to learn new programming languages or increase complexity.',
-    button: 'I`m a Developer',
+    button: "I'm a Developer",
   },
   {
     title: 'Grow through Us',
     content:
       'There are various ways to get involved with Cascadia, whether as a developer creating dApps and protocols or as a member of the community contributing in the development of future blockchain possibilities.',
-    button: 'I`m a Founder / Creator',
+    button: "I'm a Founder / Creator",
   },
   {
     title: 'United Front',
@@ -34,12 +34,12 @@ export default function Home() {
   return (
     <Layout>
       <div className='m-auto md:px-10 lg:px-32'>
-        <div className='mt-12 grid grid-cols-1 gap-10 sm:mt-24 sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='mt-12 grid grid-cols-1 gap-5 sm:mt-24 sm:grid-cols-2 md:gap-10 lg:grid-cols-4'>
           <div className='p-6 sm:col-span-2 md:p-0'>
-            <h1 className='home-title-lg pb-4 text-center md:text-left'>
+            <h1 className='pb-4 text-center text-3xl font-bold text-primary-900 sm:text-4xl md:text-left'>
               Reinterpret in a new way
             </h1>
-            <div className='home-content-base text-center md:text-left'>
+            <div className='text-center text-base font-normal text-primary-500 md:text-left'>
               Cascadia offers a standard process to cross-chain communication
               that satisfies the requirements of platform developers — no
               integration effort is required of them — and application builders
@@ -48,13 +48,13 @@ export default function Home() {
             </div>
           </div>
           <div className='flex flex-col p-6 md:p-2'>
-            <div className='home-content-base uppercase sm:text-left'>
+            <div className='text-base font-normal uppercase text-primary-500 sm:text-left'>
               This week
             </div>
-            <div className='home-content-bold py-2 text-left'>
+            <div className='py-2 text-left text-base font-medium text-primary-900'>
               Ecosystem Panel: Helping the Climate with Web3
             </div>
-            <div className='home-content-base flex-auto pb-6 text-left lg:flex-none'>
+            <div className='flex-auto pb-6 text-left text-base font-normal text-primary-500 lg:flex-none'>
               Town halls are taking on a new format with a transition into
               Ecosystem Panels. <br />
               Join us this Friday for the first one.
@@ -65,13 +65,13 @@ export default function Home() {
             />
           </div>
           <div className='flex flex-col p-6 md:p-2'>
-            <div className='home-content-base uppercase sm:text-left'>
+            <div className='text-base font-normal uppercase text-primary-500 sm:text-left'>
               Featured
             </div>
-            <div className='home-content-bold py-2 text-left'>
+            <div className='py-2 text-left text-base font-medium text-primary-900'>
               Early Bird Tickets for NEARCON are live
             </div>
-            <div className='home-content-base flex-auto pb-6 text-left lg:flex-none'>
+            <div className='flex-auto pb-6 text-left text-base font-normal text-primary-500 lg:flex-none'>
               Join the Sophon community, Web3 ecosystem, and 200+ hackers IRL in
               Lisbon, Portugal from Sept 11-14. Immerse yourself in talks,
               networking, workshops, and more. Prices increase after July 31st.
@@ -83,12 +83,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='relative mt-24 grid-cols-4 gap-x-10 p-6 md:p-0 lg:grid'>
+        <div className='relative mt-6 grid-cols-4 p-6 sm:mt-12 md:mt-24 md:p-0 lg:grid'>
           <div className='col-span-2 p-6 md:p-0 lg:col-start-3'>
-            <h1 className='home-title-lg text-center md:text-left'>
+            <h1 className='text-center text-2xl font-bold text-primary-900 sm:text-left sm:text-4xl'>
               Create an account & choose a path
             </h1>
-            <div className='home-content-base py-6'>
+            <div className='py-6 text-base font-normal text-primary-500'>
               The best way to stake your claim in the Sophon verse is by
               creating an account (wallet). Then, choose the first step in your
               journey.
@@ -98,7 +98,7 @@ export default function Home() {
               className='w-full bg-primary-900 text-secondary-200 hover:bg-black/70 sm:w-fit'
             />
           </div>
-          <div className='z-10 col-span-3 col-start-2 mt-8 hidden grid-cols-3 gap-3 bg-white p-6 md:gap-6 lg:grid'>
+          <div className='z-10 col-span-3 col-start-2 mt-8 hidden grid-cols-3 gap-3 bg-white p-5 md:gap-6 lg:grid'>
             {cardList.map((item) => (
               <Card key={item.title} {...item} />
             ))}
@@ -113,17 +113,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='my-24 gap-x-10 p-6 text-center md:p-0'>
-          <h1 className='home-title-lg pb-6 text-main-900'>
+        <div className='my-5 gap-x-10 p-6 text-center sm:my-24 md:p-0'>
+          <h1 className='pb-6 text-2xl font-bold text-main-900 sm:text-4xl'>
             Join our community
           </h1>
           <div className='pb-12 text-xl font-normal text-primary-500'>
             Never miss a critical announcement concerning Cascadia Foundation or
             a community development.
             <br />
-            Don`t just follow; be involved.
+            {`Don't just follow; be involved.`}
           </div>
-          <div className='relative mx-auto mb-6 flex h-10 w-full items-center border border-main-900 bg-transparent sm:w-1/2 lg:max-w-[600px]'>
+          <div className='relative mx-auto mb-6 flex h-10 w-full max-w-[600px] items-center border border-main-900 bg-transparent'>
             <FontAwesomeIcon
               icon={faEnvelope}
               className='absolute inset-y-0 left-0 m-auto p-2 text-base text-primary-500'

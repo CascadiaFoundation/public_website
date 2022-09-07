@@ -10,21 +10,4 @@ body {
 }
 
 @layer components {
-  .home-title-lg,
-  h1 {
-    @apply text-4xl font-bold text-primary-900;
-  }
-
-  .home-title-base,
-  h2 {
-    @apply text-2xl font-bold text-primary-900;
-  }
-
-  .home-content-base {
-    @apply text-base font-normal text-primary-500;
-  }
-
-  .home-content-bold {
-    @apply text-base font-bold text-primary-900;
-  }
 }

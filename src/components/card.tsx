@@ -29,7 +29,7 @@ const Card = ({
         <div className='rounded-full bg-main-900 p-2'>
           <FontAwesomeIcon icon={faImages} className='h-6 w-6 text-white' />
         </div>
-        <div className='home-title-base'>{title}</div>
+        <div className='text-2xl font-bold text-primary-900'>{title}</div>
       </div>
       <div className='home-content-base flex-1 py-4'>{content}</div>
       <Btn

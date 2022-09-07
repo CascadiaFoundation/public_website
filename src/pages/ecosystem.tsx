@@ -36,7 +36,7 @@ const list: itemProps[] = [
     links: [
       'Aurora: Ethereum Bridge & EVM',
       'Octopus Network: App Chain Interoperability',
-      'Allbridge: Bridge from Solana, Terra, Celo & More',
+      'All bridge: Bridge from Solana, Terra, Celo & More',
     ],
     img: './images/no_image.png',
   },
@@ -45,8 +45,8 @@ const list: itemProps[] = [
 const Ecosystem = (): JSX.Element => {
   return (
     <Layout>
-      <div className='m-auto md:px-10 lg:px-32'>
-        <div className='my-4 flex flex-col sm:my-12 md:my-24 '>
+      <div className='md:px-10'>
+        <div className='m-auto flex max-w-[1300px] flex-col md:my-6 lg:my-14'>
           {list.map((item: itemProps, index: number) => {
             const direction =
               index % 2 === 0
@@ -55,9 +55,9 @@ const Ecosystem = (): JSX.Element => {
             return (
               <div
                 key={index}
-                className={`${direction} flex items-center justify-between`}
+                className={`${direction} flex items-start justify-between pt-16`}
               >
-                <div className='m-0 flex w-full flex-col items-start justify-center p-6 sm:p-8 md:mx-4 md:my-8 md:w-1/2'>
+                <div className='flex w-full flex-col items-start justify-center px-5'>
                   <h2 className='text-2xl font-bold text-primary-900'>
                     {item.title}
                   </h2>
@@ -68,15 +68,19 @@ const Ecosystem = (): JSX.Element => {
                       </p>
                     ))}
                   </div>
-                  <div className='text-base text-main-900'>
+                  <div className='flex w-full flex-col pb-5 text-main-900 md:pb-0'>
                     {item.links.map((link) => (
-                      <div key={link} className='py-1'>
-                        <a href='#'>{link}</a>
-                      </div>
+                      <a
+                        key={link}
+                        className='w-full overflow-hidden text-ellipsis whitespace-nowrap py-1 text-right md:text-left'
+                        href='#'
+                      >
+                        {link}
+                      </a>
                     ))}
                   </div>
                 </div>
-                <div className='m-0 flex w-full items-center justify-center p-6 sm:p-8 md:mx-4 md:my-8 md:w-1/2 md:p-0'>
+                <div className='flex w-full items-start justify-center px-5'>
                   <div className='relative h-[300px] w-full'>
                     <Image
                       className='absolute'

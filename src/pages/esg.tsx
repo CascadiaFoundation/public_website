@@ -7,8 +7,8 @@ const Esg = (): JSX.Element => {
   return (
     <Layout>
       <div className='m-auto px-5 md:px-10 lg:px-32'>
-        <div className='flex flex-col items-center justify-center py-20'>
-          <div className='text-center text-4xl font-bold text-primary-900 md:text-left'>
+        <div className='flex flex-col items-center justify-center py-16'>
+          <div className='text-center text-2xl font-bold text-primary-900 md:text-left md:text-4xl'>
             Why does it matter?
           </div>
           <div className='my-6 max-w-[850px] text-center text-base font-normal text-primary-500'>
@@ -17,7 +17,7 @@ const Esg = (): JSX.Element => {
             environmental and social impact as well as how governance structures
             may be adjusted to optimize stakeholder well-being.
           </div>
-          <div className='flex flex-row items-center justify-center px-2 py-6'>
+          <div className='grid grid-cols-1 px-2 py-6 sm:grid-cols-3'>
             <div className='mt-10 flex flex-col items-center justify-center px-2 text-main-900 sm:mt-0 sm:px-12'>
               <div className='relative h-14 w-14'>
                 <Image
@@ -56,10 +56,10 @@ const Esg = (): JSX.Element => {
       </div>
       <div className='m-auto bg-white px-5 md:px-10 lg:px-32'>
         <div className='border-b border-b-secondary-100'>
-          <div className='pt-16 text-center text-4xl font-semibold text-main-900'>
+          <div className='pt-16 text-center text-2xl font-semibold text-main-900'>
             Environmental
           </div>
-          <div className='py-6 text-center text-base text-primary-500 md:text-left'>
+          <div className='py-6 text-left text-base text-primary-500'>
             <p className='pb-5'>
               A recent analysis found that Cascadia’s energy consumption
               estimates are lower than any major competitor, even Visa! Beyond
@@ -107,10 +107,10 @@ const Esg = (): JSX.Element => {
         </div>
 
         <div className='border-b border-b-secondary-100'>
-          <div className='pt-16 text-center text-4xl font-semibold text-main-900'>
+          <div className='pt-16 text-center text-2xl font-semibold text-main-900'>
             Social
           </div>
-          <div className='py-6 text-center text-base text-primary-500 md:text-left'>
+          <div className='py-6 text-left text-base text-primary-500'>
             <p className='pb-5'>
               A recent analysis found that Cascadia’s energy consumption
               estimates are lower than any major competitor, even Visa! Beyond
@@ -158,10 +158,10 @@ const Esg = (): JSX.Element => {
         </div>
 
         <div>
-          <div className='pt-16 text-center text-4xl font-semibold text-main-900'>
+          <div className='pt-16 text-center text-2xl font-semibold text-main-900'>
             Governance
           </div>
-          <div className='py-6 text-center text-base text-primary-500 md:text-left'>
+          <div className='py-6 text-left text-base text-primary-500'>
             <p className='pb-5'>
               A recent analysis found that Cascadia’s energy consumption
               estimates are lower than any major competitor, even Visa! Beyond
@@ -208,9 +208,9 @@ const Esg = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className='m-auto px-0 md:px-10 lg:px-32'>
+      <div className='m-auto px-5 md:px-10 lg:px-32'>
         <div className='flex flex-col items-center justify-center py-16'>
-          <div className='text-center text-4xl font-bold text-primary-900'>
+          <div className='text-center text-3xl font-bold text-primary-900 md:text-4xl'>
             ESG on Cascadia is the Future
           </div>
           <div className='relative my-12 h-[240px] w-full p-6 md:w-[400px] md:p-0'>

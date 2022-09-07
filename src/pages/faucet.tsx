@@ -60,14 +60,14 @@ const Faucet = (): JSX.Element => {
 
   return (
     <Layout>
-      <div className='m-auto md:px-10 md:py-6 lg:px-32 lg:py-14'>
-        <div className='bg-white p-4 shadow-md shadow-primary-500/20 sm:px-6 sm:py-5 md:px-8 md:py-7'>
-          <div className='grid grid-rows-4 place-items-center gap-y-2 text-center sm:gap-y-4 md:gap-y-8'>
-            <div className='flex w-full items-center justify-between'>
-              <h2 className='text-xl font-bold text-primary-900 md:text-2xl'>
+      <div className='m-auto p-4 md:px-10 md:py-6 lg:px-32 lg:py-14'>
+        <div className='bg-white p-6 px-6 shadow-md shadow-primary-500/20 sm:py-4 md:px-8 md:py-6'>
+          <div className='flex flex-col items-center justify-center text-center'>
+            <div className='flex w-full flex-col items-center justify-between md:flex-row'>
+              <h2 className='mt-5 w-full text-center text-2xl font-semibold text-primary-900 md:mt-0 md:text-left'>
                 Cascadia Faucet
               </h2>
-              <div className='flex items-center justify-end'>
+              <div className='mt-5 mr-5 flex w-full items-center justify-end md:mt-0 md:mr-0'>
                 {/* {library && library.provider.isMetaMask && (
                   <div className="hidden sm:inline-block">
                     <Web3Network />
@@ -76,15 +76,12 @@ const Faucet = (): JSX.Element => {
                 <Web3Status />
               </div>
             </div>
-            <div className='w-full max-w-[900px] font-normal text-primary-900'>
-              This faucet is a community project where you can currently request
-              up to 20Ⓝ testnet Cascadia every hour. It is run on donations so
-              if you have any unused tokens please consider sharing them with
-              our fellow testnetters.
+            <div className='mt-8 w-full max-w-[990px] font-normal text-primary-900'>
+              {`Our Cascadia faucet distributes tasks and rewards in tiny, micro-sized bits to encourage our community to visit this more frequently. You can currently request up to 10 test coin for Cascadia through our faucet program once every hour. It is supported by donations, so if you have any extra tokens, please think about giving them to yet another fellow "testnetter".`}
             </div>
-            <div className='relative mt-4 h-10 w-full max-w-[600px] border border-primary-900'>
+            <div className='relative mt-8 h-10 w-full max-w-[600px] border border-primary-900'>
               <input
-                className='t- h-full w-full bg-background p-2 placeholder:text-primary-500/60 focus:outline-none'
+                className='h-full w-full bg-background p-2 text-base font-normal placeholder:text-primary-500 focus:outline-none'
                 placeholder='Hexadecimal Address (0x...)'
                 onChange={handleChangeInput}
                 maxLength={42}
@@ -107,16 +104,19 @@ const Faucet = (): JSX.Element => {
                 />
               )}
             </div>
-            <div className='text-sm text-primary-500'>
+            <div className='mt-8 text-sm text-primary-500'>
               Feel free to send the residual coins to the following faucet
               address once you have finished testing.
             </div>
             {account && (
-              <div className='flex items-center justify-center'>
-                <Typography variant='sm' className='w-full text-primary-500'>
+              <div className='my-8 flex items-center justify-center bg-background px-3 py-2'>
+                <Typography
+                  variant='sm'
+                  className='w-full break-all text-primary-500'
+                >
                   {account}
                 </Typography>
-                <Copy toCopy={account} className='ml-2 text-primary-500'></Copy>
+                <Copy toCopy={account} className='ml-4 text-primary-500'></Copy>
               </div>
             )}
           </div>

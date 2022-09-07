@@ -48,7 +48,7 @@ export default function Web3Connect({ loading }: ButtonProps) {
         'flex cursor-pointer items-center px-3 py-2 text-secondary-100 transition-all',
         !(window.web3 || window.ethereum)
           ? 'bg-primary-900/60'
-          : 'bg-primary-900 hover:bg-primary-900/60'
+          : 'bg-primary-900 hover:bg-[#616771]'
       )}
     >
       <FontAwesomeIcon icon={faWallet} className='mr-3 text-xl' />
