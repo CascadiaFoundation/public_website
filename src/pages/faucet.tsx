@@ -6,9 +6,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import Copy from '@/components/accountDetails/copy';
+import Btn from '@/components/btn';
 import toast from '@/components/toast';
-import Typography from '@/components/typography';
 import Web3Status from '@/components/web3Status';
 
 import loadingCircle from '@/animation/loading-circle.json';
@@ -71,57 +70,41 @@ const Faucet = (): JSX.Element => {
                 Cascadia Faucet
               </h2>
               <div className='mt-5 mr-5 flex w-full items-center justify-end md:mt-0 md:mr-0'>
-                {/* {library && library.provider.isMetaMask && (
-                  <div className="hidden sm:inline-block">
-                    <Web3Network />
-                  </div>
-                )} */}
                 <Web3Status />
               </div>
             </div>
             <div className='mt-8 w-full max-w-[990px] font-normal text-primary-900'>
               {`Our Cascadia faucet distributes tasks and rewards in tiny, micro-sized bits to encourage our community to visit this more frequently. You can currently request up to 10 test coin for Cascadia through our faucet program once every hour. It is supported by donations, so if you have any extra tokens, please think about giving them to yet another fellow "testnetter".`}
             </div>
-            <div className='relative mt-8 h-10 w-full max-w-[600px] border border-primary-900'>
+            <div className='relative mt-8 flex h-10 w-full max-w-[600px] items-center border border-primary-900 bg-background'>
               <input
-                className='h-full w-full bg-background p-2 text-base font-normal placeholder:text-primary-500 focus:outline-none'
+                className='h-full w-full overflow-hidden text-ellipsis bg-background p-2 text-base font-normal placeholder:text-primary-500 focus:outline-none'
                 placeholder='Hexadecimal Address (0x...)'
                 onChange={handleChangeInput}
                 maxLength={42}
                 value={inputAddress}
               />
               {loading ? (
-                <div className='absolute inset-y-0 right-0 m-auto h-10 w-10 cursor-pointer'>
+                <div className='m-auto w-10 cursor-pointer pr-2'>
                   <Lottie animationData={loadingCircle} autoplay loop />
                 </div>
               ) : (
                 <FontAwesomeIcon
                   icon={faCheck}
-                  onClick={handleSubmit}
                   className={clsx(
-                    'absolute inset-y-0 right-2 m-auto text-xl',
+                    'm-auto pr-2 text-xl',
                     checkedAddress
                       ? 'cursor-pointer text-primary-900'
                       : 'text-primary-500/50'
                   )}
                 />
               )}
+              <Btn
+                label='Send request'
+                onClick={handleSubmit}
+                className='flex-none border-0 bg-primary-900 text-secondary-200 transition-all hover:bg-primary-500'
+              />
             </div>
-            <div className='mt-8 text-sm text-primary-500'>
-              Feel free to send the residual coins to the following faucet
-              address once you have finished testing.
-            </div>
-            {account && (
-              <div className='my-8 flex items-center justify-center bg-background px-3 py-2'>
-                <Typography
-                  variant='sm'
-                  className='w-full break-all text-primary-500'
-                >
-                  {account}
-                </Typography>
-                <Copy toCopy={account} className='ml-4 text-primary-500'></Copy>
-              </div>
-            )}
           </div>
         </div>
       </div>
