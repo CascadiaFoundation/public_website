@@ -17,7 +17,7 @@ const list: itemProps[] = [
       'In order to integrate the greatest aspects of cryptocurrency solutions, we are creating an open-sourced blockchain ecosystem of services and goods. It entails investigating cutting-edge encryption methods, creating consensus mechanisms, and designing software applications that are simple to use. This allows developers, creators, organizations, and people all over the world to join an ecosystem for Web 3.0 that is easy to reach, transparent, and governed by the community.',
     ],
     links: ['Learn about the Creator Economy on Cascadia'],
-    img: './images/no_image.png',
+    img: '/images/no_image.png',
   },
   {
     title: 'Developers / Creators',
@@ -26,7 +26,7 @@ const list: itemProps[] = [
       'Any-to-any communication across blockchains is made possible by Cascadia, regardless of the message`s payload or consensus algorithm. Cascadia paves the path forward and welcomes all developers and creators. It is based on Solana`s POH, supports all smart contracts developed on the Ethereum Blockchain & has secure, instant, low-cost transaction costs.',
     ],
     links: ['Follow progress on sharding'],
-    img: './images/no_image.png',
+    img: '/images/no_image.png',
   },
   {
     title: 'Our Vision & Mission',
@@ -38,7 +38,7 @@ const list: itemProps[] = [
       'Octopus Network: App Chain Interoperability',
       'All bridge: Bridge from Solana, Terra, Celo & More',
     ],
-    img: './images/no_image.png',
+    img: '/images/no_image.png',
   },
 ];
 

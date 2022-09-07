@@ -70,7 +70,7 @@ const AccountDetails: FC<AccountDetailsProps> = ({
                   // @ts-ignore TYPE NEEDS FIXING
                   address={account}
                   defaultComponent={
-                    <Image src="./images/logo.webp" alt="Logo" width={48} height={48} />
+                    <Image src="/images/logo.webp" alt="Logo" width={48} height={48} />
                   }
                   provider={library}
                 />

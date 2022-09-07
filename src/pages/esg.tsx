@@ -22,7 +22,7 @@ const Esg = (): JSX.Element => {
               <div className='relative h-14 w-14'>
                 <Image
                   className='absolute'
-                  src='./images/environmental.png'
+                  src='/images/environmental.png'
                   layout='fill'
                   alt=''
                 />
@@ -33,7 +33,7 @@ const Esg = (): JSX.Element => {
               <div className='relative h-14 w-14'>
                 <Image
                   className='absolute'
-                  src='./images/social.png'
+                  src='/images/social.png'
                   layout='fill'
                   alt=''
                 />
@@ -44,7 +44,7 @@ const Esg = (): JSX.Element => {
               <div className='relative h-14 w-14'>
                 <Image
                   className='absolute'
-                  src='./images/governance.png'
+                  src='/images/governance.png'
                   layout='fill'
                   alt=''
                 />
@@ -81,7 +81,7 @@ const Esg = (): JSX.Element => {
               <div className='relative h-[300px] w-full'>
                 <Image
                   className='absolute'
-                  src='./images/no_image.png'
+                  src='/images/no_image.png'
                   alt=''
                   layout='fill'
                 />
@@ -148,7 +148,7 @@ const Esg = (): JSX.Element => {
               <div className='relative h-[300px] w-full'>
                 <Image
                   className='absolute'
-                  src='./images/no_image.png'
+                  src='/images/no_image.png'
                   alt=''
                   layout='fill'
                 />
@@ -183,7 +183,7 @@ const Esg = (): JSX.Element => {
               <div className='relative h-[300px] w-full'>
                 <Image
                   className='absolute'
-                  src='./images/no_image.png'
+                  src='/images/no_image.png'
                   alt=''
                   layout='fill'
                 />
@@ -216,7 +216,7 @@ const Esg = (): JSX.Element => {
           <div className='relative my-12 h-[240px] w-full p-6 md:w-[400px] md:p-0'>
             <Image
               className='absolute'
-              src='./images/no_image.png'
+              src='/images/no_image.png'
               alt=''
               layout='fill'
             />
