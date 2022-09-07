@@ -196,6 +196,17 @@ export const SUPPORTED_NETWORKS: {
     ],
     blockExplorerUrls: ['https://explorer.palm.io'],
   },
+  [ChainId.SOPHON]: {
+    chainId: '0xDEAD',
+    chainName: 'Sophon Devnet',
+    nativeCurrency: {
+      name: 'SOPHON',
+      symbol: 'SOPHON',
+      decimals: 18,
+    },
+    rpcUrls: ['http://44.211.12.215:8545'],
+    blockExplorerUrls: ['https://explorer.sophon.io'],
+  },
 };
 
 const NetworkModal: FC = () => {

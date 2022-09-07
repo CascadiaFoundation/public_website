@@ -16,7 +16,7 @@ import Layout from '@/layout';
 import { useActiveWeb3React } from '@/services/web3';
 
 const Faucet = (): JSX.Element => {
-  const { account }: any = useActiveWeb3React();
+  const { account } = useActiveWeb3React();
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -55,6 +55,9 @@ const Faucet = (): JSX.Element => {
     if (account) {
       setInputAddress(account);
       setCheckedAddress(true);
+    } else {
+      setInputAddress('');
+      setCheckedAddress(false);
     }
   }, [account]);
 

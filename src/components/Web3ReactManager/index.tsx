@@ -5,6 +5,7 @@ import useEagerConnect from '@/hooks/useEagerConnect';
 import useInactiveListener from '@/hooks/useInactiveListener';
 import useNetworkOrchistrator from '@/hooks/useNetworkOrchistrator';
 
+import { ChainId } from '@/config/chainIds';
 import { network } from '@/config/wallets';
 import { NetworkContextName } from '@/constants';
 
@@ -28,7 +29,7 @@ export const Web3ReactManager = ({ children }: { children: any }) => {
     const activate = async () => {
       if (triedEager && !networkActive && !networkError && !active) {
         const Cookies = (await import('js-cookie')).default;
-        Cookies.set('chain-id', '1');
+        Cookies.set('chain-id', ChainId.ETHEREUM.toString());
         console.log(Cookies);
         console.log('CHANGE CHAIN TO ' + Number(Cookies.get('chain-id')));
         network.changeChainId(Number(Cookies.get('chain-id')));

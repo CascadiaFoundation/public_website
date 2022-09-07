@@ -102,6 +102,22 @@ const explorers = {
         return `${link}/${type}/${data}`;
     }
   },
+  sophon: (
+    link: string,
+    data: string,
+    type: 'transaction' | 'token' | 'address' | 'block'
+  ) => {
+    switch (type) {
+      case 'transaction':
+        return `${link}/transaction/${data}`;
+      case 'token':
+        return `${link}/address/${data}`;
+      case 'address':
+        return `${link}/address/${data}`;
+      default:
+        return `${link}/${type}/${data}`;
+    }
+  },
 };
 interface ChainObject {
   [chainId: number]: {
@@ -222,6 +238,10 @@ const chains: ChainObject = {
   [ChainId.TELOS]: {
     link: 'https://rpc1.us.telos.net/v2/explore/evm',
     builder: explorers.telos,
+  },
+  [ChainId.SOPHON]: {
+    link: 'https://explorer.sophon.io',
+    builder: explorers.sophon,
   },
 };
 

@@ -26,6 +26,7 @@ export enum ChainSubdomain {
   MOONRIVER = 'moonriver',
   FUSE = 'fuse',
   TELOS = 'telos',
+  SOPHON = 'sophon',
 }
 
 const CHAIN_ID_SUBDOMAIN: { [chainId: number]: string } = {
@@ -48,6 +49,7 @@ const CHAIN_ID_SUBDOMAIN: { [chainId: number]: string } = {
   [ChainId.MOONRIVER]: ChainSubdomain.MOONRIVER,
   [ChainId.FUSE]: ChainSubdomain.FUSE,
   [ChainId.TELOS]: ChainSubdomain.TELOS,
+  [ChainId.SOPHON]: ChainSubdomain.SOPHON,
 };
 
 function useNetworkOrchistrator() {
