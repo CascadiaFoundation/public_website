@@ -1,6 +1,8 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useWeb3React } from '@web3-react/core';
 import clsx from 'clsx';
+import Cookies from 'js-cookie';
 import Lottie from 'lottie-react';
 import React, { useCallback, useEffect, useState } from 'react';
 
@@ -11,11 +13,16 @@ import toast from '@/components/toast';
 import Web3Status from '@/components/web3Status';
 
 import loadingCircle from '@/animation/loading-circle.json';
+import { ChainId } from '@/config/chainIds';
+import { network } from '@/config/wallets';
+import { NetworkContextName } from '@/constants';
 import Layout from '@/layout';
 import { useActiveWeb3React } from '@/services/web3';
 
 const Faucet = (): JSX.Element => {
-  const { account } = useActiveWeb3React();
+  const { account, deactivate } = useActiveWeb3React();
+  const { activate: activateNetwork, active: networkActive } =
+    useWeb3React(NetworkContextName);
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -59,6 +66,15 @@ const Faucet = (): JSX.Element => {
       setCheckedAddress(false);
     }
   }, [account]);
+
+  useEffect(() => {
+    //add and switch chain automatically
+    if (networkActive) return;
+    deactivate();
+    Cookies.set('chain-id', ChainId.FUSE.toString());
+    network.changeChainId(ChainId.FUSE);
+    activateNetwork(network);
+  }, [activateNetwork, deactivate, networkActive]);
 
   return (
     <Layout>

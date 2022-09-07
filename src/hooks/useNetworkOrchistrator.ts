@@ -1,9 +1,11 @@
+import { useWeb3React } from '@web3-react/core';
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
 
 import { SUPPORTED_NETWORKS } from '@/components/networkModal';
 
 import { ChainId } from '@/config/chainIds';
+import { NetworkContextName } from '@/constants';
 import { useActiveWeb3React } from '@/services/web3';
 
 export enum ChainSubdomain {
@@ -83,13 +85,15 @@ function useNetworkOrchistrator() {
   }, []);
 
   const { chainId, library, account } = useActiveWeb3React();
+  const { active: networkActive } = useWeb3React(NetworkContextName);
+
   useEffect(() => {
     const chainIdFromCookie = Number(Cookies.get('chain-id'));
-
     if (
       !chainId ||
       !chainIdFromCookie ||
       !account ||
+      !networkActive || // add and switch chain automatically
       chainId === chainIdFromCookie
     ) {
       return;
@@ -118,7 +122,7 @@ function useNetworkOrchistrator() {
       }
     };
     promptWalletSwitch();
-  }, [account, chainId, library]);
+  }, [account, chainId, library, networkActive]);
 }
 
 export default useNetworkOrchistrator;
