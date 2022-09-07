@@ -19,10 +19,10 @@ const SubHeader = (): JSX.Element => {
       title =
         'A Foundation for Developers, A Decentralized Network for Everyone';
       content =
-        'Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
+        'Decent ralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
       break;
     case '/esg':
-      title = 'Cascadia adheres the ECG model';
+      title = 'Cascadia adheres the ESG model';
       content =
         'The ideal way to define ESG is as a framework for stakeholders to understand how an organization is handling opportunities and risks connected to environmental, social, and governance criteria.';
       break;
