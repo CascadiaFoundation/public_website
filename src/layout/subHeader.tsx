@@ -19,7 +19,7 @@ const SubHeader = (): JSX.Element => {
       title =
         'A Foundation for Developers, A Decentralized Network for Everyone';
       content =
-        'Decent ralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
+        'Cascadia is revolutionizing the crypto world of financial transactions. Embracing decentralized finance solutions by introducing EVM compatibility and enabling Ethereum Dapp developers to effortlessly port their projects away.';
       break;
     case '/esg':
       title = 'Cascadia adheres the ESG model';
@@ -29,7 +29,7 @@ const SubHeader = (): JSX.Element => {
     case '/faucet':
       title = 'Faucet “Activated”';
       content =
-        'Decentralized Oracle Network provide tamper-proof inputs, outputs, and computations to support advanced smart contracs on any blockchain.';
+        'Our faucet is made to be simple and user-friendly. Simply connect wallet, do you "tests", and send any leftover tokens to the address below.';
       break;
     default:
       break;
