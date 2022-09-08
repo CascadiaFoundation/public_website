@@ -6,6 +6,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 
 import '@/styles/globals.css';
 import '@/styles/colors.css';
+import '@/styles/fonts.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'; // import Font Awesome CSS
 config.autoAddCss = false;
 
@@ -59,6 +60,7 @@ function MyApp({ Component, pageProps }) {
             stopDelayMs={200}
             height={4}
             showOnShallow={true}
+            options={{ showSpinner: false }}
           />
           <Web3ReactProvider getLibrary={getLibrary}>
             <Web3ProviderNetwork getLibrary={getLibrary}>

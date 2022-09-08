@@ -1,22 +1,28 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useWeb3React } from '@web3-react/core';
 import clsx from 'clsx';
+import Cookies from 'js-cookie';
 import Lottie from 'lottie-react';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import Copy from '@/components/accountDetails/copy';
+import Btn from '@/components/btn';
 import toast from '@/components/toast';
-import Typography from '@/components/typography';
 import Web3Status from '@/components/web3Status';
 
 import loadingCircle from '@/animation/loading-circle.json';
+import { ChainId } from '@/config/chainIds';
+import { network } from '@/config/wallets';
+import { NetworkContextName } from '@/constants';
 import Layout from '@/layout';
 import { useActiveWeb3React } from '@/services/web3';
 
 const Faucet = (): JSX.Element => {
-  const { account }: any = useActiveWeb3React();
+  const { account, deactivate } = useActiveWeb3React();
+  const { activate: activateNetwork, active: networkActive } =
+    useWeb3React(NetworkContextName);
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -55,70 +61,66 @@ const Faucet = (): JSX.Element => {
     if (account) {
       setInputAddress(account);
       setCheckedAddress(true);
+    } else {
+      setInputAddress('');
+      setCheckedAddress(false);
     }
   }, [account]);
 
+  useEffect(() => {
+    //add and switch chain automatically
+    if (networkActive) return;
+    deactivate();
+    Cookies.set('chain-id', ChainId.FUSE.toString());
+    network.changeChainId(ChainId.FUSE);
+    activateNetwork(network);
+  }, [activateNetwork, deactivate, networkActive]);
+
   return (
     <Layout>
-      <div className='m-auto md:px-10 md:py-6 lg:px-32 lg:py-14'>
-        <div className='bg-white p-4 shadow-md shadow-primary-500/20 sm:px-6 sm:py-5 md:px-8 md:py-7'>
-          <div className='grid grid-rows-4 place-items-center gap-y-2 text-center sm:gap-y-4 md:gap-y-8'>
-            <div className='flex w-full items-center justify-between'>
-              <h2 className='text-xl font-bold text-primary-900 md:text-2xl'>
+      <div className='m-auto p-4 md:px-10 md:py-6 lg:px-32 lg:py-14'>
+        <div className='bg-white p-6 px-6 shadow-md shadow-primary-500/20 sm:py-4 md:px-8 md:py-6'>
+          <div className='flex flex-col items-center justify-center text-center'>
+            <div className='flex w-full flex-col items-center justify-between md:flex-row'>
+              <h2 className='mt-5 w-full text-center text-2xl font-semibold text-primary-900 md:mt-0 md:text-left'>
                 Cascadia Faucet
               </h2>
-              <div className='flex items-center justify-end'>
-                {/* {library && library.provider.isMetaMask && (
-                  <div className="hidden sm:inline-block">
-                    <Web3Network />
-                  </div>
-                )} */}
+              <div className='mt-5 mr-5 flex w-full items-center justify-end md:mt-0 md:mr-0'>
                 <Web3Status />
               </div>
             </div>
-            <div className='w-full max-w-[900px] font-normal text-primary-900'>
-              This faucet is a community project where you can currently request
-              up to 20Ⓝ testnet Cascadia every hour. It is run on donations so
-              if you have any unused tokens please consider sharing them with
-              our fellow testnetters.
+            <div className='mt-8 w-full max-w-[990px] font-normal text-primary-900'>
+              {`Our Cascadia faucet distributes tasks and rewards in tiny, micro-sized bits to encourage our community to visit this more frequently. You can currently request up to 10 test coin for Cascadia through our faucet program once every hour. It is supported by donations, so if you have any extra tokens, please think about giving them to yet another fellow "testnetter".`}
             </div>
-            <div className='relative mt-4 h-10 w-full max-w-[600px] border border-primary-900'>
+            <div className='relative mt-8 flex h-10 w-full max-w-[600px] items-center border border-primary-900 bg-background'>
               <input
-                className='t- h-full w-full bg-background p-2 placeholder:text-primary-500/60 focus:outline-none'
+                className='h-full w-full overflow-hidden text-ellipsis bg-background p-2 text-base font-normal placeholder:text-primary-500 focus:outline-none'
                 placeholder='Hexadecimal Address (0x...)'
                 onChange={handleChangeInput}
                 maxLength={42}
                 value={inputAddress}
               />
               {loading ? (
-                <div className='absolute inset-y-0 right-0 m-auto h-10 w-10 cursor-pointer'>
+                <div className='m-auto w-10 cursor-pointer pr-2'>
                   <Lottie animationData={loadingCircle} autoplay loop />
                 </div>
               ) : (
                 <FontAwesomeIcon
                   icon={faCheck}
-                  onClick={handleSubmit}
                   className={clsx(
-                    'absolute inset-y-0 right-2 m-auto text-xl',
+                    'm-auto pr-2 text-xl',
                     checkedAddress
                       ? 'cursor-pointer text-primary-900'
                       : 'text-primary-500/50'
                   )}
                 />
               )}
+              <Btn
+                label='Send request'
+                onClick={handleSubmit}
+                className='flex-none border-0 bg-primary-900 text-secondary-200 transition-all hover:bg-primary-500'
+              />
             </div>
-            <div className='text-sm text-primary-500'>
-              Feel free to send the residual coins to the following faucet
-              address once you have finished testing.
-            </div>
-            {account && (
-              <div className='flex items-center justify-center'>
-                <Typography variant='sm' className='w-full text-primary-500'>
-                  {account}
-                </Typography>
-                <Copy toCopy={account} className='ml-2 text-primary-500'></Copy>
-              </div>
-            )}
           </div>
         </div>
       </div>
