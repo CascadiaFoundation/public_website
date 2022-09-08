@@ -35,25 +35,25 @@ const Footer = (): JSX.Element => {
     <div className='bg-main-900 p-[5%] pb-0'>
       <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-6 lg:gap-y-0'>
         <div className='grid grid-cols-2 sm:col-span-2 sm:block lg:col-span-1'>
-          <div className='cursor-pointer pb-6 text-2xl uppercase text-white'>
+          <div className='cursor-pointer pb-6 text-2xl font-bold uppercase text-white'>
             CASCADIA
           </div>
-          <div className='capitaliz flex flex-col gap-1 text-right text-base text-secondary-100/80'>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Block Explorer
-            </a>
-            <a className='hover:text-white sm:text-left'>
+          <div className='capitaliz flex flex-col gap-1 text-right text-base font-normal text-secondary-100/80'>
+            <div className='py-[2px] hover:text-white sm:text-left'>
+              <Link href='#'>Block Explorer</Link>
+            </div>
+            <div className='py-[2px] hover:text-white sm:text-left'>
               <Link href='/faucet'>Cascadia Faucet</Link>
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Cascadia Bridge
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Sophon Chain
-            </a>
-            <a href='#' className='hover:text-white sm:text-left'>
-              Governance
-            </a>
+            </div>
+            <div className='py-[2px] hover:text-white sm:text-left'>
+              <Link href='/faucet'>Cascadia Bridge</Link>
+            </div>
+            <div className='py-[2px] hover:text-white sm:text-left'>
+              <Link href='/faucet'>Sophon Chain</Link>
+            </div>
+            <div className='py-[2px] hover:text-white sm:text-left'>
+              <Link href='/faucet'>Governance</Link>
+            </div>
           </div>
         </div>
         {itemList.map((item) => (
@@ -61,14 +61,14 @@ const Footer = (): JSX.Element => {
             key={item.title}
             className='col-span-2 hidden sm:block lg:col-span-1'
           >
-            <div className='cursor-pointer pb-4 text-base uppercase text-white'>
+            <div className='cursor-pointer pb-4 text-base font-semibold uppercase text-white'>
               {item.title}
             </div>
             <ul className='capitaliz text-base text-secondary-100'>
               {item.list.map((li) => (
                 <li
                   key={li}
-                  className='py-[2px] text-base text-secondary-100/80 hover:text-white'
+                  className='py-[2px] text-base font-normal text-secondary-100/80 hover:text-white'
                 >
                   <a href='#'>{li}</a>
                 </li>
@@ -102,7 +102,7 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-between gap-4 pt-20 pb-6 sm:flex-row sm:gap-0'>
+      <div className='flex flex-col items-center justify-between gap-4 pt-20 pb-6 text-base font-normal sm:flex-row sm:gap-0'>
         <div className='flex items-center  gap-6'>
           <a href='#' className='text-secondary-100 hover:text-white'>
             Privacy Policy

@@ -1,3 +1,5 @@
+import { faWallet } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useWeb3React } from '@web3-react/core';
 import React from 'react';
 
@@ -17,10 +19,10 @@ function Web3StatusInner() {
       <button
         onClick={toggleWalletModal}
         disabled
-        className='flex cursor-not-allowed items-center bg-primary-900 px-3 py-2 text-secondary-100 transition-all'
+        className='flex items-center bg-primary-500 px-3 py-2 text-secondary-100 transition-all'
       >
-        {/* <span>{shortenString(account, 25)}</span> */}
-        <span>Connected wallet</span>
+        <FontAwesomeIcon icon={faWallet} className='mr-3 text-xl' />
+        <span>Wallet Connected</span>
       </button>
     );
   } else {

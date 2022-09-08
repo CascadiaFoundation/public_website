@@ -7,7 +7,7 @@ const SlideCard = (): JSX.Element => {
       <div className='relative h-[180px] w-full'>
         <Image
           className='absolute'
-          src='./images/card.png'
+          src='/images/card.png'
           alt=''
           layout='fill'
           objectFit='cover'

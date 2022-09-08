@@ -14,16 +14,6 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  images: {
-    loader: 'akamai',
-    path: '',
-  },
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
 
   // SVGR
   webpack(config) {
