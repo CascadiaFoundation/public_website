@@ -30,7 +30,7 @@ const Esg = (): JSX.Element => {
               <div className='mt-3 text-base'>Environmental</div>
             </div>
             <div className='mt-10 flex flex-col items-center justify-center px-2 text-main-900 sm:mt-0 sm:px-12'>
-              <div className='relative h-14 w-14'>
+              <div className='relative h-14 w-16'>
                 <Image
                   className='absolute'
                   src='/images/social.png'
