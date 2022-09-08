@@ -1,9 +1,5 @@
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useWeb3React } from '@web3-react/core';
-import clsx from 'clsx';
 import Cookies from 'js-cookie';
-import Lottie from 'lottie-react';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,7 +8,6 @@ import Btn from '@/components/btn';
 import toast from '@/components/toast';
 import Web3Status from '@/components/web3Status';
 
-import loadingCircle from '@/animation/loading-circle.json';
 import { ChainId } from '@/config/chainIds';
 import { network } from '@/config/wallets';
 import { NetworkContextName } from '@/constants';
@@ -25,7 +20,6 @@ const Faucet = (): JSX.Element => {
     useWeb3React(NetworkContextName);
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
 
   const notify = React.useCallback((type: string, message: string) => {
     toast({ type, message });
@@ -43,17 +37,13 @@ const Faucet = (): JSX.Element => {
   const handleSubmit = useCallback(() => {
     if (!checkedAddress) return;
 
-    setLoading(true);
-
     fetch(`/api/getFaucet/${inputAddress}`)
       .then((res) => res.json())
       .then((res) => {
         notify('dark', res.message);
-        setLoading(false);
       })
       .catch(() => {
         notify('dark', 'Network Error');
-        setLoading(false);
       });
   }, [checkedAddress, inputAddress, notify]);
 
@@ -100,21 +90,6 @@ const Faucet = (): JSX.Element => {
                 maxLength={42}
                 value={inputAddress}
               />
-              {loading ? (
-                <div className='m-auto w-10 cursor-pointer pr-2'>
-                  <Lottie animationData={loadingCircle} autoplay loop />
-                </div>
-              ) : (
-                <FontAwesomeIcon
-                  icon={faCheck}
-                  className={clsx(
-                    'm-auto pr-2 text-xl',
-                    checkedAddress
-                      ? 'cursor-pointer text-primary-900'
-                      : 'text-primary-500/50'
-                  )}
-                />
-              )}
               <Btn
                 label='Send request'
                 onClick={handleSubmit}
