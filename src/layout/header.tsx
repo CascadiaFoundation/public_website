@@ -9,24 +9,22 @@ import NavBtn, { btnProps } from '@/components/navBtn';
 
 const navigation: btnProps[] = [
   {
-    name: 'Learning',
-    href: '/learning',
-  },
-  {
     name: 'Ecosystem',
-    href: '/ecosystem',
+    link: '/ecosystem',
   },
   {
     name: 'ESG',
-    href: '/esg',
+    link: '/esg',
   },
   {
     name: 'Community',
-    href: '/community',
+    link: '/community',
+    href: 'https://discord.gg/theforeverwar',
   },
   {
     name: 'Blog',
-    href: '/blog',
+    link: '/blog',
+    href: 'https://medium.com/@sophon1004moo/about',
   },
 ];
 
@@ -101,16 +99,26 @@ const Header = (): JSX.Element => {
                 <Disclosure.Panel className='duration-3000 h-full w-full bg-main-900 transition-all md:hidden'>
                   <div className='space-y-1 px-2 pt-14 pb-3 sm:px-3'>
                     {navigation.map((item) => (
-                      <Link key={item.name} href={item.href}>
-                        <Disclosure.Button
-                          className={clsx(
-                            'block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900',
-                            pathname === item.href && 'text-white'
-                          )}
-                        >
-                          {item.name}
-                        </Disclosure.Button>
-                      </Link>
+                      <div key={item.name}>
+                        {item.href ? (
+                          <a href={item.href} target='_blank' rel='noreferrer'>
+                            <Disclosure.Button className='block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900'>
+                              {item.name}
+                            </Disclosure.Button>
+                          </a>
+                        ) : (
+                          <Link href={item.link}>
+                            <Disclosure.Button
+                              className={clsx(
+                                'block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900',
+                                pathname === item.link && 'text-white'
+                              )}
+                            >
+                              {item.name}
+                            </Disclosure.Button>
+                          </Link>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </Disclosure.Panel>
