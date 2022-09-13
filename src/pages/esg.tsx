@@ -195,7 +195,7 @@ const Esg = (): JSX.Element => {
                     <p className='w-full pb-6 text-center text-2xl font-semibold text-primary-900 sm:text-left'>
                       {item.title}
                     </p>
-                    <p className='pb-5 text-center text-base font-normal text-primary-500 sm:text-left'>
+                    <div className='pb-5 text-center text-base font-normal text-primary-500 sm:text-left'>
                       {item.content.map((p: string, index: number) => (
                         <p
                           key={index}
@@ -204,7 +204,7 @@ const Esg = (): JSX.Element => {
                           {p}
                         </p>
                       ))}
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>
