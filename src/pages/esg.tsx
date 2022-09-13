@@ -14,20 +14,19 @@ type itemProps = {
 const list: itemProps[] = [
   {
     image: '/images/no_image.png',
-    title:
-      'Engagement with companies on the physical and transition risks of climate change',
+    title: 'Engagement',
     content:
       'In Cascadia, we think that investors should interact with issuers to make sure that climate data, scenario analysis, and related disclosures are comprehensive enough to support thorough climate risk analysis in the investment process',
   },
   {
     image: '/images/no_image.png',
-    title: 'Education within our Foundation',
+    title: 'Education',
     content:
       'In order to give our users the climate-related research they deserve, we all must continue to educate ourselves on climate change.',
   },
   {
     image: '/images/no_image.png',
-    title: 'Policy that supports our efforts',
+    title: 'Policy',
     content:
       'Users need to keep meeting with policymakers to ensure that they have the resources necessary to perform the function of finance, i.e., the effective capital allocation that aids in tackling the existential threat of climate change.',
   },
