@@ -8,27 +8,33 @@ import Layout from '@/layout';
 type itemProps = {
   image: string;
   title: string;
-  content: string;
+  content: string[];
 };
 
 const list: itemProps[] = [
   {
     image: '/images/no_image.png',
     title: 'Engagement',
-    content:
-      'In Cascadia, we think that investors should interact with issuers to make sure that climate data, scenario analysis, and related disclosures are comprehensive enough to support thorough climate risk analysis in the investment process',
+    content: [
+      `Offsets are frequently misapplied, incorrectly reported, and devalued as a result of market structure. This is made worse by the fact that carbon credits vary depending on the market.`,
+      `The industry must collaborate with businesses and governments as the world continues to address these massive challenges. Decentralization, smart contracts, and Cascadia's technology are being leveraged to upend the foundation upon which ESG claims are rooted.  Blockchain-based initiatives that are truly revolutionary are enhancing corporate and community productivity while also lowering inequality & decreasing pollution.`,
+    ],
   },
   {
     image: '/images/no_image.png',
     title: 'Education',
-    content:
-      'In order to give our users the climate-related research they deserve, we all must continue to educate ourselves on climate change.',
+    content: [
+      `On the market, there is a general lack of education and knowledge of its foundational ideas and shortcomings. Applying new technologies carries risks that need to be weighed against the potential rewards, particularly in unproven areas. In order to address issues with network scalability and processing rates, as well as to lower security threats, proper technological setup is essential.`,
+      `The Cascadia Foundation encourages the use of a openly accessible, standardized "toolbox" by providing educational resources on blockchain that will support additional research and development in the crypto industry.`,
+    ],
   },
   {
     image: '/images/no_image.png',
     title: 'Policy',
-    content:
-      'Users need to keep meeting with policymakers to ensure that they have the resources necessary to perform the function of finance, i.e., the effective capital allocation that aids in tackling the existential threat of climate change.',
+    content: [
+      `Blockchain technology from Cascadia has the potential to be used to create network systems and collaborative platforms that can aid in the attainment of national investment goals, such as the low-carbon transition. To promote the development of blockchain-based solutions in a safe and equal manner, a variety of policy steps are necessary.`,
+      `Our core protocol layer enables any organisation to develop decentralised apps to support the governance, alignment, and monitoring of various infrastructural requirements.`,
+    ],
   },
 ];
 
@@ -132,10 +138,10 @@ const Esg = (): JSX.Element => {
       </div>
       <div className='w-full bg-main-900 py-6 md:py-12'>
         <div className='mb-8 px-10 text-center text-2xl font-bold text-white md:text-4xl'>
-          EEP - Engagement, Education, Policy
+          ESG - Environmental, Social, Governance
         </div>
         <div className='text-center text-lg font-semibold text-white md:text-2xl'>
-          Our Key tools on environmental importance
+          Our Key Tools on ESG accountability
         </div>
       </div>
 
@@ -186,12 +192,19 @@ const Esg = (): JSX.Element => {
                           } opacity-0`
                     )}
                   >
-                    <p className='w-full pb-5 text-center text-2xl font-semibold text-primary-900 sm:text-left'>
+                    <p className='w-full pb-6 text-center text-2xl font-semibold text-primary-900 sm:text-left'>
                       {item.title}
                     </p>
-                    <p className='pb-5 text-center text-base font-normal text-primary-500 sm:text-left'>
-                      {item.content}
-                    </p>
+                    <div className='pb-5 text-center text-base font-normal text-primary-500 sm:text-left'>
+                      {item.content.map((p: string, index: number) => (
+                        <p
+                          key={index}
+                          className='pb-6 leading-[24px] last:pb-0'
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
