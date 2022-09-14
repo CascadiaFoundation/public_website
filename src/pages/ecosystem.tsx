@@ -1,5 +1,7 @@
+import clsx from 'clsx';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import { InView } from 'react-intersection-observer';
 
 import Layout from '@/layout';
 
@@ -42,22 +44,41 @@ const list: itemProps[] = [
   },
 ];
 
+type animationProps = {
+  [key: number]: boolean;
+};
 const Ecosystem = (): JSX.Element => {
+  const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
       <div className='md:px-10'>
-        <div className='m-auto flex max-w-[1300px] flex-col md:my-6 lg:my-14'>
+        <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden pb-16 md:my-6 lg:my-14'>
           {list.map((item: itemProps, index: number) => {
-            const direction =
-              index % 2 === 0
-                ? 'flex-col md:flex-row'
-                : 'flex-col md:flex-row-reverse';
+            const direction = index % 2 === 0;
             return (
-              <div
+              <InView
+                as='div'
+                className={clsx(
+                  'flex flex-col items-start justify-between pt-16',
+                  direction ? 'md:flex-row' : 'md:flex-row-reverse'
+                )}
                 key={index}
-                className={`${direction} flex items-start justify-between pt-16`}
+                rootMargin='-50px'
+                threshold={0}
+                onChange={(inView) =>
+                  setAnimation((state) => ({ ...state, [index]: inView }))
+                }
               >
-                <div className='flex w-full flex-col items-start justify-center px-5'>
+                <div
+                  className={clsx(
+                    'flex w-full flex-col items-start justify-center overflow-hidden px-5 transition-all duration-1000 ease-out',
+                    animation[index]
+                      ? 'translate-x-0 opacity-100 delay-200'
+                      : `${
+                          direction ? '-translate-x-full' : 'translate-x-full'
+                        } opacity-0`
+                  )}
+                >
                   <h2 className='text-2xl font-bold text-primary-900'>
                     {item.title}
                   </h2>
@@ -80,7 +101,12 @@ const Ecosystem = (): JSX.Element => {
                     ))}
                   </div>
                 </div>
-                <div className='flex w-full items-start justify-center px-5'>
+                <div
+                  className={clsx(
+                    'flex w-full items-start justify-center overflow-hidden px-5 transition-all delay-500 duration-1000',
+                    animation[index] ? 'opacity-100' : 'opacity-0'
+                  )}
+                >
                   <div className='relative h-[300px] w-full'>
                     <Image
                       className='absolute'
@@ -90,7 +116,7 @@ const Ecosystem = (): JSX.Element => {
                     />
                   </div>
                 </div>
-              </div>
+              </InView>
             );
           })}
         </div>
