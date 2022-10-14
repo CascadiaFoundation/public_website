@@ -46,13 +46,13 @@ const Footer = (): JSX.Element => {
               <Link href='/faucet'>Cascadia Faucet</Link>
             </div>
             <div className='py-[2px] hover:text-white sm:text-left'>
-              <Link href='/faucet'>Cascadia Bridge</Link>
+              <Link href='/#'>Cascadia Bridge</Link>
             </div>
             <div className='py-[2px] hover:text-white sm:text-left'>
-              <Link href='/faucet'>Sophon Chain</Link>
+              <Link href='/#'>Sophon Chain</Link>
             </div>
             <div className='py-[2px] hover:text-white sm:text-left'>
-              <Link href='/faucet'>Governance</Link>
+              <Link href='/#'>Governance</Link>
             </div>
           </div>
         </div>
