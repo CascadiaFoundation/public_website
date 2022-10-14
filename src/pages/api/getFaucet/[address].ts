@@ -17,7 +17,10 @@ export default async function getFaucet(
   }
   const formBodyStr: string = formBody.join('&');
 
-  await fetch('http://44.211.12.215:3000/api/get-faucet', {
+  const faucetBackendUrl =
+    process.env.FAUCET_BACKEND_URL || 'http://localhost:3001';
+
+  await fetch(`${faucetBackendUrl}/api/get-faucet`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -27,7 +30,9 @@ export default async function getFaucet(
     if (apiRes.status !== 200) {
       res.status(400).json({ success: 'error', message: await apiRes.text() });
     } else {
-      res.status(200).json({ success: 'success', data: await apiRes.text() });
+      res
+        .status(200)
+        .json({ success: 'success', message: await apiRes.text() });
     }
   });
 }
