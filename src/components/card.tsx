@@ -1,23 +1,22 @@
-import { faImages } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
+import Image from 'next/image';
 import React from 'react';
-
-import Btn from './btn';
 
 type itemProps = {
   className?: string;
   title: string;
   content: string;
-  button: string;
+  iconUrl: string;
+  // button: string;
 };
 
 const Card = ({
   className,
   title,
   content,
-  button,
-}: itemProps): JSX.Element => {
+  iconUrl,
+}: // button,
+itemProps): JSX.Element => {
   return (
     <div
       className={clsx(
@@ -26,16 +25,25 @@ const Card = ({
       )}
     >
       <div className='flex items-center gap-4'>
-        <div className='rounded-full bg-main-900 p-2'>
-          <FontAwesomeIcon icon={faImages} className='h-6 w-6 text-white' />
+        <div className='flex'>
+          {/* <FontAwesomeIcon icon={faImages} className='h-6 w-6 text-white' /> */}
+          <Image
+            src={iconUrl}
+            alt='innovation icons'
+            // layout='fill'
+            width='36'
+            height='36'
+          />
         </div>
         <div className='text-2xl font-bold text-primary-900'>{title}</div>
       </div>
-      <div className='home-content-base flex-1 py-4'>{content}</div>
-      <Btn
+      <div className='home-content-base flex-1 py-4 text-primary-500'>
+        {content}
+      </div>
+      {/* <Btn
         label={button}
         className='w-full border-primary-900 bg-transparent text-base text-primary-900 hover:bg-primary-900/10 lg:w-fit'
-      />
+      /> */}
     </div>
   );
 };

@@ -1,7 +1,12 @@
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
+
+// import ESGSubHeader from '@/components/esgSubHeader';
+import Btn from '@/components/btn';
 
 import Layout from '@/layout';
 
@@ -13,27 +18,24 @@ type itemProps = {
 
 const list: itemProps[] = [
   {
-    image: '/images/no_image.png',
-    title: 'Engagement',
+    image: '/images/environmental-image.png',
+    title: 'Environmental',
     content: [
-      `Offsets are frequently misapplied, incorrectly reported, and devalued as a result of market structure. This is made worse by the fact that carbon credits vary depending on the market.`,
-      `The industry must collaborate with businesses and governments as the world continues to address these massive challenges. Decentralization, smart contracts, and Cascadia's technology are being leveraged to upend the foundation upon which ESG claims are rooted.  Blockchain-based initiatives that are truly revolutionary are enhancing corporate and community productivity while also lowering inequality & decreasing pollution.`,
+      `The cryptocurrency industry must learn to collaborate with businesses and governments as the world continues to address these massive environmental challenges.  Revolutionary blockchain-based initiatives enhance corporate and community productivity while lower inequality and decreasing pollution.`,
     ],
   },
   {
-    image: '/images/no_image.png',
-    title: 'Education',
+    image: '/images/social-image.png',
+    title: 'Social',
     content: [
-      `On the market, there is a general lack of education and knowledge of its foundational ideas and shortcomings. Applying new technologies carries risks that need to be weighed against the potential rewards, particularly in unproven areas. In order to address issues with network scalability and processing rates, as well as to lower security threats, proper technological setup is essential.`,
-      `The Cascadia Foundation encourages the use of a openly accessible, standardized "toolbox" by providing educational resources on blockchain that will support additional research and development in the crypto industry.`,
+      `Applying new technologies carries risks that need to be weighed against potential rewards.  In order to address issues regarding network scalability and processing rates, education and knowledge is crucial.  Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that will support social research and development.`,
     ],
   },
   {
-    image: '/images/no_image.png',
-    title: 'Policy',
+    image: '/images/governance-image.png',
+    title: 'Governance',
     content: [
-      `Blockchain technology from Cascadia has the potential to be used to create network systems and collaborative platforms that can aid in the attainment of national investment goals, such as the low-carbon transition. To promote the development of blockchain-based solutions in a safe and equal manner, a variety of policy steps are necessary.`,
-      `Our core protocol layer enables any organisation to develop decentralised apps to support the governance, alignment, and monitoring of various infrastructural requirements.`,
+      `Cascadia's technology can be used to create collaborative networks and incentive alignment amongst ordinarily incompatible parties.  Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
     ],
   },
 ];
@@ -46,8 +48,9 @@ const Esg = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
-      <div className='m-auto px-5 md:px-10 lg:px-32'>
-        <div className='mb-10 flex flex-col items-center justify-center pt-16'>
+      {/* <ESGSubHeader /> */}
+      <div className='m-auto bg-white px-5 md:px-10 lg:px-32'>
+        <div className='flex flex-col items-center justify-center pt-16'>
           <InView
             as='div'
             className={clsx(
@@ -66,10 +69,11 @@ const Esg = (): JSX.Element => {
               Why does it matter?
             </div>
             <div className='my-6 max-w-[850px] text-center text-base font-normal text-primary-500'>
-              Cascadia embraced the ESG framework, which has now grown into a
-              comprehensive framework with important components relating to
-              environmental and social impact as well as how governance
-              structures may be adjusted to optimize stakeholder well-being.
+              Embracing ESG policies is not only ethically right, it&apos;s also
+              good for business. Through our cybernetic modeling, we seek to
+              build a framework to understand how environmental, social impact,
+              and governance structures, can be adjusted to optimize stakeholder
+              well-being.
             </div>
           </InView>
           <InView
@@ -136,16 +140,16 @@ const Esg = (): JSX.Element => {
           </InView>
         </div>
       </div>
-      <div className='w-full bg-main-900 py-6 md:py-12'>
+      {/* <div className='w-full bg-main-900 py-6 md:py-12'>
         <div className='mb-8 px-10 text-center text-2xl font-bold text-white md:text-4xl'>
           ESG - Environmental, Social, Governance
         </div>
         <div className='text-center text-lg font-semibold text-white md:text-2xl'>
           Our Key Tools on ESG accountability
         </div>
-      </div>
+      </div> */}
 
-      <div className='bg-white py-16'>
+      <div className='bg-white pt-24'>
         {list.map((item: itemProps, index: number) => {
           const direction = index % 2 === 0;
           return (
@@ -211,7 +215,32 @@ const Esg = (): JSX.Element => {
             </InView>
           );
         })}
+
+        <div className='gap-x-10 p-6 text-center sm:mt-4 md:p-0'>
+          <h1 className='pb-6 text-2xl font-bold text-primary-900 sm:text-4xl'>
+            Join our community
+          </h1>
+          <div className='pb-12 text-xl font-normal text-primary-500'>
+            Never miss a critical announcement. Don&apos;t just follow -- be
+            involved.
+          </div>
+          <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className='absolute inset-y-0 left-0 m-auto p-2 text-base text-primary-500'
+            />
+            <input
+              className='h-full w-full p-2 pl-10 focus:outline-none md:placeholder:text-primary-500'
+              placeholder='Receive email updates'
+            />
+            <Btn
+              label='Subscribe'
+              className='absolute inset-y-0 right-0 border-0 bg-primary-900/50 text-secondary-200 hover:bg-primary-900/80'
+            />
+          </div>
+        </div>
       </div>
+      <div className='h-24 bg-white'></div>
     </Layout>
   );
 };
