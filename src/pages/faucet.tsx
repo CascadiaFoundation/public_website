@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useCallback, useState } from 'react';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -5,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Btn from '@/components/btn';
 import toast from '@/components/toast';
 
-import Layout from '@/layout';
+import Header from '@/layout/header';
 const Faucet = (): JSX.Element => {
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
@@ -37,37 +38,93 @@ const Faucet = (): JSX.Element => {
   }, [checkedAddress, inputAddress, notify]);
 
   return (
-    <Layout>
-      <div className='m-auto p-4 md:px-10 md:py-6 lg:px-32 lg:py-14'>
-        <div className='bg-white p-6 px-6 shadow-md shadow-primary-500/20 sm:py-4 md:px-8 md:py-6'>
-          <div className='flex flex-col items-center justify-center text-center'>
-            <div className='flex w-full flex-col items-center justify-between md:flex-row'>
-              <h2 className='mt-5 w-full text-center text-2xl font-semibold text-primary-900 md:mt-0 md:text-left'>
-                Cascadia Faucet
-              </h2>
-            </div>
-            <div className='mt-8 w-full max-w-[990px] font-normal text-primary-900'>
-              {`Our Cascadia faucet distributes tasks and rewards in tiny, micro-sized bits to encourage our community to visit this more frequently. You can currently request up to 10 test coin for Cascadia through our faucet program once every hour. It is supported by donations, so if you have any extra tokens, please think about giving them to yet another fellow "testnetter".`}
-            </div>
-            <div className='relative mt-8 flex h-10 w-full max-w-[600px] items-center border border-primary-900 bg-background'>
-              <input
-                className='h-full w-full overflow-hidden text-ellipsis bg-background p-2 text-base font-normal placeholder:text-primary-500 focus:outline-none'
-                placeholder='Hexadecimal Address (0x...)'
-                onChange={handleChangeInput}
-                maxLength={42}
-                value={inputAddress}
-              />
-              <Btn
-                label='Send request'
-                onClick={handleSubmit}
-                className='flex-none border-0 bg-primary-900 text-secondary-200 transition-all hover:bg-primary-500'
-              />
-            </div>
+    <div>
+      <Header />
+      <video
+        loop
+        autoPlay
+        muted
+        className='absolute left-0 right-0 top-0 bottom-0 -z-10 h-screen w-screen object-cover'
+      >
+        <source src='home.mp4' type='video/mp4' />
+      </video>
+      {/* <div className='text-4xl text-primary-500 font-light h-screen flex items-center justify-left px-8 md:px-20 lg:px-32'>
+        <div>
+          <span>The</span>
+          <span className='font-bold'> World's First Neocybernetic </span>
+          <span>Blockchain</span>
+        </div>
+      </div> */}
+      <div className='flex h-screen items-center justify-center'>
+        <div className='text-center'>
+          <div className='pb-14 text-4xl font-bold text-primary-900'>
+            Faucet
           </div>
+          <div className='flex justify-center pb-7 font-normal text-primary-500'>
+            <span className='w-1/3'>
+              You can currently request Cascadia test tokens once every 24
+              hours. The faucet is supported by donations, so if you have extra
+              tokens, please donate them to others.
+            </span>
+          </div>
+          <div className='pb-7'>
+            <input
+              className='h-full w-1/3 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none'
+              placeholder='Hexadecimal Address (0x...)'
+              onChange={handleChangeInput}
+              maxLength={42}
+              value={inputAddress}
+            />
+          </div>
+          <Btn
+            label='Send request'
+            onClick={handleSubmit}
+            className='disabled w-1/3 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50'
+          />
         </div>
       </div>
-    </Layout>
+      <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-12 text-primary-500 md:px-20 lg:px-32'>
+        <div className='mr-6'>
+          <Link href='/privacy'>Privacy Policy</Link>
+        </div>
+        <div>
+          <Link href='/terms'>Terms of Use</Link>
+        </div>
+      </div>
+    </div>
   );
+  // return (
+  //   <Layout>
+  //     <div className='m-auto p-4 md:px-10 md:py-6 lg:px-32 lg:py-14'>
+  //       <div className='bg-white p-6 px-6 shadow-md shadow-primary-500/20 sm:py-4 md:px-8 md:py-6'>
+  //         <div className='flex flex-col items-center justify-center text-center'>
+  //           <div className='flex w-full flex-col items-center justify-between md:flex-row'>
+  //             <h2 className='mt-5 w-full text-center text-2xl font-semibold text-primary-900 md:mt-0 md:text-left'>
+  //               Cascadia Faucet
+  //             </h2>
+  //           </div>
+  //           <div className='mt-8 w-full max-w-[990px] font-normal text-primary-900'>
+  //             {`Our Cascadia faucet distributes tasks and rewards in tiny, micro-sized bits to encourage our community to visit this more frequently. You can currently request up to 10 test coin for Cascadia through our faucet program once every hour. It is supported by donations, so if you have any extra tokens, please think about giving them to yet another fellow "testnetter".`}
+  //           </div>
+  //           <div className='relative mt-8 flex h-10 w-full max-w-[600px] items-center border border-primary-900 bg-background'>
+  //             <input
+  //               className='h-full w-full overflow-hidden text-ellipsis bg-background p-2 text-base font-normal placeholder:text-primary-500 focus:outline-none'
+  //               placeholder='Hexadecimal Address (0x...)'
+  //               onChange={handleChangeInput}
+  //               maxLength={42}
+  //               value={inputAddress}
+  //             />
+  //             <Btn
+  //               label='Send request'
+  //               onClick={handleSubmit}
+  //               className='flex-none border-0 bg-primary-900 text-secondary-200 transition-all hover:bg-primary-500'
+  //             />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </Layout>
+  // );
 };
 
 export default Faucet;

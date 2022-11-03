@@ -2,12 +2,17 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import NavBtn, { btnProps } from '@/components/navBtn';
 
 const navigation: btnProps[] = [
+  {
+    name: 'Learn',
+    link: '/learn',
+  },
   {
     name: 'Ecosystem',
     link: '/ecosystem',
@@ -26,6 +31,10 @@ const navigation: btnProps[] = [
     link: '/blog',
     href: 'https://medium.com/@sophon1004moo/about',
   },
+  {
+    name: 'Faucet',
+    link: '/faucet',
+  },
 ];
 
 const Header = (): JSX.Element => {
@@ -37,13 +46,23 @@ const Header = (): JSX.Element => {
         <Disclosure as='nav' className='bg-transparent'>
           {({ open, close }: { open: boolean; close: () => void }) => (
             <>
-              <div className='mx-auto w-full px-10 md:px-20 lg:px-32'>
+              <div className='mx-auto w-full px-10 lg:px-32'>
                 <div className='flex h-16 items-center justify-between'>
                   <div className='flex h-full items-center'>
                     <div className='z-30 flex-shrink-0'>
                       <Link href='/'>
-                        <div className='cursor-pointer text-xl font-semibold text-white'>
-                          Cascadia
+                        <div className='flex cursor-pointer items-center text-xl font-semibold text-white'>
+                          <Image
+                            className='absolute'
+                            src='/images/logo.png'
+                            // layout='fill'
+                            width='36'
+                            height='30'
+                            alt='logo'
+                          />
+                          <span className='pl-2 text-primary-900'>
+                            Cascadia
+                          </span>
                         </div>
                       </Link>
                     </div>
@@ -55,11 +74,11 @@ const Header = (): JSX.Element => {
                   </div>
                   <div className='-mr-2 flex md:hidden'>
                     {/* Mobile menu button */}
-                    <Disclosure.Button className='z-30 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-white hover:text-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
+                    <Disclosure.Button className='z-30 inline-flex items-center justify-center rounded-md border border-primary-500 bg-transparent p-2 text-primary-500 hover:border-primary-500/70 hover:text-primary-500/70 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
                       <span className='sr-only'>Open main menu</span>
                       {open ? (
                         <XMarkIcon
-                          className='block h-6 w-6'
+                          className='block h-6 w-6 text-white'
                           aria-hidden='true'
                         />
                       ) : (
@@ -96,7 +115,7 @@ const Header = (): JSX.Element => {
                 leaveFrom='transform translate-y-0 h-fit opacity-100'
                 leaveTo='transform -translate-y-full h-0 opacity-0'
               >
-                <Disclosure.Panel className='duration-3000 h-full w-full bg-main-900 transition-all md:hidden'>
+                <Disclosure.Panel className='duration-3000 h-full w-full bg-primary-500 transition-all md:hidden'>
                   <div className='space-y-1 px-2 pt-14 pb-3 sm:px-3'>
                     {navigation.map((item) => (
                       <div key={item.name}>
