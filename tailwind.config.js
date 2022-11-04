@@ -23,9 +23,12 @@ module.exports = {
       backgroundImage: {
         'home-background': "url('/images/header/home.png')",
         'learning-background': "url('/images/header/learning.png')",
-        'learn-background': "url('/images/header/learn-background.jpg')",
-        'eco-background': "url('/images/header/eco-background.jpg')",
-        'esg-background': "url('/images/header/esg-background.jpg')",
+        // 'learn-background': "url('/images/header/learn-background.jpg')",
+        // 'eco-background': "url('/images/header/eco-background.jpg')",
+        // 'esg-background': "url('/images/header/esg-background.jpg')",
+        'learn-background': "url('/images/test-image/test-header1.jpg')",
+        'eco-background': "url('/images/test-image/test-header2.jpg')",
+        'esg-background': "url('/images/header/eco-background.jpg')",
       },
       boxShadow: {
         cardShadow:
