@@ -1,13 +1,14 @@
 import Link from 'next/link';
-import React, { useCallback, useState } from 'react';
 
-import 'react-toastify/dist/ReactToastify.css';
-
-import Btn from '@/components/btn';
-import toast from '@/components/toast';
-
+// import React, { useCallback, useState } from 'react';
+// import 'react-toastify/dist/ReactToastify.css';
+// import Btn from '@/components/btn';
+// import toast from '@/components/toast';
 import Header from '@/layout/header';
 const Faucet = (): JSX.Element => {
+  /**
+   * 20221104_disable function part before make site live(11/11)_carl 
+
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
 
@@ -37,6 +38,8 @@ const Faucet = (): JSX.Element => {
       });
   }, [checkedAddress, inputAddress, notify]);
 
+  */
+
   return (
     <div>
       <Header />
@@ -48,13 +51,15 @@ const Faucet = (): JSX.Element => {
       >
         <source src='home.mp4' type='video/mp4' />
       </video>
-      {/* <div className='text-4xl text-primary-500 font-light h-screen flex items-center justify-left px-8 md:px-20 lg:px-32'>
+      {/* 
+      <div className='text-4xl text-primary-500 font-light h-screen flex items-center justify-left px-8 md:px-20 lg:px-32'>
         <div>
           <span>The</span>
           <span className='font-bold'> World's First Neocybernetic </span>
           <span>Blockchain</span>
         </div>
-      </div> */}
+      </div>
+      */}
       <div className='flex h-screen items-center justify-center'>
         <div className='text-center'>
           <div className='pb-14 text-4xl font-bold text-primary-900'>
@@ -71,16 +76,25 @@ const Faucet = (): JSX.Element => {
             <input
               className='h-full w-4/5 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none md:w-3/5 xl:w-1/3'
               placeholder='Hexadecimal Address (0x...)'
-              onChange={handleChangeInput}
+              // onChange={handleChangeInput} - 20221104_disable function part before make site live(11/11)_carl
               maxLength={42}
-              value={inputAddress}
+              // value={inputAddress} - 20221104_disable function part before make site live(11/11)_carl
             />
           </div>
+          {/**
+           * 20221104_disable function part before make site live(11/11)_carl
           <Btn
             label='Send request'
             onClick={handleSubmit}
-            className='disabled w-4/5 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50 md:w-3/5 xl:w-1/3'
-          />
+            className='w-4/5 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50 md:w-3/5 xl:w-1/3'
+          /> 
+          */}
+          <button
+            className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
+            disabled
+          >
+            Send Request
+          </button>
         </div>
       </div>
       <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-7 text-primary-500 md:px-10 lg:px-32'>
