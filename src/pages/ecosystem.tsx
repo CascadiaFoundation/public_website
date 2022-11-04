@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
-// import EcoSubHeader from '@/components/ecoSubHeader';
+import EcoSubHeader from '@/components/ecoSubHeader';
 import EmailBox from '@/components/emailBox';
 
 import Layout from '@/layout';
@@ -53,10 +53,10 @@ const Ecosystem = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
-      {/* <EcoSubHeader /> */}
+      <EcoSubHeader />
       <div className='md:px-10'>
         {/* <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden pb-16 md:my-6 lg:my-14'> */}
-        <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden md:mt-6 lg:mt-14'>
+        <div className='m-auto flex w-full flex-col overflow-hidden md:mt-6 lg:mt-14'>
           {list.map((item: itemProps, index: number) => {
             const direction = index % 2 === 0;
             return (
@@ -77,7 +77,7 @@ const Ecosystem = (): JSX.Element => {
                   className={clsx(
                     'flex w-full flex-col items-start justify-center overflow-hidden px-5 transition-all duration-1000 ease-out',
                     animation[index]
-                      ? 'translate-x-0 opacity-100 delay-200'
+                      ? 'translate-x-0 opacity-100 delay-200 lg:px-20'
                       : `${
                           direction ? '-translate-x-full' : 'translate-x-full'
                         } opacity-0`
@@ -88,7 +88,10 @@ const Ecosystem = (): JSX.Element => {
                   </h2>
                   <div className='py-6 text-base text-primary-500'>
                     {item.content.map((p: string, index: number) => (
-                      <p key={index} className='pb-5 last-of-type:pb-0'>
+                      <p
+                        key={index}
+                        className='pb-5 leading-7 last-of-type:pb-0'
+                      >
                         {p}
                       </p>
                     ))}
@@ -113,7 +116,7 @@ const Ecosystem = (): JSX.Element => {
                 >
                   <div className='relative h-[300px] w-full'>
                     <Image
-                      className='absolute'
+                      className='absolute object-cover'
                       src={item.img}
                       alt=''
                       layout='fill'

@@ -37,7 +37,7 @@ itemProps): JSX.Element => {
         </div>
         <div className='text-2xl font-bold text-primary-900'>{title}</div>
       </div>
-      <div className='home-content-base flex-1 py-4 text-primary-500'>
+      <div className='home-content-base flex-1 py-4 leading-7 text-primary-500'>
         {content}
       </div>
       {/* <Btn

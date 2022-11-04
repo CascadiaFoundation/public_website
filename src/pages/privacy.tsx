@@ -150,18 +150,18 @@ const Privacy = (): JSX.Element => {
   return (
     <div>
       <Layout>
-        <div className='space-y-10 px-32 py-48'>
+        <div className='space-y-10 px-10 py-48 lg:px-32'>
           <div className='text-center text-4xl font-black text-primary-900'>
             Privacy Policy
           </div>
-          <div className='text-center text-2xl font-normal text-primary-500'>
+          <div className='text-center text-2xl font-normal leading-10 text-primary-500'>
             This privacy statement discloses the privacy practices for Cascadia
             Foundation.
           </div>
           <div className='space-y-8'>
             {ContentList.map((item, index) => (
               <div key={index}>
-                <div className='text-2xl font-bold text-primary-900'>
+                <div className='text-2xl font-bold leading-[44px] text-primary-900'>
                   {item.title}
                 </div>
                 <div className='space-y-6'>
@@ -172,7 +172,7 @@ const Privacy = (): JSX.Element => {
                     // </div>
                     <div
                       key={index}
-                      className='text-base font-normal text-primary-500'
+                      className='text-base font-normal leading-7 text-primary-500'
                       dangerouslySetInnerHTML={{ __html: desItem }}
                     ></div>
                   ))}
