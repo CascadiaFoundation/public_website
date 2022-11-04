@@ -22,7 +22,7 @@ const list: itemProps[] = [
       'Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We are creating an open-sourced network of services and goods, allowing developers, creators, and organizations to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.',
     ],
     // links: ['Learn about the Creator Economy on Cascadia'],
-    img: '/images/eco-image.png',
+    img: '/images/test-image/test-mini1.jpg',
   },
   {
     title: 'Developers / Creators',
@@ -30,7 +30,7 @@ const list: itemProps[] = [
       "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts developed.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is also viable, regardless of the message's payload or consensus algorithm.",
     ],
     // links: ['Follow progress on sharding'],
-    img: '/images/eco-image.png',
+    img: '/images/test-image/test-mini2.jpg',
   },
   {
     title: 'Our Mission',
@@ -42,7 +42,7 @@ const list: itemProps[] = [
     //   'Octopus Network: App Chain Interoperability',
     //   'All bridge: Bridge from Solana, Terra, Celo & More',
     // ],
-    img: '/images/eco-image.png',
+    img: '/images/test-image/test-mini3.jpg',
   },
 ];
 

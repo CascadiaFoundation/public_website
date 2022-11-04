@@ -41,7 +41,7 @@ const ESGSubHeader = (): JSX.Element => {
   }
 
   return (
-    <div className='flex h-full w-full items-center justify-center bg-eco-background bg-cover bg-center pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
+    <div className='flex h-full w-full items-center justify-center bg-esg-background bg-cover bg-center pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
       <div className='flex items-center justify-center lg:justify-start'>
         <div className='py-15 flex h-full w-3/4 flex-col items-baseline justify-center px-2 px-0 text-center lg:w-full lg:py-0 lg:text-left'>
           <div className='w-full pb-12 text-center text-3xl font-bold text-primary-900 md:text-4xl lg:text-left'>
