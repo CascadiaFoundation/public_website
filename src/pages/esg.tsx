@@ -101,7 +101,9 @@ const Esg = (): JSX.Element => {
                   alt=''
                 />
               </div>
-              <div className='mt-3 text-base'>Environmental</div>
+              <div className='mt-3 text-xl font-semibold leading-7 text-primary-900'>
+                Environmental
+              </div>
             </div>
             <div
               className={clsx(
@@ -117,7 +119,9 @@ const Esg = (): JSX.Element => {
                   alt=''
                 />
               </div>
-              <div className='mt-3 text-base'>Social</div>
+              <div className='mt-3 text-xl font-semibold leading-7 text-primary-900'>
+                Social
+              </div>
             </div>
             <div
               className={clsx(
@@ -135,7 +139,9 @@ const Esg = (): JSX.Element => {
                   alt=''
                 />
               </div>
-              <div className='mt-3 text-base'>Governance</div>
+              <div className='mt-3 text-xl font-semibold leading-7 text-primary-900'>
+                Governance
+              </div>
             </div>
           </InView>
         </div>
