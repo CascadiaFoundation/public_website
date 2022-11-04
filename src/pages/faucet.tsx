@@ -60,16 +60,16 @@ const Faucet = (): JSX.Element => {
           <div className='pb-14 text-4xl font-bold text-primary-900'>
             Faucet
           </div>
-          <div className='flex justify-center pb-7 font-normal text-primary-500'>
-            <span className='w-1/3'>
+          <div className='flex justify-center pb-9 font-normal text-primary-500'>
+            <span className='w-4/5 leading-7 md:w-3/5 xl:w-1/3'>
               You can currently request Cascadia test tokens once every 24
               hours. The faucet is supported by donations, so if you have extra
               tokens, please donate them to others.
             </span>
           </div>
-          <div className='pb-7'>
+          <div className='pb-9'>
             <input
-              className='h-full w-1/3 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none'
+              className='h-full w-4/5 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none md:w-3/5 xl:w-1/3'
               placeholder='Hexadecimal Address (0x...)'
               onChange={handleChangeInput}
               maxLength={42}
@@ -79,11 +79,11 @@ const Faucet = (): JSX.Element => {
           <Btn
             label='Send request'
             onClick={handleSubmit}
-            className='disabled w-1/3 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50'
+            className='disabled w-4/5 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50 md:w-3/5 xl:w-1/3'
           />
         </div>
       </div>
-      <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-12 text-primary-500 md:px-20 lg:px-32'>
+      <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-7 text-primary-500 md:px-10 lg:px-32'>
         <div className='mr-6'>
           <Link href='/privacy'>Privacy Policy</Link>
         </div>

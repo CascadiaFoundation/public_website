@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Inter', ...fontFamily.sans],
+        mont: ['Montserrat', ...fontFamily.sans],
       },
       colors: {
         dark: '#222222',

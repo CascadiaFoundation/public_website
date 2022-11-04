@@ -44,14 +44,14 @@ export default function Home() {
       >
         <source src='home.mp4' type='video/mp4' />
       </video>
-      <div className='justify-left flex h-screen items-center px-8 text-4xl font-light text-primary-500 md:px-20 lg:px-32'>
+      <div className='justify-left flex h-screen items-center px-8 text-4xl font-light text-primary-500 md:px-10 lg:px-32'>
         <div>
           <span>The</span>
           <span className='font-bold'> World&apos;s First Neocybernetic </span>
           <span>Blockchain</span>
         </div>
       </div>
-      <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-12 text-primary-500 md:px-20 lg:px-32'>
+      <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-7 text-primary-500 md:px-10 lg:px-32'>
         <div className='mr-6'>
           <Link href='/privacy'>Privacy Policy</Link>
         </div>

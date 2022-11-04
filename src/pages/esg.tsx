@@ -5,8 +5,8 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
-// import ESGSubHeader from '@/components/esgSubHeader';
 import Btn from '@/components/btn';
+import ESGSubHeader from '@/components/esgSubHeader';
 
 import Layout from '@/layout';
 
@@ -48,7 +48,7 @@ const Esg = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
-      {/* <ESGSubHeader /> */}
+      <ESGSubHeader />
       <div className='m-auto bg-white px-5 md:px-10 lg:px-32'>
         <div className='flex flex-col items-center justify-center pt-16'>
           <InView
@@ -68,7 +68,7 @@ const Esg = (): JSX.Element => {
             <div className='text-center text-2xl font-bold text-primary-900 md:text-left md:text-4xl'>
               Why does it matter?
             </div>
-            <div className='my-6 max-w-[850px] text-center text-base font-normal text-primary-500'>
+            <div className='my-6 max-w-[850px] text-center text-base font-normal leading-8 text-primary-500'>
               Embracing ESG policies is not only ethically right, it&apos;s also
               good for business. Through our cybernetic modeling, we seek to
               build a framework to understand how environmental, social impact,
@@ -165,7 +165,7 @@ const Esg = (): JSX.Element => {
             >
               <div
                 className={clsx(
-                  'flex flex-col items-start justify-between pb-5 md:flex-row md:pb-20',
+                  'flex flex-col justify-between pb-5 md:flex-row md:pb-20',
                   direction ? 'md:flex-row' : 'md:flex-row-reverse'
                 )}
               >
@@ -176,9 +176,9 @@ const Esg = (): JSX.Element => {
                     animation[index] ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                  <div className='relative h-[300px] w-full'>
+                  <div className='relative h-full min-h-[300px] w-full sm:min-h-[0px]'>
                     <Image
-                      className='absolute'
+                      className='absolute object-cover'
                       src={item.image}
                       alt=''
                       layout='fill'
@@ -203,7 +203,7 @@ const Esg = (): JSX.Element => {
                       {item.content.map((p: string, index: number) => (
                         <p
                           key={index}
-                          className='pb-6 leading-[24px] last:pb-0'
+                          className='pb-6 leading-[28px] last:pb-0'
                         >
                           {p}
                         </p>
@@ -217,12 +217,11 @@ const Esg = (): JSX.Element => {
         })}
 
         <div className='gap-x-10 p-6 text-center sm:mt-4 md:p-0'>
-          <h1 className='pb-6 text-2xl font-bold text-primary-900 sm:text-4xl'>
-            Join our community
+          <h1 className='pb-7 text-2xl font-bold text-primary-900 sm:text-4xl'>
+            Join Our Community
           </h1>
-          <div className='pb-12 text-xl font-normal text-primary-500'>
-            Never miss a critical announcement. Don&apos;t just follow -- be
-            involved.
+          <div className='pb-8 text-xl font-normal text-primary-500'>
+            Never miss a critical announcement. Be involved.
           </div>
           <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
             <FontAwesomeIcon
