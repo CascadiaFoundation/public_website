@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Inter', ...fontFamily.sans],
+        mont: ['Montserrat', ...fontFamily.sans],
       },
       colors: {
         dark: '#222222',
@@ -17,10 +18,14 @@ module.exports = {
         'secondary-200': '#F6F7F8',
         'primary-500': '#616771',
         'primary-900': '#18191A',
+        'footer-text': '#B0B3B8',
       },
       backgroundImage: {
         'home-background': "url('/images/header/home.png')",
         'learning-background': "url('/images/header/learning.png')",
+        'learn-background': "url('/images/header/learn-background.jpg')",
+        'eco-background': "url('/images/header/eco-background.jpg')",
+        'esg-background': "url('/images/header/esg-background.jpg')",
       },
       boxShadow: {
         cardShadow:

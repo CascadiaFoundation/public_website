@@ -3,12 +3,15 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
+import EcoSubHeader from '@/components/ecoSubHeader';
+import EmailBox from '@/components/emailBox';
+
 import Layout from '@/layout';
 
 type itemProps = {
   title: string;
   content: string[];
-  links: string[];
+  // links: string[];
   img: string;
 };
 
@@ -16,31 +19,30 @@ const list: itemProps[] = [
   {
     title: 'What is Cascadia?',
     content: [
-      'In order to integrate the greatest aspects of cryptocurrency solutions, we are creating an open-sourced blockchain ecosystem of services and goods. It entails investigating cutting-edge encryption methods, creating consensus mechanisms, and designing software applications that are simple to use. This allows developers, creators, organizations, and people all over the world to join an ecosystem for Web 3.0 that is easy to reach, transparent, and governed by the community.',
+      'Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We are creating an open-sourced network of services and goods, allowing developers, creators, and organizations to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.',
     ],
-    links: ['Learn about the Creator Economy on Cascadia'],
-    img: '/images/no_image.png',
+    // links: ['Learn about the Creator Economy on Cascadia'],
+    img: '/images/eco-image.png',
   },
   {
     title: 'Developers / Creators',
     content: [
-      'The Cascadia Foundation is based on the same security and incentive framework that fueled the development of new Layer 1 application platforms.',
-      'Any-to-any communication across blockchains is made possible by Cascadia, regardless of the message`s payload or consensus algorithm. Cascadia paves the path forward and welcomes all developers and creators. It is based on Solana`s POH, supports all smart contracts developed on the Ethereum Blockchain & has secure, instant, low-cost transaction costs.',
+      "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts developed.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is also viable, regardless of the message's payload or consensus algorithm.",
     ],
-    links: ['Follow progress on sharding'],
-    img: '/images/no_image.png',
+    // links: ['Follow progress on sharding'],
+    img: '/images/eco-image.png',
   },
   {
-    title: 'Our Vision & Mission',
+    title: 'Our Mission',
     content: [
-      'We are perfecting a network that anyone can use. We strive to be adaptable in order to innovate in the space, but we cannot and will not compromise on the security and trust that constitute our basic layer. We build a self-governing, decentralized future that is guided by the group intelligence of the community.',
+      'Cascadia seeks to create a differentiated value proposition by diving deeper than the consensus layer, to explore emergent coordination and incentive alignment in complex adaptive systems.  We will innovative in the space, but will not compromise on the security and trust that constitute our base layer.  Our vision is a self-governing, decentralized future guided by the group intelligence of our community.',
     ],
-    links: [
-      'Aurora: Ethereum Bridge & EVM',
-      'Octopus Network: App Chain Interoperability',
-      'All bridge: Bridge from Solana, Terra, Celo & More',
-    ],
-    img: '/images/no_image.png',
+    // links: [
+    //   'Aurora: Ethereum Bridge & EVM',
+    //   'Octopus Network: App Chain Interoperability',
+    //   'All bridge: Bridge from Solana, Terra, Celo & More',
+    // ],
+    img: '/images/eco-image.png',
   },
 ];
 
@@ -51,8 +53,10 @@ const Ecosystem = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
+      <EcoSubHeader />
       <div className='md:px-10'>
-        <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden pb-16 md:my-6 lg:my-14'>
+        {/* <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden pb-16 md:my-6 lg:my-14'> */}
+        <div className='m-auto flex w-full flex-col overflow-hidden md:mt-6 lg:mt-14'>
           {list.map((item: itemProps, index: number) => {
             const direction = index % 2 === 0;
             return (
@@ -73,7 +77,7 @@ const Ecosystem = (): JSX.Element => {
                   className={clsx(
                     'flex w-full flex-col items-start justify-center overflow-hidden px-5 transition-all duration-1000 ease-out',
                     animation[index]
-                      ? 'translate-x-0 opacity-100 delay-200'
+                      ? 'translate-x-0 opacity-100 delay-200 lg:px-20'
                       : `${
                           direction ? '-translate-x-full' : 'translate-x-full'
                         } opacity-0`
@@ -84,13 +88,16 @@ const Ecosystem = (): JSX.Element => {
                   </h2>
                   <div className='py-6 text-base text-primary-500'>
                     {item.content.map((p: string, index: number) => (
-                      <p key={index} className='pb-5 last-of-type:pb-0'>
+                      <p
+                        key={index}
+                        className='pb-5 leading-7 last-of-type:pb-0'
+                      >
                         {p}
                       </p>
                     ))}
                   </div>
                   <div className='flex w-full flex-col pb-5 text-main-900 md:pb-0'>
-                    {item.links.map((link) => (
+                    {/* {item.links.map((link) => (
                       <a
                         key={link}
                         className='w-full overflow-hidden text-ellipsis whitespace-nowrap py-1 text-right hover:underline md:text-left'
@@ -98,7 +105,7 @@ const Ecosystem = (): JSX.Element => {
                       >
                         {link}
                       </a>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
                 <div
@@ -109,7 +116,7 @@ const Ecosystem = (): JSX.Element => {
                 >
                   <div className='relative h-[300px] w-full'>
                     <Image
-                      className='absolute'
+                      className='absolute object-cover'
                       src={item.img}
                       alt=''
                       layout='fill'
@@ -119,6 +126,7 @@ const Ecosystem = (): JSX.Element => {
               </InView>
             );
           })}
+          <EmailBox />
         </div>
       </div>
     </Layout>

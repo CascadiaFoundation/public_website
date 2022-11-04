@@ -7,23 +7,23 @@ import AccordionItem from '@/components/acordionItem';
 const itemList = [
   {
     title: 'RESOURCES',
-    list: ['Whitepaper', 'Technology', 'FAQs', 'Academy'],
+    list: ['Whitepaper', 'Technology', 'FAQs'],
   },
   {
     title: 'DEVELOPERS',
-    list: ['Documentation', 'Github', 'Office Hours', 'Grants', 'Bug Bounty'],
+    list: ['Documentation', 'Github'],
   },
   {
     title: 'FOUNDATION',
-    list: ['About', 'Ecosystem', 'Careers', 'Contact Us'],
+    list: ['Careers', 'Contact Us'],
   },
-  {
-    title: 'YOUR PATH',
-    list: ['Developer', 'Founder / Creator', 'Community'],
-  },
+  // {
+  //   title: 'YOUR PATH',
+  //   list: ['Developer', 'Founder / Creator', 'Community'],
+  // },
   {
     title: 'SOCIAL',
-    list: ['Developer Path', 'Founder Path', 'Community Path'],
+    list: ['Discord', 'Twitter'],
   },
 ];
 const Footer = (): JSX.Element => {
@@ -32,13 +32,14 @@ const Footer = (): JSX.Element => {
     setCollapsedIndex((prev) => (prev === index ? undefined : index));
   };
   return (
-    <div className='bg-main-900 p-[5%] pb-0'>
-      <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-6 lg:gap-y-0'>
-        <div className='grid grid-cols-2 sm:col-span-2 sm:block lg:col-span-1'>
-          <div className='cursor-pointer pb-6 text-2xl font-bold uppercase text-white'>
+    // <div className='bg-primary-900 p-[5%] pb-0'>
+    <div className='bg-primary-900 px-6 pt-16 pb-0 md:px-10 lg:px-16 xl:px-32'>
+      <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-5 lg:gap-y-0'>
+        <div className='grid grid-cols-2 sm:col-span-1 sm:block lg:col-span-1'>
+          <div className='cursor-pointer pb-6 font-mont text-2xl font-bold uppercase text-white'>
             CASCADIA
           </div>
-          <div className='capitaliz flex flex-col gap-1 text-right text-base font-normal text-secondary-100/80'>
+          {/* <div className='capitaliz flex flex-col gap-1 text-right text-base font-normal text-secondary-100/80'>
             <div className='py-[2px] hover:text-white sm:text-left'>
               <Link href='#'>Block Explorer</Link>
             </div>
@@ -54,12 +55,12 @@ const Footer = (): JSX.Element => {
             <div className='py-[2px] hover:text-white sm:text-left'>
               <Link href='/#'>Governance</Link>
             </div>
-          </div>
+          </div> */}
         </div>
         {itemList.map((item) => (
           <div
             key={item.title}
-            className='col-span-2 hidden sm:block lg:col-span-1'
+            className='col-span-1 hidden sm:block lg:col-span-1'
           >
             <div className='cursor-pointer pb-4 text-base font-semibold uppercase text-white'>
               {item.title}
@@ -68,7 +69,7 @@ const Footer = (): JSX.Element => {
               {item.list.map((li) => (
                 <li
                   key={li}
-                  className='py-[2px] text-base font-normal text-secondary-100/80 hover:text-white'
+                  className='py-[2px] text-base font-normal text-footer-text hover:text-white'
                 >
                   <a href='#'>{li}</a>
                 </li>
@@ -103,17 +104,17 @@ const Footer = (): JSX.Element => {
       </div>
 
       <div className='flex flex-col items-center justify-between gap-4 pt-20 pb-6 text-base font-normal sm:flex-row sm:gap-0'>
-        <div className='flex items-center  gap-6'>
-          <a href='#' className='text-secondary-100 hover:text-white'>
+        <div className='flex items-center gap-6 text-footer-text'>
+          <Link href='/privacy' className='text-footer-text hover:text-white'>
             Privacy Policy
-          </a>
-          <a href='#' className='text-secondary-100 hover:text-white'>
+          </Link>
+          <Link href='/terms' className='text-footer-text hover:text-white'>
             Terms of Use
-          </a>
+          </Link>
         </div>
-        <div className='cursor-pointer text-secondary-100'>
+        {/* <div className='cursor-pointer text-secondary-100'>
           Cascadia Foundation
-        </div>
+        </div> */}
       </div>
     </div>
   );
