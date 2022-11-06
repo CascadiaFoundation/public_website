@@ -42,16 +42,16 @@ const LearnSubHeader = (): JSX.Element => {
   }
 
   return (
-    <div className='flex h-full w-full items-center justify-center bg-learn-background bg-cover bg-center pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
-      <div className='flex items-center justify-center lg:justify-start'>
-        <div className='py-15 flex h-full w-3/4 flex-col items-baseline justify-center px-2 px-0 text-center lg:w-full lg:py-0 lg:text-left'>
-          <div className='w-full pb-12 text-center text-3xl font-bold text-primary-900 md:text-4xl lg:text-left'>
+    <div className='flex h-full w-full items-center justify-center bg-learn-background bg-cover bg-center px-10 pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
+      <div className='flex items-center lg:justify-start'>
+        <div className='py-15 flex h-full w-full flex-col items-baseline px-2 px-0 lg:w-3/4 lg:w-full lg:py-0 lg:text-left'>
+          <div className='w-full pb-12 text-3xl font-bold text-primary-900 md:text-4xl lg:text-left'>
             {title}
           </div>
           <div className='w-full pb-12 text-base leading-8 text-primary-500 lg:max-w-[600px]'>
             {content}
           </div>
-          <div className='flex w-full flex-col items-center justify-center text-center sm:flex-row lg:justify-start'>
+          <div className='flex w-full flex-col text-center sm:flex-row lg:justify-start'>
             <Btn
               className='mb-4 w-full border-primary-900 bg-primary-900 text-white transition-all hover:bg-white hover:text-primary-900 sm:mr-6 sm:w-[200px] md:mb-0 md:w-fit'
               label='Develop with Cascadia'
