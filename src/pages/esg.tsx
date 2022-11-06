@@ -25,7 +25,7 @@ const list: itemProps[] = [
     ],
   },
   {
-    image: '/images/social-image.png',
+    image: '/images/social-image.jpg',
     title: 'Social',
     content: [
       `Applying new technologies carries risks that need to be weighed against potential rewards.  In order to address issues regarding network scalability and processing rates, education and knowledge is crucial.  Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that will support social research and development.`,
@@ -54,7 +54,7 @@ const Esg = (): JSX.Element => {
           <InView
             as='div'
             className={clsx(
-              'flex h-full w-full flex-col items-center justify-center transition-all duration-500',
+              'flex h-full w-full flex-col justify-center transition-all duration-500',
               animation[100]
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-1/2 opacity-0'
@@ -65,10 +65,10 @@ const Esg = (): JSX.Element => {
               setAnimation((state) => ({ ...state, [100]: inView }))
             }
           >
-            <div className='text-center text-2xl font-bold text-primary-900 md:text-left md:text-4xl'>
+            <div className='text-2xl font-bold text-primary-900 md:text-left md:text-4xl'>
               Why does it matter?
             </div>
-            <div className='my-6 max-w-[850px] text-center text-base font-normal leading-8 text-primary-500'>
+            <div className='my-6 max-w-[850px] text-base font-normal leading-8 text-primary-500'>
               Embracing ESG policies is not only ethically right, it&apos;s also
               good for business. Through our cybernetic modeling, we seek to
               build a framework to understand how environmental, social impact,
@@ -202,10 +202,10 @@ const Esg = (): JSX.Element => {
                           } opacity-0`
                     )}
                   >
-                    <p className='w-full pb-6 text-center text-2xl font-semibold text-primary-900 sm:text-left'>
+                    <p className='w-full pb-6 text-2xl font-semibold text-primary-900 sm:text-left'>
                       {item.title}
                     </p>
-                    <div className='pb-5 text-center text-base font-normal text-primary-500 sm:text-left'>
+                    <div className='pb-5 text-base font-normal text-primary-500 sm:text-left'>
                       {item.content.map((p: string, index: number) => (
                         <p
                           key={index}
