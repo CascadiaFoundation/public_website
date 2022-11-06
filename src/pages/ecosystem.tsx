@@ -27,7 +27,7 @@ const list: itemProps[] = [
   {
     title: 'Developers / Creators',
     content: [
-      "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts developed.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is also viable, regardless of the message's payload or consensus algorithm.",
+      "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is also viable, regardless of the message's payload or consensus algorithm.",
     ],
     // links: ['Follow progress on sharding'],
     img: '/images/test-image/test-mini2.jpg',

@@ -24,16 +24,21 @@ const navigation: btnProps[] = [
   {
     name: 'Community',
     link: '/community',
-    href: 'https://discord.gg/theforeverwar',
+    href: 'https://discord.gg/cascadiafoundation',
   },
   {
     name: 'Blog',
     link: '/blog',
-    href: 'https://medium.com/@sophon1004moo/about',
+    href: 'https://medium.com/@CascadiaFoundation',
   },
   {
     name: 'Faucet',
     link: '/faucet',
+  },
+  {
+    name: 'Social',
+    link: '/social',
+    href: 'https://www.twitter.com/@CascadiaSystems',
   },
 ];
 
@@ -53,20 +58,19 @@ const Header = (): JSX.Element => {
                       <Link href='/'>
                         <div className='flex cursor-pointer items-center text-xl font-semibold text-white'>
                           <Image
-                            className='absolute'
                             src='/images/logo.png'
                             // layout='fill'
                             width='36'
                             height='30'
                             alt='logo'
                           />
-                          <span className='pl-2 text-primary-900'>
+                          <span className='pl-2 font-mont text-primary-900'>
                             Cascadia
                           </span>
                         </div>
                       </Link>
                     </div>
-                    <div className='ml-10 hidden h-full items-baseline space-x-4 md:flex'>
+                    <div className='ml-10 hidden h-full items-baseline md:flex lg:space-x-4'>
                       {navigation.map((item: btnProps) => (
                         <NavBtn key={item.name} {...item} />
                       ))}
@@ -107,7 +111,7 @@ const Header = (): JSX.Element => {
                 ></div>
               </Transition>
               <Transition
-                className='absolute inset-x-0 top-0 z-20'
+                className='top-30 absolute inset-x-0 z-20'
                 enter='transition duration-200 ease-out'
                 enterFrom='transform -translate-y-full h-0 opacity-0'
                 enterTo='transform translate-y-0 h-fit opacity-100'
@@ -115,13 +119,13 @@ const Header = (): JSX.Element => {
                 leaveFrom='transform translate-y-0 h-fit opacity-100'
                 leaveTo='transform -translate-y-full h-0 opacity-0'
               >
-                <Disclosure.Panel className='duration-3000 h-full w-full bg-primary-500 transition-all md:hidden'>
-                  <div className='space-y-1 px-2 pt-14 pb-3 sm:px-3'>
+                <Disclosure.Panel className='duration-3000 h-full w-full bg-white transition-all md:hidden'>
+                  <div className='space-y-1 p-3 sm:px-3'>
                     {navigation.map((item) => (
                       <div key={item.name}>
                         {item.href ? (
                           <a href={item.href} target='_blank' rel='noreferrer'>
-                            <Disclosure.Button className='block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900'>
+                            <Disclosure.Button className='block w-full rounded-md px-3 py-2 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900'>
                               {item.name}
                             </Disclosure.Button>
                           </a>
@@ -129,7 +133,7 @@ const Header = (): JSX.Element => {
                           <Link href={item.link}>
                             <Disclosure.Button
                               className={clsx(
-                                'block w-full rounded-md px-3 py-2 text-base font-medium text-secondary-100 transition-all hover:bg-white hover:text-main-900',
+                                'block w-full rounded-md px-3 py-2 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900',
                                 pathname === item.link && 'text-white'
                               )}
                             >

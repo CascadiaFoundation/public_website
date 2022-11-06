@@ -1,10 +1,11 @@
-import Link from 'next/link';
+import Footer from '@/layout/footer';
+import Header from '@/layout/header';
+// import Link from 'next/link';
 
 // import React, { useCallback, useState } from 'react';
 // import 'react-toastify/dist/ReactToastify.css';
 // import Btn from '@/components/btn';
 // import toast from '@/components/toast';
-import Header from '@/layout/header';
 const Faucet = (): JSX.Element => {
   /**
    * 20221104_disable function part before make site live(11/11)_carl 
@@ -68,8 +69,7 @@ const Faucet = (): JSX.Element => {
           <div className='flex justify-center pb-9 font-normal text-primary-500'>
             <span className='w-4/5 leading-7 md:w-3/5 xl:w-1/3'>
               You can currently request Cascadia test tokens once every 24
-              hours. The faucet is supported by donations, so if you have extra
-              tokens, please donate them to others.
+              hours. The faucet is supported by donations.
             </span>
           </div>
           <div className='pb-9'>
@@ -97,14 +97,15 @@ const Faucet = (): JSX.Element => {
           </button>
         </div>
       </div>
-      <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-7 text-primary-500 md:px-10 lg:px-32'>
+      <Footer />
+      {/* <div className='text-normal absolute bottom-0 left-0 flex items-center px-8 py-7 text-primary-500 md:px-10 lg:px-32'>
         <div className='mr-6'>
           <Link href='/privacy'>Privacy Policy</Link>
         </div>
         <div>
           <Link href='/terms'>Terms of Use</Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
   // return (

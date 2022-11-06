@@ -7,15 +7,42 @@ import AccordionItem from '@/components/acordionItem';
 const itemList = [
   {
     title: 'RESOURCES',
-    list: ['Whitepaper', 'Technology', 'FAQs'],
+    list: [
+      {
+        name: 'whitepaper',
+        link: '',
+      },
+      {
+        name: 'technology',
+        link: 'https://app.gitbook.com',
+      },
+    ],
   },
   {
     title: 'DEVELOPERS',
-    list: ['Documentation', 'Github'],
+    list: [
+      {
+        name: 'Documentation',
+        link: '',
+      },
+      {
+        name: 'Github',
+        link: 'https://github.com/CascadiaFoundation',
+      },
+    ],
   },
   {
     title: 'FOUNDATION',
-    list: ['Careers', 'Contact Us'],
+    list: [
+      {
+        name: 'Careers',
+        link: '',
+      },
+      {
+        name: 'Contact Us',
+        link: '',
+      },
+    ],
   },
   // {
   //   title: 'YOUR PATH',
@@ -23,7 +50,16 @@ const itemList = [
   // },
   {
     title: 'SOCIAL',
-    list: ['Discord', 'Twitter'],
+    list: [
+      {
+        name: 'Discord',
+        link: 'https://discord.gg/cascadiafoundation',
+      },
+      {
+        name: 'Twitter',
+        link: 'https://www.twitter.com/@CascadiaSystems',
+      },
+    ],
   },
 ];
 const Footer = (): JSX.Element => {
@@ -36,9 +72,11 @@ const Footer = (): JSX.Element => {
     <div className='bg-primary-900 px-6 pt-16 pb-0 md:px-10 lg:px-16 xl:px-32'>
       <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-5 lg:gap-y-0'>
         <div className='grid grid-cols-2 sm:col-span-1 sm:block lg:col-span-1'>
-          <div className='cursor-pointer pb-6 font-mont text-2xl font-bold uppercase text-white'>
-            CASCADIA
-          </div>
+          <Link href='/'>
+            <div className='cursor-pointer pb-6 font-mont text-2xl font-bold text-white'>
+              Cascadia
+            </div>
+          </Link>
           {/* <div className='capitaliz flex flex-col gap-1 text-right text-base font-normal text-secondary-100/80'>
             <div className='py-[2px] hover:text-white sm:text-left'>
               <Link href='#'>Block Explorer</Link>
@@ -66,12 +104,12 @@ const Footer = (): JSX.Element => {
               {item.title}
             </div>
             <ul className='capitaliz text-base text-secondary-100'>
-              {item.list.map((li) => (
+              {item.list.map((li, index) => (
                 <li
-                  key={li}
+                  key={index}
                   className='py-[2px] text-base font-normal text-footer-text hover:text-white'
                 >
-                  <a href='#'>{li}</a>
+                  <a href={li.link ? li.link : '#'}>{li.name}</a>
                 </li>
               ))}
             </ul>
@@ -88,12 +126,12 @@ const Footer = (): JSX.Element => {
                 onClick={() => handleCollapse(index)}
               >
                 <ul className='pl-6 text-left'>
-                  {item.list.map((li) => (
+                  {item.list.map((li, index) => (
                     <li
-                      key={li}
+                      key={index}
                       className='py-2 text-base font-thin text-secondary-100/80 hover:text-white'
                     >
-                      <a href='#'>{li}</a>
+                      <a href={li.link}>{li.name}</a>
                     </li>
                   ))}
                 </ul>

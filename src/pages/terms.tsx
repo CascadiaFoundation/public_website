@@ -302,13 +302,13 @@ const Privacy = (): JSX.Element => {
     <div>
       <Layout>
         <div className='space-y-10 px-10 py-48 lg:px-32'>
-          <div className='text-center text-4xl font-black text-primary-900'>
+          <div className='text-base font-black text-primary-900'>
             Terms and Conditions
           </div>
           <div className='space-y-8'>
             {ContentList.map((item, index) => (
               <div key={index}>
-                <div className='pb-5 text-2xl font-bold leading-10 text-primary-900'>
+                <div className='pb-5 text-base font-bold leading-10 text-primary-900'>
                   {item.title}
                 </div>
                 <div className='space-y-6'>
