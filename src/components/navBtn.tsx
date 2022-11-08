@@ -28,7 +28,7 @@ const NavBtn = ({ name, href, link, onClick }: btnProps): JSX.Element => {
           className={clsx(
             "hover:text-red inline-flex h-full cursor-pointer items-center text-base font-normal before:absolute before:top-0 before:h-[2px] before:w-full before:-translate-y-full before:rounded-sm before:opacity-0 before:transition-all before:content-[''] hover:before:translate-y-0 hover:before:opacity-100",
             pathname === link
-              ? 'font-bold text-primary-900 before:translate-y-0 before:opacity-100'
+              ? 'font-bold text-highlight before:translate-y-0 before:opacity-100'
               : 'text-primary-500'
           )}
           onClick={handleClick(onClick)}

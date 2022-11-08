@@ -1,11 +1,12 @@
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
-import Btn from '@/components/btn';
+import EmailBox from '@/components/emailBox';
+// import Btn from '@/components/btn';
 import ESGSubHeader from '@/components/esgSubHeader';
 
 import Layout from '@/layout';
@@ -18,24 +19,24 @@ type itemProps = {
 
 const list: itemProps[] = [
   {
-    image: '/images/environmental-image.png',
+    image: '/images/environmental-image.jpg',
     title: 'Environmental',
     content: [
-      `The cryptocurrency industry must learn to collaborate with businesses and governments as the world continues to address these massive environmental challenges.  Revolutionary blockchain-based initiatives enhance corporate and community productivity while lower inequality and decreasing pollution.`,
+      `The cryptocurrency industry must learn to collaborate with businesses and governments as the world address environmental challenges.  Revolutionary blockchain-based initiatives enhance corporate and community productivity while lowering inequality and decreasing pollution.`,
     ],
   },
   {
     image: '/images/social-image.jpg',
     title: 'Social',
     content: [
-      `Applying new technologies carries risks that need to be weighed against potential rewards.  In order to address issues regarding network scalability and processing rates, education and knowledge is crucial.  Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that will support social research and development.`,
+      `New technologies carry risks that need to be weighed against potential rewards.  In order to address issues regarding network scalability and processing rates, education and knowledge is crucial.  Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that support social research and development.`,
     ],
   },
   {
-    image: '/images/governance-image.png',
+    image: '/images/governance-image.jpg',
     title: 'Governance',
     content: [
-      `Cascadia's technology can be used to create collaborative networks and incentive alignment amongst ordinarily incompatible parties.  Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
+      `Cascadia's technology stack can be used to create collaborative networks and align incentives amongst ordinarily incompatible parties on a blockchain network. Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
     ],
   },
 ];
@@ -49,8 +50,8 @@ const Esg = (): JSX.Element => {
   return (
     <Layout>
       <ESGSubHeader />
-      <div className='m-auto bg-white px-5 md:px-10 lg:px-32'>
-        <div className='flex flex-col items-center justify-center pt-16'>
+      <div className='m-auto bg-white px-10 lg:px-32'>
+        <div className='flex flex-col items-center justify-center pt-12 md:pt-24'>
           <InView
             as='div'
             className={clsx(
@@ -65,21 +66,23 @@ const Esg = (): JSX.Element => {
               setAnimation((state) => ({ ...state, [100]: inView }))
             }
           >
-            <div className='text-2xl font-bold text-primary-900 md:text-left md:text-4xl'>
+            <div className='text-2xl font-bold text-primary-900 md:text-center md:text-4xl'>
               Why does it matter?
             </div>
-            <div className='my-6 max-w-[850px] text-base font-normal leading-8 text-primary-500'>
-              Embracing ESG policies is not only ethically right, it&apos;s also
-              good for business. Through our cybernetic modeling, we seek to
-              build a framework to understand how environmental, social impact,
-              and governance structures, can be adjusted to optimize stakeholder
-              well-being.
+            <div className='flex items-center justify-center'>
+              <div className='my-6 max-w-[850px] text-left text-base font-normal leading-8 text-primary-500 md:text-center'>
+                Embracing ESG policies is not only ethically right, it&apos;s
+                also good for business. By applying the science of cybernetics
+                to incentive alignment, we seek to understand how environmental,
+                social impact, and governance structures, can be adjusted to
+                optimize stakeholder well-being.
+              </div>
             </div>
           </InView>
           <InView
             as='div'
             className='grid grid-cols-1 px-2 py-6 sm:grid-cols-3'
-            rootMargin='-50px'
+            rootMargin='50px'
             threshold={0}
             onChange={(inView) =>
               setAnimation((state) => ({ ...state, [50]: inView }))
@@ -155,7 +158,7 @@ const Esg = (): JSX.Element => {
         </div>
       </div> */}
 
-      <div className='bg-white pt-24'>
+      <div className='bg-white pt-12 lg:pt-24'>
         {list.map((item: itemProps, index: number) => {
           const direction = index % 2 === 0;
           return (
@@ -171,7 +174,7 @@ const Esg = (): JSX.Element => {
             >
               <div
                 className={clsx(
-                  'flex flex-col justify-between pb-5 md:flex-row md:pb-20',
+                  'flex flex-col justify-between pb-12 md:flex-row lg:pb-20',
                   direction ? 'md:flex-row' : 'md:flex-row-reverse'
                 )}
               >
@@ -191,7 +194,7 @@ const Esg = (): JSX.Element => {
                     />
                   </div>
                 </div>
-                <div className='flex w-full flex-col items-start justify-center overflow-hidden pl-0 pt-16 text-primary-500 md:w-1/2 md:pl-5 md:pt-0'>
+                <div className='flex w-full flex-col items-start justify-center overflow-hidden pt-12 text-primary-500 md:w-1/2 md:pt-0 md:pl-5 md:pt-0'>
                   <div
                     className={clsx(
                       'h-full w-full transition-all delay-200 duration-500 ease-out',
@@ -202,10 +205,10 @@ const Esg = (): JSX.Element => {
                           } opacity-0`
                     )}
                   >
-                    <p className='w-full pb-6 text-2xl font-semibold text-primary-900 sm:text-left'>
+                    <p className='w-full pb-12 text-2xl font-semibold text-primary-900 sm:text-left md:pb-6'>
                       {item.title}
                     </p>
-                    <div className='pb-5 text-base font-normal text-primary-500 sm:text-left'>
+                    <div className='pb-0 text-base font-normal text-primary-500 sm:text-left md:pb-5'>
                       {item.content.map((p: string, index: number) => (
                         <p
                           key={index}
@@ -221,31 +224,31 @@ const Esg = (): JSX.Element => {
             </InView>
           );
         })}
-
-        <div className='gap-x-10 p-6 text-center sm:mt-4 md:p-0'>
-          <h1 className='pb-7 text-2xl font-bold text-primary-900 sm:text-4xl'>
-            Join Our Community
-          </h1>
-          <div className='pb-8 text-xl font-normal text-primary-500'>
-            Never miss a critical announcement. Be involved.
-          </div>
-          <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className='absolute inset-y-0 left-0 m-auto p-2 text-base text-primary-500'
-            />
-            <input
-              className='h-full w-full p-2 pl-10 focus:outline-none md:placeholder:text-primary-500'
-              placeholder='Receive email updates'
-            />
-            <Btn
-              label='Subscribe'
-              className='absolute inset-y-0 right-0 border-0 bg-primary-900/50 text-secondary-200 hover:bg-primary-900/80'
-            />
-          </div>
-        </div>
       </div>
-      <div className='h-24 bg-white'></div>
+      {/* <div className='gap-x-10 p-6 text-center sm:mt-4 md:p-0'>
+        <h1 className='pb-7 text-2xl font-bold text-primary-900 sm:text-4xl'>
+          Join Our Community
+        </h1>
+        <div className='pb-8 text-xl font-normal text-primary-500'>
+          Never miss a critical announcement. Be involved.
+        </div>
+        <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className='absolute inset-y-0 left-0 m-auto p-2 text-base text-primary-500'
+          />
+          <input
+            className='w-[65%] xs:w-full p-2 pl-10 focus:outline-none md:placeholder:text-primary-500'
+            placeholder='Receive email updates'
+          />
+          <Btn
+            label='Subscribe'
+            className='absolute inset-y-0 right-0 border-0 bg-primary-900/50 text-secondary-200 hover:bg-primary-900/80'
+          />
+        </div>
+      </div> */}
+      <EmailBox />
+      {/* <div className='h-24 bg-white'></div> */}
     </Layout>
   );
 };

@@ -9,11 +9,11 @@ const itemList = [
     title: 'RESOURCES',
     list: [
       {
-        name: 'whitepaper',
+        name: 'Whitepaper',
         link: '',
       },
       {
-        name: 'technology',
+        name: 'Technology',
         link: 'https://app.gitbook.com',
       },
     ],
@@ -69,7 +69,7 @@ const Footer = (): JSX.Element => {
   };
   return (
     // <div className='bg-primary-900 p-[5%] pb-0'>
-    <div className='bg-primary-900 px-6 pt-16 pb-0 md:px-10 lg:px-16 xl:px-32'>
+    <div className='bg-highlight px-6 pt-16 pb-0 md:px-10 lg:px-16 xl:px-32'>
       <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-5 lg:gap-y-0'>
         <div className='grid grid-cols-2 sm:col-span-1 sm:block lg:col-span-1'>
           <Link href='/'>

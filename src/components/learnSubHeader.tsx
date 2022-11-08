@@ -23,9 +23,9 @@ const LearnSubHeader = (): JSX.Element => {
       break;
     case '/ecosystem':
       title =
-        'A Foundation for Developers<br/>A Decentralized Network for Everyone';
+        'A Foundation for Developers<div style="height: 16px;"></div>A Decentralized Network for Everyone';
       content =
-        'Cascadia is revolutionizing the crypto world of financial transactions. Embracing decentralized finance solutions by introducing EVM compatibility and enabling Ethereum Dapp developers to effortlessly port their projects away.';
+        "Cascadia supports EVM-compatible decentralized finance solutions allowing Ethereum developers to easily port their projects to the industry's most collaborative blockchain.";
       break;
     case '/esg':
       title = 'Cascadia adheres the ESG model';
@@ -42,7 +42,7 @@ const LearnSubHeader = (): JSX.Element => {
   }
 
   return (
-    <div className='flex h-full w-full items-center justify-center bg-learn-background bg-cover bg-center px-10 pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
+    <div className='flex h-full w-full items-center justify-center bg-learn-background bg-cover bg-center px-10 pb-12 pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
       <div className='flex items-center lg:justify-start'>
         <div className='py-15 flex h-full w-full flex-col items-baseline px-2 px-0 lg:w-3/4 lg:w-full lg:py-0 lg:text-left'>
           <div className='w-full pb-12 text-3xl font-bold text-primary-900 md:text-4xl lg:text-left'>
@@ -53,12 +53,12 @@ const LearnSubHeader = (): JSX.Element => {
           </div>
           <div className='flex w-full flex-col text-center sm:flex-row lg:justify-start'>
             <Btn
-              className='mb-4 w-full border-primary-900 bg-primary-900 text-white transition-all hover:bg-white hover:text-primary-900 sm:mr-6 sm:w-[200px] md:mb-0 md:w-fit'
+              className='mb-4 w-full border-highlight bg-highlight text-white transition-all hover:bg-white hover:text-highlight sm:mr-6 sm:w-[200px] md:mb-4 md:mb-0 md:w-fit'
               label='Develop with Cascadia'
               onClick={() => router.push('/ecosystem')}
             />
             <Btn
-              className='mb-4 w-full border-primary-900 bg-transparent text-primary-900 hover:bg-primary-900 hover:text-white sm:w-[200px] md:mb-0 md:w-fit'
+              className='mb-0 w-full border-highlight bg-transparent text-highlight hover:bg-highlight hover:text-white sm:w-[200px] md:mb-4 md:mb-0 md:w-fit'
               label='Explore solutions'
               onClick={() => router.push('/esg')}
             />

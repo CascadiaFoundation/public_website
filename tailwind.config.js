@@ -6,6 +6,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '355px',
+      },
       fontFamily: {
         primary: ['Inter', ...fontFamily.sans],
         mont: ['Montserrat', ...fontFamily.sans],
@@ -19,6 +22,7 @@ module.exports = {
         'primary-500': '#616771',
         'primary-900': '#18191A',
         'footer-text': '#B0B3B8',
+        highlight: '#003264',
       },
       backgroundImage: {
         'home-background': "url('/images/header/home.png')",
@@ -26,6 +30,8 @@ module.exports = {
         'learn-background': "url('/images/header/learn-background.jpg')",
         'eco-background': "url('/images/header/eco-background.jpg')",
         'esg-background': "url('/images/header/esg-background.jpg')",
+        'faucet-background': "url('/faucet-background.jpg')",
+        'ai-background': "url('/images/AIface-image.jpg')",
         // 'learn-background': "url('/images/test-image/test-header1.jpg')",
         // 'eco-background': "url('/images/test-image/test-header2.jpg')",
         // 'esg-background': "url('/images/header/eco-background.jpg')",
