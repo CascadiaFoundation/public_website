@@ -25,7 +25,7 @@ itemProps): JSX.Element => {
       )}
     >
       <div className='flex items-center gap-4'>
-        <div className='flex'>
+        <div className='flex cursor-pointer'>
           {/* <FontAwesomeIcon icon={faImages} className='h-6 w-6 text-white' /> */}
           <Image
             src={iconUrl}

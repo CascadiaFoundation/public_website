@@ -25,7 +25,7 @@ const cardList = [
   {
     title: 'Reflexivity',
     content:
-      'Cascadia is rich in internal and external feedback, both negative and positive, leading to reflexive phenomena such as self-organization, self-production, and self-regulation.',
+      'Cascadia is rich in internal and external feedback, leading to reflexive phenomena such as self-organization, self-production, and self-regulation.',
     iconUrl: '/images/icon/reflexivity-icon.svg',
     // button: 'Explore Community',
   },
@@ -36,21 +36,23 @@ const Learn = (): JSX.Element => {
     <Layout>
       <LearnSubHeader />
       <div className='m-auto px-10 lg:px-32'>
-        <div className='mt-24'>
-          <div className='pb-7 text-4xl font-bold text-primary-900 sm:text-4xl md:text-left'>
+        <div className='mt-12 lg:mt-24'>
+          <div className='pb-12 text-4xl font-bold text-primary-900 sm:text-4xl md:text-left'>
             The Blockchain Future
           </div>
           <div className='text-base font-normal leading-7 text-primary-500 md:text-left'>
-            Cascadia is a purpose-built Layer-1 EVM compatible based on Cosmos
-            SDK architecture. Built for fairness, speed, and sustainability, the
-            Cascadia blockchain offers a unified solution to cross-chain
-            communications that satisfies the requirements of platform
-            developers and dapp builders.
+            Cascadia is a purpose-built Layer-1 EVM compatible platform based on
+            Cosmos SDK architecture. Built for fairness, speed, and
+            sustainability, the Cascadia blockchain offers a unified solution to
+            cross-chain communications that satisfies the requirements of
+            platform developers.
           </div>
         </div>
 
-        <div className='mt-24'>
-          <div className='pb-7 text-4xl font-bold text-primary-900 sm:text-4xl md:text-left'>
+        <div className='mt-12 h-[200px] bg-ai-background bg-cover bg-center md:h-[400px] lg:mt-24 lg:h-[582px]'></div>
+
+        <div className='mt-12 lg:mt-24'>
+          <div className='pb-12 text-base font-normal text-primary-500 sm:text-base md:text-left'>
             As a complex adaptive system (CAS), the Cascadia blockchain retains
             the following characteristics:
           </div>
@@ -59,7 +61,7 @@ const Learn = (): JSX.Element => {
               <Card key={item.title} {...item} />
             ))}
           </div>
-          <div className='space-y-4 lg:hidden lg:gap-6'>
+          <div className='space-y-12 lg:hidden lg:gap-6'>
             {cardList.map((item) => (
               <Card key={item.title} {...item} />
             ))}
@@ -86,7 +88,7 @@ const Learn = (): JSX.Element => {
             />
           </div>
         </div> */}
-        <EmailBox />
+
         {/* <div className='my-5 gap-x-10 p-6 text-center sm:my-24 md:p-0'>
           <h1 className='pb-7 text-2xl font-bold text-primary-900 sm:text-4xl'>
             Join our community
@@ -126,6 +128,7 @@ const Learn = (): JSX.Element => {
           </div>
         </div> */}
       </div>
+      <EmailBox />
     </Layout>
   );
 };
