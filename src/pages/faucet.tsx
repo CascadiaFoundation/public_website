@@ -42,16 +42,16 @@ const Faucet = (): JSX.Element => {
   */
 
   return (
-    <div>
+    <div className='bg-faucet-background bg-cover'>
       <Header />
-      <video
+      {/* <video
         loop
         autoPlay
         muted
         className='absolute left-0 right-0 top-0 bottom-0 -z-10 h-screen w-screen object-cover'
       >
         <source src='home.mp4' type='video/mp4' />
-      </video>
+      </video> */}
       {/* 
       <div className='text-4xl text-primary-500 font-light h-screen flex items-center justify-left px-8 md:px-20 lg:px-32'>
         <div>
@@ -66,35 +66,55 @@ const Faucet = (): JSX.Element => {
           <div className='pb-14 text-4xl font-bold text-primary-900'>
             Faucet
           </div>
-          <div className='flex justify-center pb-9 font-normal text-primary-500'>
-            <span className='w-4/5 leading-7 md:w-3/5 xl:w-1/3'>
-              You can currently request Cascadia test tokens once every 24
-              hours. The faucet is supported by donations.
+          <div className='flex justify-center pb-14 font-normal text-primary-500'>
+            <span className='w-4/5 leading-7 md:w-3/5 xl:w-full'>
+              You can request Cascadia test tokens once every 24 hours. The
+              faucet is supported by donations.
             </span>
           </div>
-          <div className='pb-9'>
-            <input
-              className='h-full w-4/5 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none md:w-3/5 xl:w-1/3'
-              placeholder='Hexadecimal Address (0x...)'
-              // onChange={handleChangeInput} - 20221104_disable function part before make site live(11/11)_carl
-              maxLength={42}
-              // value={inputAddress} - 20221104_disable function part before make site live(11/11)_carl
-            />
+          <div className='block xl:hidden'>
+            <div className='pb-14'>
+              <input
+                className='h-full w-4/5 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none md:w-3/5 xl:w-1/3'
+                placeholder='Hexadecimal Address (0x...)'
+                // onChange={handleChangeInput} - 20221104_disable function part before make site live(11/11)_carl
+                maxLength={42}
+                // value={inputAddress} - 20221104_disable function part before make site live(11/11)_carl
+              />
+            </div>
+            {/**
+             * 20221104_disable function part before make site live(11/11)_carl
+            <Btn
+              label='Send request'
+              onClick={handleSubmit}
+              className='w-4/5 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50 md:w-3/5 xl:w-1/3'
+            /> 
+            */}
+            <button
+              className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
+              disabled
+            >
+              Send Request
+            </button>
           </div>
-          {/**
-           * 20221104_disable function part before make site live(11/11)_carl
-          <Btn
-            label='Send request'
-            onClick={handleSubmit}
-            className='w-4/5 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50 md:w-3/5 xl:w-1/3'
-          /> 
-          */}
-          <button
-            className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
-            disabled
-          >
-            Send Request
-          </button>
+
+          <div className='hidden xl:block'>
+            <div className='flex justify-between px-10'>
+              <input
+                className='h-full w-9/12 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none'
+                placeholder='Hexadecimal Address (0x...)'
+                // onChange={handleChangeInput} - 20221104_disable function part before make site live(11/11)_carl
+                maxLength={42}
+                // value={inputAddress} - 20221104_disable function part before make site live(11/11)_carl
+              />
+              <button
+                className='w-3/12 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all'
+                disabled
+              >
+                Send Request
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

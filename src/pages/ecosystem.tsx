@@ -19,30 +19,30 @@ const list: itemProps[] = [
   {
     title: 'What is Cascadia?',
     content: [
-      'Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We are creating an open-sourced network of services and goods, allowing developers, creators, and organizations to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.',
+      "Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We're creating an open-sourced network of services and goods, allowing developers and creators to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.",
     ],
     // links: ['Learn about the Creator Economy on Cascadia'],
-    img: '/images/test-image/test-mini1.jpg',
+    img: '/images/cascadia-image.jpg',
   },
   {
     title: 'Developers / Creators',
     content: [
-      "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is also viable, regardless of the message's payload or consensus algorithm.",
+      "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is viable, regardless of the message's payload or consensus algorithm.",
     ],
     // links: ['Follow progress on sharding'],
-    img: '/images/test-image/test-mini2.jpg',
+    img: '/images/developer-image.jpg',
   },
   {
     title: 'Our Mission',
     content: [
-      'Cascadia seeks to create a differentiated value proposition by diving deeper than the consensus layer, to explore emergent coordination and incentive alignment in complex adaptive systems.  We will innovative in the space, but will not compromise on the security and trust that constitute our base layer.  Our vision is a self-governing, decentralized future guided by the group intelligence of our community.',
+      'Cascadia seeks to create a differentiated value proposition by diving deeper than the consensus layer, to explore emergent coordination and incentive alignment in complex adaptive systems.  We will innovative in the space, but will not compromise on security nor trust that constitute our base layer.  Our vision is a self-governing, decentralized future guided by the group intelligence of our community.',
     ],
     // links: [
     //   'Aurora: Ethereum Bridge & EVM',
     //   'Octopus Network: App Chain Interoperability',
     //   'All bridge: Bridge from Solana, Terra, Celo & More',
     // ],
-    img: '/images/test-image/test-mini3.jpg',
+    img: '/images/mission-image.jpg',
   },
 ];
 
@@ -56,14 +56,14 @@ const Ecosystem = (): JSX.Element => {
       <EcoSubHeader />
       <div className='md:px-10'>
         {/* <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden pb-16 md:my-6 lg:my-14'> */}
-        <div className='m-auto flex w-full flex-col overflow-hidden md:mt-6 lg:mt-14'>
+        <div className='m-auto mt-0 flex w-full flex-col overflow-hidden lg:mt-12'>
           {list.map((item: itemProps, index: number) => {
             const direction = index % 2 === 0;
             return (
               <InView
                 as='div'
                 className={clsx(
-                  'flex flex-col items-start justify-between pt-16',
+                  'flex flex-col items-start justify-between pt-12',
                   direction ? 'md:flex-row' : 'md:flex-row-reverse'
                 )}
                 key={index}
@@ -75,18 +75,18 @@ const Ecosystem = (): JSX.Element => {
               >
                 <div
                   className={clsx(
-                    'flex w-full flex-col items-start justify-center overflow-hidden px-5 transition-all duration-1000 ease-out',
+                    'flex w-full flex-col items-start justify-center overflow-hidden px-10 transition-all duration-1000 ease-out lg:px-16',
                     animation[index]
-                      ? 'translate-x-0 opacity-100 delay-200 lg:px-20'
+                      ? 'translate-x-0 opacity-100 delay-200'
                       : `${
                           direction ? '-translate-x-full' : 'translate-x-full'
                         } opacity-0`
                   )}
                 >
-                  <h2 className='text-2xl font-bold text-primary-900'>
+                  <h2 className='pb-6 text-2xl font-bold text-primary-900 md:pb-0'>
                     {item.title}
                   </h2>
-                  <div className='py-6 text-base text-primary-500'>
+                  <div className='pt-6 text-base text-primary-500'>
                     {item.content.map((p: string, index: number) => (
                       <p
                         key={index}
@@ -96,7 +96,7 @@ const Ecosystem = (): JSX.Element => {
                       </p>
                     ))}
                   </div>
-                  <div className='flex w-full flex-col pb-5 text-main-900 md:pb-0'>
+                  <div className='flex w-full flex-col pb-12 text-main-900 md:pb-0'>
                     {/* {item.links.map((link) => (
                       <a
                         key={link}
@@ -110,11 +110,11 @@ const Ecosystem = (): JSX.Element => {
                 </div>
                 <div
                   className={clsx(
-                    'flex w-full items-start justify-center overflow-hidden px-5 transition-all delay-500 duration-1000',
+                    'flex w-full items-start justify-center overflow-hidden px-10 transition-all delay-500 duration-1000 lg:px-16',
                     animation[index] ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                  <div className='relative h-[300px] w-full'>
+                  <div className='relative min-h-[240px] w-full md:min-h-[390px] lg:min-h-[320px] xl:min-h-[220px] 2xl:min-h-[140px]'>
                     <Image
                       className='absolute object-cover'
                       src={item.img}

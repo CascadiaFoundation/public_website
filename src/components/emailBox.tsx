@@ -5,11 +5,11 @@ import Btn from '@/components/btn';
 
 const EmailBox = (): JSX.Element => {
   return (
-    <div className='my-5 gap-x-10 p-6 text-center sm:my-24 md:p-0'>
-      <h1 className='pb-7 text-2xl font-bold text-primary-900 sm:text-4xl'>
+    <div className='sm:my-18 my-12 px-6 text-center md:p-0 lg:my-24'>
+      <h1 className='pb-12 text-2xl font-bold text-primary-900 sm:text-4xl'>
         Join Our Community
       </h1>
-      <div className='pb-8 text-xl font-normal text-primary-500'>
+      <div className='pb-12 text-xl font-normal text-primary-500'>
         Never miss a critical announcement. Be involved.
       </div>
       <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
@@ -18,7 +18,7 @@ const EmailBox = (): JSX.Element => {
           className='absolute inset-y-0 left-0 m-auto p-2 text-base text-primary-500'
         />
         <input
-          className='h-full w-full p-2 pl-10 focus:outline-none md:placeholder:text-primary-500'
+          className='h-full w-[65%] p-2 pl-10 focus:outline-none md:placeholder:text-primary-500 xs:w-full'
           placeholder='Receive email updates'
         />
         <Btn

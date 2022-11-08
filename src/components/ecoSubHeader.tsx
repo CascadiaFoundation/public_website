@@ -18,9 +18,9 @@ const EcoSubHeader = (): JSX.Element => {
       break;
     case '/ecosystem':
       title =
-        'A Foundation for Developers<br/>A Decentralized Network for Everyone';
+        'A Foundation for Developers<div style="height: 16px;"></div>A Decentralized Network for Everyone';
       content =
-        'Cascadia is revolutionizing the crypto world of financial transactions. Embracing decentralized finance solutions by introducing EVM compatibility and enabling Ethereum Dapp developers to effortlessly port their projects away.';
+        "Cascadia supports EVM-compatible decentralized finance solutions allowing Ethereum developers to easily port their projects to the industry's most collaborative blockchain.";
       break;
     case '/esg':
       title = 'Cascadia Embraces ESG Accountability';
@@ -37,22 +37,22 @@ const EcoSubHeader = (): JSX.Element => {
   }
 
   return (
-    <div className='flex h-full w-full items-center bg-eco-background bg-cover bg-center px-10 pt-20 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
-      <div className='flex items-center lg:justify-start'>
+    <div className='flex h-full w-full items-center bg-eco-background bg-cover bg-center px-10 pt-24 sm:pb-20 md:justify-start md:px-20 lg:h-[480px] lg:px-32'>
+      <div className='flex items-center md:pt-8 lg:justify-start'>
         <div className='py-15 flex h-full w-full flex-col items-baseline justify-center px-2 px-0 lg:w-3/4 lg:w-full lg:py-0 lg:text-left'>
-          <div className='w-full pb-12 text-3xl font-bold text-primary-900 md:text-4xl lg:max-w-[800px] lg:text-left'>
+          <div className='w-full pb-12 text-3xl font-bold text-primary-900 md:text-4xl lg:mt-10 lg:max-w-[800px] lg:text-left'>
             <div dangerouslySetInnerHTML={{ __html: title }}></div>
           </div>
           <div className='w-full pb-12 text-base leading-8 text-primary-500 lg:max-w-[600px]'>
             {content}
           </div>
-          <div className='flex w-full flex-col items-center sm:flex-row lg:justify-start'>
+          <div className='flex w-full flex-col items-center pb-12 sm:flex-row md:pb-0 lg:justify-start'>
             {/* <Btn
               className='mb-4 w-full border-white bg-white text-primary-900 transition-all hover:border-white/40 hover:bg-white/40 sm:mr-4 sm:w-[200px] md:mb-0 md:w-fit'
               label='Develop with Cascadia'
             /> */}
             <Btn
-              className='mb-4 w-full border-primary-900 bg-transparent text-primary-900 hover:bg-primary-900 hover:text-white sm:w-[200px] md:mb-0 md:w-fit'
+              className='w-full border-highlight bg-transparent text-highlight hover:bg-highlight hover:text-white sm:w-[200px] md:mb-4 md:mb-0 md:w-fit'
               label='Explore solutions'
               onClick={() => router.push('/esg')}
             />

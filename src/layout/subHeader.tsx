@@ -17,7 +17,7 @@ const SubHeader = (): JSX.Element => {
       break;
     case '/ecosystem':
       title =
-        'A Foundation for Developers, A Decentralized Network for Everyone';
+        'A Foundation for Developers<div style="height: 16px;"></div>A Decentralized Network for Everyone';
       content =
         'Cascadia is revolutionizing the crypto world of financial transactions. Embracing decentralized finance solutions by introducing EVM compatibility and enabling Ethereum Dapp developers to effortlessly port their projects away.';
       break;

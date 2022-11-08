@@ -46,8 +46,8 @@ export default function Home() {
       </video>
       <div className='justify-left flex h-screen items-center px-8 text-4xl font-light text-primary-500 md:px-10 lg:px-32'>
         <div>
-          <span>The</span>
-          <span className='font-bold'> World&apos;s First Neocybernetic </span>
+          <span>The World&apos;s First </span>
+          <span className='font-bold'>Neocybernetic </span>
           <span>Blockchain</span>
         </div>
       </div>
