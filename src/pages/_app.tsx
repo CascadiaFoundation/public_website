@@ -1,7 +1,9 @@
+import { keyframes } from '@emotion/react';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import Image from 'next/image';
 import NextNProgress from 'nextjs-progressbar';
 import { Fragment, useEffect, useState } from 'react';
+import Reveal from 'react-awesome-reveal';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import '@/styles/globals.css';
@@ -33,8 +35,17 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(true);
-    }, 1500);
+    }, 1100);
   }, []);
+
+  const zoomOut = keyframes`
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+    `;
 
   return (
     <>
@@ -72,14 +83,22 @@ function MyApp({ Component, pageProps }) {
         </>
       ) : (
         <div className='m-auto flex min-h-screen w-full items-center justify-center bg-black'>
-          <div className='px-100 w-1/2 font-mont text-4xl font-bold text-white text-main-900'>
-            <Image
-              src='/images/icon/final-logo.svg'
-              alt='Final Logo'
-              // layout='fill'
-              width='1080'
-              height='216'
-            />
+          <div className='px-100 font-mont text-4xl font-bold text-white text-main-900'>
+            <Reveal
+              className='onStep'
+              keyframes={zoomOut}
+              delay={100}
+              duration={1000}
+              triggerOnce
+            >
+              <Image
+                src='/images/icon/final-logo.svg'
+                alt='Final Logo'
+                // layout='fill'
+                width='250'
+                height='67'
+              />
+            </Reveal>
           </div>
         </div>
       )}

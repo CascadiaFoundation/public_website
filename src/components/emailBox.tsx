@@ -7,10 +7,10 @@ const EmailBox = (): JSX.Element => {
   return (
     <div className='sm:my-18 my-12 px-6 text-center md:p-0 lg:my-24'>
       <h1 className='pb-12 text-2xl font-bold text-primary-900 sm:text-4xl'>
-        Join Our Community
+        Welcome to Cascadia
       </h1>
       <div className='pb-12 text-xl font-normal text-primary-500'>
-        Never miss a critical announcement. Be involved.
+        Join us. Never miss a critical announcement!
       </div>
       <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
         <FontAwesomeIcon
