@@ -17,6 +17,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@fortawesome/fontawesome-free": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
@@ -31,6 +32,7 @@
     "next": "^12.2.5",
     "nextjs-progressbar": "^0.0.14",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.1.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
