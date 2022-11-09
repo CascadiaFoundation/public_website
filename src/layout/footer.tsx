@@ -73,7 +73,7 @@ const Footer = (): JSX.Element => {
       <div className='grind-cols-2 grid gap-y-8 sm:grid-cols-5 lg:gap-y-0'>
         <div className='grid grid-cols-2 sm:col-span-1 sm:block lg:col-span-1'>
           <Link href='/'>
-            <div className='cursor-pointer pb-6 font-mont text-2xl font-bold text-white'>
+            <div className='cursor-pointer pb-6 font-mont text-2xl font-normal text-white'>
               Cascadia
             </div>
           </Link>

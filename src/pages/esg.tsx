@@ -22,21 +22,21 @@ const list: itemProps[] = [
     image: '/images/environmental-image.jpg',
     title: 'Environmental',
     content: [
-      `The cryptocurrency industry must learn to collaborate with businesses and governments as the world address environmental challenges.  Revolutionary blockchain-based initiatives enhance corporate and community productivity while lowering inequality and decreasing pollution.`,
+      `Cascadia’s blockchain-based initiatives enhance corporate and community productivity while lowering inequality and decreasing pollution. The cryptocurrency industry must learn to collaborate with businesses and governments as the world address environmental challenges.`,
     ],
   },
   {
     image: '/images/social-image.jpg',
     title: 'Social',
     content: [
-      `New technologies carry risks that need to be weighed against potential rewards.  In order to address issues regarding network scalability and processing rates, education and knowledge is crucial.  Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that support social research and development.`,
+      `Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that support social research and development, addressing issues regarding network scalability and processing rates.`,
     ],
   },
   {
     image: '/images/governance-image.jpg',
     title: 'Governance',
     content: [
-      `Cascadia's technology stack can be used to create collaborative networks and align incentives amongst ordinarily incompatible parties on a blockchain network. Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
+      `Most importantly, Cascadia’s technology stack can be used to create collaborative networks and align incentives amongst ordinarily incompatible parties on a blockchain network . Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
     ],
   },
 ];

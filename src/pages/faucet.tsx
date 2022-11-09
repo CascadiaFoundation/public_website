@@ -94,7 +94,7 @@ const Faucet = (): JSX.Element => {
               className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
               disabled
             >
-              Send Request
+              Claim
             </button>
           </div>
 
@@ -111,7 +111,7 @@ const Faucet = (): JSX.Element => {
                 className='w-3/12 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all'
                 disabled
               >
-                Send Request
+                Claim
               </button>
             </div>
           </div>
