@@ -18,7 +18,7 @@ export default async function getFaucet(
   const formBodyStr: string = formBody.join('&');
 
   const faucetBackendUrl =
-    process.env.FAUCET_BACKEND_URL || 'http://localhost:3001';
+    process.env.FAUCET_BACKEND_URL || 'http://18.211.35.61:3001';
 
   await fetch(`${faucetBackendUrl}/api/get-faucet`, {
     method: 'POST',

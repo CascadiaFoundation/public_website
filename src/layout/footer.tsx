@@ -14,7 +14,7 @@ const itemList = [
       },
       {
         name: 'Technology',
-        link: 'https://app.gitbook.com',
+        link: '',
       },
     ],
   },
@@ -53,7 +53,7 @@ const itemList = [
     list: [
       {
         name: 'Discord',
-        link: 'https://discord.gg/cascadiafoundation',
+        link: 'https://discord.gg/cascadia',
       },
       {
         name: 'Twitter',
@@ -100,16 +100,20 @@ const Footer = (): JSX.Element => {
             key={item.title}
             className='col-span-1 hidden sm:block lg:col-span-1'
           >
-            <div className='cursor-pointer pb-4 text-base font-semibold uppercase text-white'>
+            <div className='pb-4 text-base font-semibold uppercase text-white'>
               {item.title}
             </div>
             <ul className='capitaliz text-base text-secondary-100'>
               {item.list.map((li, index) => (
                 <li
                   key={index}
-                  className='py-[2px] text-base font-normal text-footer-text hover:text-white'
+                  className='py-[2px] text-base font-normal text-footer-text'
                 >
-                  <a href={li.link ? li.link : '#'}>{li.name}</a>
+                  {li.link !== ''
+                    ? <div className="hover:text-white"><a href={li.link ? li.link : '#'} target="_blank">{li.name}</a></div>
+                    : <div><span>{li.name}</span></div>
+                  }
+                  {/* <a href={li.link ? li.link : '#'} target="_blank">{li.name}</a> */}
                 </li>
               ))}
             </ul>
@@ -129,9 +133,12 @@ const Footer = (): JSX.Element => {
                   {item.list.map((li, index) => (
                     <li
                       key={index}
-                      className='py-2 text-base font-thin text-secondary-100/80 hover:text-white'
+                      className='py-2 text-base font-thin text-secondary-100/80'
                     >
-                      <a href={li.link}>{li.name}</a>
+                      {li.link !== ''
+                        ? <div className="hover:text-white"><a href={li.link ? li.link : '#'} target="_blank">{li.name}</a></div>
+                        : <div><span>{li.name}</span></div>
+                      }
                     </li>
                   ))}
                 </ul>
