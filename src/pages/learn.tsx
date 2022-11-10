@@ -37,10 +37,10 @@ const Learn = (): JSX.Element => {
       <LearnSubHeader />
       <div className='m-auto px-10 lg:px-32'>
         <div className='mt-12 lg:mt-24'>
-          <div className='pb-12 text-4xl font-bold text-primary-900 sm:text-4xl md:text-left'>
-            Cascadia Neocybernetic Blockchain
+          <div className='pb-12 text-4xl font-bold text-primary-900 sm:text-4xl lg:text-center'>
+            The Cybernetic Future
           </div>
-          <div className='pb-12 text-base font-normal text-primary-500 sm:text-base md:text-left'>
+          <div className='pb-12 text-base font-normal text-primary-500 sm:text-base lg:text-center'>
             As a complex adaptive system (CAS), the Cascadia blockchain retains
             the following characteristics:
           </div>
@@ -59,15 +59,16 @@ const Learn = (): JSX.Element => {
         <div className='mt-12 h-[200px] bg-ai-background bg-cover bg-center md:h-[400px] lg:mt-24 lg:h-[582px]'></div>
 
         <div className='mt-12 lg:mt-24'>
-          <div className='pb-12 text-4xl font-bold text-primary-900 sm:text-4xl md:text-left'>
-            The Blockchain Future
+          <div className='pb-12 text-4xl font-bold text-primary-900 sm:text-4xl lg:text-center'>
+            An Open Economy
           </div>
           <div className='text-base font-normal leading-7 text-primary-500 md:text-left'>
-            Cascadia is a purpose-built Layer-1 EVM compatible platform based on
+            Cascadia is a purpose-built EVM compatible platform based on
             Cosmos SDK architecture. Built for fairness, speed, and
             sustainability, the Cascadia blockchain offers a unified solution to
             cross-chain communications that satisfies the requirements of
-            platform developers.
+            platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication)
+            protocol, allowing users freely exchange assets and data across sovereign networks.
           </div>
         </div>
 

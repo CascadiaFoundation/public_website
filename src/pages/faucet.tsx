@@ -1,14 +1,13 @@
 import Footer from '@/layout/footer';
 import Header from '@/layout/header';
-// import Link from 'next/link';
+import Link from 'next/link';
 
-// import React, { useCallback, useState } from 'react';
-// import 'react-toastify/dist/ReactToastify.css';
-// import Btn from '@/components/btn';
-// import toast from '@/components/toast';
+import React, { useCallback, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import Btn from '@/components/btn';
+import toast from '@/components/toast';
 const Faucet = (): JSX.Element => {
-  /**
-   * 20221104_disable function part before make site live(11/11)_carl 
+
 
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
@@ -39,7 +38,7 @@ const Faucet = (): JSX.Element => {
       });
   }, [checkedAddress, inputAddress, notify]);
 
-  */
+
 
   return (
     <div className='bg-faucet-background bg-cover'>
@@ -77,25 +76,23 @@ const Faucet = (): JSX.Element => {
               <input
                 className='h-full w-4/5 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none md:w-3/5 xl:w-1/3'
                 placeholder='Hexadecimal Address (0x...)'
-                // onChange={handleChangeInput} - 20221104_disable function part before make site live(11/11)_carl
+                onChange={handleChangeInput}
                 maxLength={42}
-                // value={inputAddress} - 20221104_disable function part before make site live(11/11)_carl
+                value={inputAddress}
               />
             </div>
-            {/**
-             * 20221104_disable function part before make site live(11/11)_carl
             <Btn
-              label='Send request'
+              label='Claim'
               onClick={handleSubmit}
-              className='w-4/5 flex-none border-0 bg-primary-500 text-background transition-all hover:bg-primary-500/50 md:w-3/5 xl:w-1/3'
-            /> 
-            */}
-            <button
+              className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
+            />
+
+            {/* <button
               className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
               disabled
             >
               Claim
-            </button>
+            </button> */}
           </div>
 
           <div className='hidden xl:block'>
@@ -103,16 +100,21 @@ const Faucet = (): JSX.Element => {
               <input
                 className='h-full w-9/12 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-center placeholder:text-primary-500 focus:outline-none'
                 placeholder='Hexadecimal Address (0x...)'
-                // onChange={handleChangeInput} - 20221104_disable function part before make site live(11/11)_carl
+                onChange={handleChangeInput}
                 maxLength={42}
-                // value={inputAddress} - 20221104_disable function part before make site live(11/11)_carl
+                value={inputAddress}
               />
-              <button
+              <Btn
+                label='Claim'
+                onClick={handleSubmit}
+                className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/4'
+              />
+              {/* <button
                 className='w-3/12 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all'
                 disabled
               >
                 Claim
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

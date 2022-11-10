@@ -43,7 +43,7 @@ const EcoSubHeader = (): JSX.Element => {
           <div className='w-full pb-12 text-3xl font-bold text-primary-900 md:text-4xl lg:mt-10 lg:max-w-[800px] lg:text-left'>
             <div dangerouslySetInnerHTML={{ __html: title }}></div>
           </div>
-          <div className='w-full pb-12 text-base leading-8 text-primary-500 lg:max-w-[600px]'>
+          <div className='w-full pb-12 text-base leading-7 text-primary-500 lg:max-w-[600px]'>
             {content}
           </div>
           <div className='flex w-full flex-col items-center pb-12 sm:flex-row md:pb-0 lg:justify-start'>
