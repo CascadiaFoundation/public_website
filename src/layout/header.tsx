@@ -24,7 +24,7 @@ const navigation: btnProps[] = [
   {
     name: 'Community',
     link: '/community',
-    href: 'https://discord.gg/cascadiafoundation',
+    href: 'https://discord.gg/cascadia',
   },
   {
     name: 'Blog',

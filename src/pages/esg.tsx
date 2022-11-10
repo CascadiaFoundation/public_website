@@ -29,14 +29,14 @@ const list: itemProps[] = [
     image: '/images/social-image.jpg',
     title: 'Social',
     content: [
-      `Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that support social research and development, addressing issues regarding network scalability and processing rates.`,
+      `Cascadia encourages the use of an openly accessible, standardized toolbox, by providing educational resources that support social research and development, addressing issues regarding network scalability and processing.`,
     ],
   },
   {
     image: '/images/governance-image.jpg',
     title: 'Governance',
     content: [
-      `Most importantly, Cascadia’s technology stack can be used to create collaborative networks and align incentives amongst ordinarily incompatible parties on a blockchain network . Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
+      `Most importantly, Cascadia’s technology stack can be used to align incentives amongst ordinarily incompatible parties on a blockchain network . Our core protocol will enable any organization to develop decentralized applications that support both off-chain and on-chain governance.`,
     ],
   },
 ];
@@ -200,9 +200,8 @@ const Esg = (): JSX.Element => {
                       'h-full w-full transition-all delay-200 duration-500 ease-out',
                       animation[index]
                         ? 'translate-x-0 opacity-100'
-                        : `${
-                            direction ? '-translate-x-full' : 'translate-x-full'
-                          } opacity-0`
+                        : `${direction ? '-translate-x-full' : 'translate-x-full'
+                        } opacity-0`
                     )}
                   >
                     <p className='w-full pb-12 text-2xl font-semibold text-primary-900 sm:text-left md:pb-6'>

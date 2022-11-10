@@ -19,7 +19,7 @@ const list: itemProps[] = [
   {
     title: 'What is Cascadia?',
     content: [
-      "Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We're creating an open-sourced network of services and goods, allowing developers and creators to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.",
+      "Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We're creating an open-sourced network of services and goods, allowing developers / creators to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.",
     ],
     // links: ['Learn about the Creator Economy on Cascadia'],
     img: '/images/cascadia-image.jpg',
@@ -78,9 +78,8 @@ const Ecosystem = (): JSX.Element => {
                     'flex w-full flex-col items-start justify-center overflow-hidden px-10 transition-all duration-1000 ease-out lg:px-16',
                     animation[index]
                       ? 'translate-x-0 opacity-100 delay-200'
-                      : `${
-                          direction ? '-translate-x-full' : 'translate-x-full'
-                        } opacity-0`
+                      : `${direction ? '-translate-x-full' : 'translate-x-full'
+                      } opacity-0`
                   )}
                 >
                   <h2 className='pb-6 text-2xl font-bold text-primary-900 md:pb-0'>
