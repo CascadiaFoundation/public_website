@@ -44,7 +44,8 @@
     "react-toastify": "^9.0.8",
     "recoil": "^0.7.5",
     "redux-persist": "^6.0.0",
-    "swiper": "^8.3.2"
+    "swiper": "^8.3.2",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.3.0",
@@ -56,6 +57,7 @@
     "@testing-library/react": "^13.3.0",
     "@types/react": "^18.0.17",
     "@types/react-copy-to-clipboard": "^5.0.4",
+    "@types/validator": "^13.7.10",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "autoprefixer": "^10.4.8",
