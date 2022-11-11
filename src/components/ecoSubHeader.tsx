@@ -20,7 +20,7 @@ const EcoSubHeader = (): JSX.Element => {
       title =
         'A Foundation for Developers<div style="height: 16px;"></div>A Decentralized Network for Everyone';
       content =
-        "Cascadia supports EVM-compatible decentralized finance solutions allowing Ethereum developers to easily port their projects to the industry's most collaborative blockchain.";
+        "Cascadia supports EVM-compatible decentralized finance solutions, allowing Ethereum developers to easily port their projects to the industry's most collaborative blockchain.";
       break;
     case '/esg':
       title = 'Cascadia Embraces ESG Accountability';

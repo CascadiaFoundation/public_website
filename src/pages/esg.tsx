@@ -185,9 +185,9 @@ const Esg = (): JSX.Element => {
                     animation[index] ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                  <div className='relative h-full min-h-[300px] w-full sm:min-h-[0px]'>
+                  <div className='relative h-full min-h-[300px] w-full sm:min-h-[0px] 2xl:min-h-[270px]'>
                     <Image
-                      className='absolute object-cover'
+                      className='absolute object-cover object-center'
                       src={item.image}
                       alt=''
                       layout='fill'
@@ -200,8 +200,9 @@ const Esg = (): JSX.Element => {
                       'h-full w-full transition-all delay-200 duration-500 ease-out',
                       animation[index]
                         ? 'translate-x-0 opacity-100'
-                        : `${direction ? '-translate-x-full' : 'translate-x-full'
-                        } opacity-0`
+                        : `${
+                            direction ? '-translate-x-full' : 'translate-x-full'
+                          } opacity-0`
                     )}
                   >
                     <p className='w-full pb-12 text-2xl font-semibold text-primary-900 sm:text-left md:pb-6'>
