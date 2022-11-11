@@ -78,8 +78,9 @@ const Ecosystem = (): JSX.Element => {
                     'flex w-full flex-col items-start justify-center overflow-hidden px-10 transition-all duration-1000 ease-out lg:px-16',
                     animation[index]
                       ? 'translate-x-0 opacity-100 delay-200'
-                      : `${direction ? '-translate-x-full' : 'translate-x-full'
-                      } opacity-0`
+                      : `${
+                          direction ? '-translate-x-full' : 'translate-x-full'
+                        } opacity-0`
                   )}
                 >
                   <h2 className='pb-6 text-2xl font-bold text-primary-900 md:pb-0'>
@@ -113,9 +114,9 @@ const Ecosystem = (): JSX.Element => {
                     animation[index] ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                  <div className='relative min-h-[240px] w-full md:min-h-[390px] lg:min-h-[320px] xl:min-h-[220px] 2xl:min-h-[140px]'>
+                  <div className='relative min-h-[240px] w-full md:min-h-[390px] lg:min-h-[330px] xl:min-h-[240px] 2xl:min-h-[220px]'>
                     <Image
-                      className='absolute object-cover'
+                      className='absolute object-cover object-top'
                       src={item.img}
                       alt=''
                       layout='fill'

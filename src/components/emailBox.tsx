@@ -1,6 +1,6 @@
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import validator from 'validator';
 
 import Btn from '@/components/btn';
@@ -21,9 +21,22 @@ const EmailBox = (): JSX.Element => {
       setCheckedEmail(false);
       setEmailError('Enter valid Email!');
     }
-  }
+  };
 
-  const handleSubmit = useCallback(() => {
+  // const handleSubmit = useCallback(() => {
+  //   if (checkedEmail === false) {
+  //     setOpenModal(false);
+
+  //     return;
+  //   }
+  //   setOpenModal(true);
+  //   fetch(`/api/addEmail/${inputEmail}`)
+  //     .then(() => {
+  //       setOpenModal(true);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
+  const handleSubmit = () => {
     if (checkedEmail === false) {
       setOpenModal(false);
 
@@ -31,12 +44,11 @@ const EmailBox = (): JSX.Element => {
     }
     setOpenModal(true);
     fetch(`/api/addEmail/${inputEmail}`)
-      .then((res) => {
+      .then(() => {
         setOpenModal(true);
-      }
-      )
-      .catch((err) => (console.log(err)))
-  }, [inputEmail]);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className='sm:my-18 my-12 px-6 text-center md:p-0 lg:my-24'>
@@ -47,7 +59,7 @@ const EmailBox = (): JSX.Element => {
         Join us. Never miss a critical announcement!
       </div>
       {/* <div className={`relative mx-auto flex h-10 w-full max-w-[600px] items-center border bg-transparent ${checkedEmail ? 'border-primary-900/50' : 'border-red-600'}`}> */}
-      <div className={`relative mx-auto flex h-10 w-full max-w-[600px] items-center border bg-transparent border-primary-900/50`}>
+      <div className='relative mx-auto flex h-10 w-full max-w-[600px] items-center border border-primary-900/50 bg-transparent'>
         <FontAwesomeIcon
           icon={faEnvelope}
           className='absolute inset-y-0 left-0 m-auto p-2 text-base text-primary-500'
@@ -68,31 +80,33 @@ const EmailBox = (): JSX.Element => {
         />
       </div>
       <div>
-        <span style={{
-          fontWeight: 'bold',
-          color: 'red',
-        }}>{emailError}</span>
+        <span
+          style={{
+            fontWeight: 'bold',
+            color: 'red',
+          }}
+        >
+          {emailError}
+        </span>
       </div>
       {/* modal */}
       {openModal ? (
         <>
-          <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none p-10"
-          >
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+          <div className='fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden p-10 outline-none focus:outline-none'>
+            <div className='relative my-6 mx-auto w-auto max-w-3xl'>
               {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className='relative flex w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none'>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                <div className='relative flex-auto p-6'>
+                  <p className='my-4 text-lg leading-relaxed text-slate-500'>
                     THANKS! YOU HAVE BEEN ADDED TO OUR MAILING LIST!
                   </p>
                 </div>
                 {/*footer*/}
-                <div className="flex items-center justify-center p-2 border-t border-solid border-slate-200 rounded-b">
+                <div className='flex items-center justify-center rounded-b border-t border-solid border-slate-200 p-2'>
                   <button
-                    className="bg-highlight text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
+                    className='mr-1 mb-1 rounded bg-highlight px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none active:bg-emerald-600'
+                    type='button'
                     onClick={() => setOpenModal(false)}
                   >
                     OK
@@ -101,7 +115,7 @@ const EmailBox = (): JSX.Element => {
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          <div className='fixed inset-0 z-40 bg-black opacity-25'></div>
         </>
       ) : null}
     </div>

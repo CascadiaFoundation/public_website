@@ -1,14 +1,13 @@
-import Footer from '@/layout/footer';
-import Header from '@/layout/header';
-import Link from 'next/link';
-
 import React, { useCallback, useState } from 'react';
+
 import 'react-toastify/dist/ReactToastify.css';
+
 import Btn from '@/components/btn';
 import toast from '@/components/toast';
+
+import Footer from '@/layout/footer';
+import Header from '@/layout/header';
 const Faucet = (): JSX.Element => {
-
-
   const [inputAddress, setInputAddress] = useState<string>('');
   const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
 
@@ -37,8 +36,6 @@ const Faucet = (): JSX.Element => {
         notify('dark', 'Network Error');
       });
   }, [checkedAddress, inputAddress, notify]);
-
-
 
   return (
     <div className='bg-faucet-background bg-cover'>

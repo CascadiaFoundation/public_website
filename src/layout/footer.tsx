@@ -23,7 +23,7 @@ const itemList = [
     list: [
       {
         name: 'Documentation',
-        link: '',
+        link: 'https://drive.google.com/file/d/1LynWGocZNauQIESyxs2Un-GfoT_6IiM9/view?usp=share_link',
       },
       {
         name: 'Github',
@@ -109,10 +109,21 @@ const Footer = (): JSX.Element => {
                   key={index}
                   className='py-[2px] text-base font-normal text-footer-text'
                 >
-                  {li.link !== ''
-                    ? <div className="hover:text-white"><a href={li.link ? li.link : '#'} target="_blank">{li.name}</a></div>
-                    : <div><span>{li.name}</span></div>
-                  }
+                  {li.link !== '' ? (
+                    <div className='hover:text-white'>
+                      <a
+                        href={li.link ? li.link : '#'}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        {li.name}
+                      </a>
+                    </div>
+                  ) : (
+                    <div>
+                      <span>{li.name}</span>
+                    </div>
+                  )}
                   {/* <a href={li.link ? li.link : '#'} target="_blank">{li.name}</a> */}
                 </li>
               ))}
@@ -135,10 +146,21 @@ const Footer = (): JSX.Element => {
                       key={index}
                       className='py-2 text-base font-thin text-secondary-100/80'
                     >
-                      {li.link !== ''
-                        ? <div className="hover:text-white"><a href={li.link ? li.link : '#'} target="_blank">{li.name}</a></div>
-                        : <div><span>{li.name}</span></div>
-                      }
+                      {li.link !== '' ? (
+                        <div className='hover:text-white'>
+                          <a
+                            href={li.link ? li.link : '#'}
+                            target='_blank'
+                            rel='noreferrer'
+                          >
+                            {li.name}
+                          </a>
+                        </div>
+                      ) : (
+                        <div>
+                          <span>{li.name}</span>
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>

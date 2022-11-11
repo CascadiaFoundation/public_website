@@ -1,11 +1,11 @@
+import clsx from 'clsx';
+import Image from 'next/image';
 import React, { useState } from 'react';
+import { InView } from 'react-intersection-observer';
 
 import Card from '@/components/card';
 import EmailBox from '@/components/emailBox';
 import LearnSubHeader from '@/components/learnSubHeader';
-import clsx from 'clsx';
-import Image from 'next/image';
-import { InView } from 'react-intersection-observer';
 
 import Layout from '@/layout';
 
@@ -20,13 +20,12 @@ const list: itemProps[] = [
   {
     title: 'An Open Economy',
     content: [
-      "Cascadia is a EVM-compatible platform based on Cosmos SDK architecture.  Built for fairness, speed, and sustainability, the Cascadia blockchain offers a unified solution to cross-chain communications that satisfies the requirements of platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication) protocol, allowing users freely exchange assets and data across sovereign networks.",
+      'Cascadia is a EVM-compatible platform based on Cosmos SDK architecture.  Built for fairness, speed, and sustainability, the Cascadia blockchain offers a unified solution to cross-chain communications that satisfies the requirements of platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication) protocol, allowing users freely exchange assets and data across sovereign networks.',
     ],
     // links: ['Learn about the Creator Economy on Cascadia'],
     img: '/images/AIface-image.jpg',
   },
 ];
-
 
 const cardList = [
   {
@@ -101,11 +100,28 @@ const Learn = (): JSX.Element => {
               >
                 <div
                   className={clsx(
-                    'flex w-full flex-col items-start justify-center overflow-hidden px-10 transition-all duration-1000 ease-out lg:px-10',
+                    'flex w-full flex-col items-start justify-center overflow-hidden pb-12 transition-all duration-1000 ease-out md:pb-0 md:pr-6',
                     animation[index]
                       ? 'translate-x-0 opacity-100 delay-200'
-                      : `${direction ? '-translate-x-full' : 'translate-x-full'
-                      } opacity-0`
+                      : `${
+                          direction ? '-translate-x-full' : 'translate-x-full'
+                        } opacity-0`
+                  )}
+                >
+                  <div className='relative min-h-[240px] w-full md:min-h-[360px] lg:min-h-[330px] xl:min-h-[240px] 2xl:min-h-[200px]'>
+                    <Image
+                      className='absolute object-cover'
+                      src={item.img}
+                      alt=''
+                      layout='fill'
+                    />
+                  </div>
+                </div>
+                <div
+                  id='learn-text'
+                  className={clsx(
+                    'flex w-full flex-col items-start justify-center overflow-hidden transition-all delay-500 duration-1000 md:pl-6',
+                    animation[index] ? 'opacity-100' : 'opacity-0'
                   )}
                 >
                   <h2 className='pb-6 text-2xl font-bold text-primary-900 md:pb-0'>
@@ -120,32 +136,6 @@ const Learn = (): JSX.Element => {
                         {p}
                       </p>
                     ))}
-                  </div>
-                  <div className='flex w-full flex-col pb-12 text-main-900 md:pb-0'>
-                    {/* {item.links.map((link) => (
-                      <a
-                        key={link}
-                        className='w-full overflow-hidden text-ellipsis whitespace-nowrap py-1 text-right hover:underline md:text-left'
-                        href='#'
-                      >
-                        {link}
-                      </a>
-                    ))} */}
-                  </div>
-                </div>
-                <div
-                  className={clsx(
-                    'flex w-full items-start justify-center overflow-hidden px-10 transition-all delay-500 duration-1000 lg:px-10',
-                    animation[index] ? 'opacity-100' : 'opacity-0'
-                  )}
-                >
-                  <div className='relative min-h-[240px] w-full md:min-h-[390px] lg:min-h-[320px] xl:min-h-[220px] 2xl:min-h-[140px]'>
-                    <Image
-                      className='absolute object-cover'
-                      src={item.img}
-                      alt=''
-                      layout='fill'
-                    />
                   </div>
                 </div>
               </InView>
