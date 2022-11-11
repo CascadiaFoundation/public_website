@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(true);
-    }, 1100);
+    }, 2500);
   }, []);
 
   const zoomOut = keyframes`
@@ -88,7 +88,7 @@ function MyApp({ Component, pageProps }) {
               className='onStep'
               keyframes={zoomOut}
               delay={100}
-              duration={1000}
+              duration={2500}
               triggerOnce
             >
               <Image

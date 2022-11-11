@@ -67,7 +67,7 @@ const Faucet = (): JSX.Element => {
           </div>
           <div className='flex justify-center pb-14 font-normal text-primary-500'>
             <span className='w-4/5 leading-7 md:w-3/5 xl:w-full'>
-              You can request Cascadia test tokens once every 24 hours. The
+              You can request Cascadia testnet tokens once every 24 hours. The
               faucet is supported by donations.
             </span>
           </div>
