@@ -19,7 +19,7 @@ const list: itemProps[] = [
   {
     title: 'What is Cascadia?',
     content: [
-      "Supported by over one hundred Contributors globally, Cascadia is a Layer-1 blockchain built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We're creating an open-sourced network of services and goods, allowing developers / creators to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.",
+      "Supported by over one hundred Contributors globally, Cascadia was built to explore the nature of incentives on network effects, starting with ve-tokenomics.  We're creating an open-sourced network of services and goods, allowing developers / creators to join a Web 3.0 ecosystem that is easy to access, transparent, and governed by the community.",
     ],
     // links: ['Learn about the Creator Economy on Cascadia'],
     img: '/images/cascadia-image.jpg',
@@ -27,7 +27,7 @@ const list: itemProps[] = [
   {
     title: 'Developers / Creators',
     content: [
-      "Cascadia is a purpose-built blockchain based on Cosmos SDK architecture, and paves the path forward for developers/creators by supporting all Ethereum smart contracts.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is viable, regardless of the message's payload or consensus algorithm.",
+      "Cascadia is a purpose-built blockchain based on SDK architecture, and paves the path forward for developers / creators by supporting all Ethereum smart contracts.  Cascadia is secure, instant, and has low-cost transactions.  Any-to-any communication across blockchains is viable, regardless of the message's payload or consensus algorithm.",
     ],
     // links: ['Follow progress on sharding'],
     img: '/images/developer-image.jpg',
