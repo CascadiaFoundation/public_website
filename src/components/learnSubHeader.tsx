@@ -19,7 +19,7 @@ const LearnSubHeader = (): JSX.Element => {
     case '/learn':
       title = 'Introducing Cascadia';
       content =
-        "Cascadia is the world's first neocybernetic blockchain, natively integrating ve - tokenomics and to develop an organic ledger with emergent behaviors.";
+        "Cascadia is the world's first neocybernetic blockchain, natively integrating ve - tokenomics to develop an organic ledger with emergent behaviors.";
       break;
     case '/ecosystem':
       title =

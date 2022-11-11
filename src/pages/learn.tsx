@@ -1,11 +1,32 @@
-// import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Card from '@/components/card';
 import EmailBox from '@/components/emailBox';
 import LearnSubHeader from '@/components/learnSubHeader';
+import clsx from 'clsx';
+import Image from 'next/image';
+import { InView } from 'react-intersection-observer';
 
 import Layout from '@/layout';
+
+type itemProps = {
+  title: string;
+  content: string[];
+  // links: string[];
+  img: string;
+};
+
+const list: itemProps[] = [
+  {
+    title: 'An Open Economy',
+    content: [
+      "Cascadia is a EVM-compatible platform based on Cosmos SDK architecture.  Built for fairness, speed, and sustainability, the Cascadia blockchain offers a unified solution to cross-chain communications that satisfies the requirements of platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication) protocol, allowing users freely exchange assets and data across sovereign networks.",
+    ],
+    // links: ['Learn about the Creator Economy on Cascadia'],
+    img: '/images/AIface-image.jpg',
+  },
+];
+
 
 const cardList = [
   {
@@ -31,7 +52,12 @@ const cardList = [
   },
 ];
 
+type animationProps = {
+  [key: number]: boolean;
+};
+
 const Learn = (): JSX.Element => {
+  const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
       <LearnSubHeader />
@@ -56,7 +82,78 @@ const Learn = (): JSX.Element => {
           </div>
         </div>
 
-        <div className='mt-12 h-[200px] bg-ai-background bg-cover bg-center md:h-[400px] lg:mt-24 lg:h-[582px]'></div>
+        <div className='m-auto mt-0 flex w-full flex-col overflow-hidden lg:mt-12'>
+          {list.map((item: itemProps, index: number) => {
+            const direction = index % 2 === 0;
+            return (
+              <InView
+                as='div'
+                className={clsx(
+                  'flex flex-col items-start justify-between pt-12',
+                  direction ? 'md:flex-row' : 'md:flex-row-reverse'
+                )}
+                key={index}
+                rootMargin='-50px'
+                threshold={0}
+                onChange={(inView) =>
+                  setAnimation((state) => ({ ...state, [index]: inView }))
+                }
+              >
+                <div
+                  className={clsx(
+                    'flex w-full flex-col items-start justify-center overflow-hidden px-10 transition-all duration-1000 ease-out lg:px-10',
+                    animation[index]
+                      ? 'translate-x-0 opacity-100 delay-200'
+                      : `${direction ? '-translate-x-full' : 'translate-x-full'
+                      } opacity-0`
+                  )}
+                >
+                  <h2 className='pb-6 text-2xl font-bold text-primary-900 md:pb-0'>
+                    {item.title}
+                  </h2>
+                  <div className='pt-6 text-base text-primary-500'>
+                    {item.content.map((p: string, index: number) => (
+                      <p
+                        key={index}
+                        className='pb-5 leading-7 last-of-type:pb-0'
+                      >
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                  <div className='flex w-full flex-col pb-12 text-main-900 md:pb-0'>
+                    {/* {item.links.map((link) => (
+                      <a
+                        key={link}
+                        className='w-full overflow-hidden text-ellipsis whitespace-nowrap py-1 text-right hover:underline md:text-left'
+                        href='#'
+                      >
+                        {link}
+                      </a>
+                    ))} */}
+                  </div>
+                </div>
+                <div
+                  className={clsx(
+                    'flex w-full items-start justify-center overflow-hidden px-10 transition-all delay-500 duration-1000 lg:px-10',
+                    animation[index] ? 'opacity-100' : 'opacity-0'
+                  )}
+                >
+                  <div className='relative min-h-[240px] w-full md:min-h-[390px] lg:min-h-[320px] xl:min-h-[220px] 2xl:min-h-[140px]'>
+                    <Image
+                      className='absolute object-cover'
+                      src={item.img}
+                      alt=''
+                      layout='fill'
+                    />
+                  </div>
+                </div>
+              </InView>
+            );
+          })}
+        </div>
+
+        {/* <div className='mt-12 h-[200px] bg-ai-background bg-cover bg-center md:h-[400px] lg:mt-24 lg:h-[582px]'></div>
 
         <div className='mt-12 lg:mt-24'>
           <div className='pb-12 text-4xl font-bold text-primary-900 sm:text-4xl lg:text-center'>
@@ -70,7 +167,7 @@ const Learn = (): JSX.Element => {
             platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication)
             protocol, allowing users freely exchange assets and data across sovereign networks.
           </div>
-        </div>
+        </div> */}
 
         {/* <div className='relative mt-6 grid-cols-4 p-6 sm:mt-12 md:mt-24 md:p-0 lg:grid space-y-4'>
           <div className='z-10 col-span-3 col-start-2 mt-8 hidden grid-cols-3 gap-3 bg-white p-5 md:gap-6 lg:grid'>
