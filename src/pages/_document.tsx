@@ -5,6 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+import GoogleAnalytics from "../components/googleAnalytics";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,7 +16,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <Head></Head>
+        <Head>
+          <GoogleAnalytics />
+        </Head>
         <body className='scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400'>
           <Main />
           <NextScript />
