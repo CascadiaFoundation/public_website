@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function getFaucet(
+export default async function addEmail(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
