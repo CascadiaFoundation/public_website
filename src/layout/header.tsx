@@ -119,13 +119,14 @@ const Header = (): JSX.Element => {
                 leaveFrom='transform translate-y-0 h-fit opacity-100'
                 leaveTo='transform -translate-y-full h-0 opacity-0'
               >
-                <Disclosure.Panel className='duration-3000 h-full w-full bg-white transition-all md:hidden'>
-                  <div className='space-y-1 p-3 sm:px-3'>
+                <Disclosure.Panel className='duration-3000 h-screen w-full bg-white transition-all md:hidden'>
+                  <div className='sm:px-3'>
                     {navigation.map((item) => (
                       <div key={item.name}>
                         {item.href ? (
                           <a href={item.href} target='_blank' rel='noreferrer'>
-                            <Disclosure.Button className='block w-full rounded-md px-3 py-2 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900'>
+                            {/* <Disclosure.Button className={`block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + ` border-t-2`}> */}
+                            <Disclosure.Button className={`block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + (item.link == '/social' ? ` border-y-2` : ` border-t-2`)}>
                               {item.name}
                             </Disclosure.Button>
                           </a>
@@ -133,7 +134,7 @@ const Header = (): JSX.Element => {
                           <Link href={item.link}>
                             <Disclosure.Button
                               className={clsx(
-                                'block w-full rounded-md px-3 py-2 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900',
+                                'block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 border-t-2',
                                 pathname === item.link && 'text-white'
                               )}
                             >

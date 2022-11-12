@@ -20,7 +20,7 @@ const list: itemProps[] = [
   {
     title: 'An Open Economy',
     content: [
-      'Cascadia is a EVM-compatible platform based on Cosmos SDK architecture.  Built for fairness, speed, and sustainability, the Cascadia blockchain offers a unified solution to cross-chain communications that satisfies the requirements of platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication) protocol, allowing users freely exchange assets and data across sovereign networks.',
+      'Cascadia is an EVM-compatible platform based on Cosmos SDK architecture.  Built for fairness, speed, and sustainability, the Cascadia blockchain offers a unified solution to cross-chain communications that satisfies the requirements of platform developers. Cascadia will adopt the IBC (Inter-Blockchain Communication) protocol, allowing users to freely exchange assets and data across sovereign networks.',
     ],
     // links: ['Learn about the Creator Economy on Cascadia'],
     img: '/images/AIface-image.jpg',
@@ -103,9 +103,8 @@ const Learn = (): JSX.Element => {
                     'flex w-full flex-col items-start justify-center overflow-hidden pb-12 transition-all duration-1000 ease-out md:pb-0 md:pr-6',
                     animation[index]
                       ? 'translate-x-0 opacity-100 delay-200'
-                      : `${
-                          direction ? '-translate-x-full' : 'translate-x-full'
-                        } opacity-0`
+                      : `${direction ? '-translate-x-full' : 'translate-x-full'
+                      } opacity-0`
                   )}
                 >
                   <div className='relative min-h-[240px] w-full md:min-h-[360px] lg:min-h-[330px] xl:min-h-[240px] 2xl:min-h-[200px]'>

@@ -36,6 +36,7 @@ const EmailBox = (): JSX.Element => {
   //     })
   //     .catch((err) => console.log(err));
   // }, []);
+
   const handleSubmit = () => {
     if (checkedEmail === false) {
       setOpenModal(false);
@@ -43,12 +44,33 @@ const EmailBox = (): JSX.Element => {
       return;
     }
     setOpenModal(true);
-    fetch(`/api/addEmail/${inputEmail}`)
+    fetch(`/api/sendEmail/${inputEmail}`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" } })
       .then(() => {
         setOpenModal(true);
       })
       .catch((err) => console.log(err));
   };
+
+  // const handleSubmit = async () => {
+  //   // const requestData = {
+  //   //   'entry.912683409': inputEmail,
+  //   // };
+  //   // const requestJson = JSON.stringify(requestData);
+
+  //   try {
+  //     const response = await fetch(`/sendEmail/${requestJson}`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/x-www-form-urlencoded",
+  //       }
+  //     });
+  //     const responseText = await response.text();
+  //     console.log(responseText);
+  //   } catch (ex) {
+  //     console.error("POST error!");
+  //   }
+  // };
+
 
   return (
     <div className='sm:my-18 my-12 px-6 text-center md:p-0 lg:my-24'>
