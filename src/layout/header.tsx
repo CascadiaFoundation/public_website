@@ -106,7 +106,7 @@ const Header = (): JSX.Element => {
                 leaveTo='transform opacity-0'
               >
                 <div
-                  className='h-full w-full bg-black/30'
+                  className='h-full w-full'
                   onClick={close}
                 ></div>
               </Transition>
@@ -126,7 +126,7 @@ const Header = (): JSX.Element => {
                         {item.href ? (
                           <a href={item.href} target='_blank' rel='noreferrer'>
                             {/* <Disclosure.Button className={`block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + ` border-t-2`}> */}
-                            <Disclosure.Button className={`block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + (item.link == '/social' ? ` border-y-2` : ` border-t-2`)}>
+                            <Disclosure.Button className={`pl-10 text-left block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + (item.link == '/social' ? ` border-y-2` : ` border-t-2`)}>
                               {item.name}
                             </Disclosure.Button>
                           </a>
@@ -134,7 +134,7 @@ const Header = (): JSX.Element => {
                           <Link href={item.link}>
                             <Disclosure.Button
                               className={clsx(
-                                'block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 border-t-2',
+                                'pl-10 text-left block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 border-t-2',
                                 pathname === item.link && 'text-white'
                               )}
                             >
