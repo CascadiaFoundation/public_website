@@ -23,7 +23,7 @@ const itemList = [
     list: [
       {
         name: 'Documentation',
-        link: 'https://drive.google.com/file/d/1LynWGocZNauQIESyxs2Un-GfoT_6IiM9/view?usp=share_link',
+        link: 'https://drive.google.com/file/d/1xSOGTw_3cD5rTIToxSplDIc4IYfrH64W/view?usp=sharing',
       },
       {
         name: 'Github',
