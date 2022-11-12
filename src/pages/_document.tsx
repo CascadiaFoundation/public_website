@@ -16,8 +16,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
+        <GoogleAnalytics />
         <Head>
-          <GoogleAnalytics />
         </Head>
         <body className='scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400'>
           <Main />
