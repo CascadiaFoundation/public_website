@@ -1,12 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function sendEmail(
+export default async function addResponse(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
     const details: any = {
-        requestJson: req.query.requestJson,
+        emailAddress: req.query.emailAddress,
     };
 
     const formBody: string[] = [];
@@ -20,7 +20,7 @@ export default async function sendEmail(
     const faucetBackendUrl =
         process.env.FAUCET_BACKEND_URL || 'http://18.211.35.61:3001';
 
-    await fetch(`${faucetBackendUrl}/api/send-email`, {
+    await fetch(`${faucetBackendUrl}/api/add-response`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',

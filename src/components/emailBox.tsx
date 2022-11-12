@@ -44,7 +44,7 @@ const EmailBox = (): JSX.Element => {
       return;
     }
     setOpenModal(true);
-    fetch(`/api/sendEmail/${inputEmail}`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" } })
+    fetch(`/api/addResponse/${inputEmail}`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" } })
       .then(() => {
         setOpenModal(true);
       })
