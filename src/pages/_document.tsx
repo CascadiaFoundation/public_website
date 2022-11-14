@@ -5,7 +5,6 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-import GoogleAnalytics from "../components/googleAnalytics";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -16,8 +15,24 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <GoogleAnalytics />
         <Head>
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-4T6X0GNZZT`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'https://www.googletagmanager.com/gtag/js?id=G-4T6X0GNZZT', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body className='scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400'>
           <Main />
