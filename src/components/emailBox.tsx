@@ -105,7 +105,7 @@ const EmailBox = (): JSX.Element => {
         <span
           style={{
             fontWeight: 'bold',
-            color: 'red',
+            color: 'black',
           }}
         >
           {emailError}
@@ -121,7 +121,7 @@ const EmailBox = (): JSX.Element => {
                 {/*body*/}
                 <div className='relative flex-auto p-6'>
                   <p className='my-4 text-lg leading-relaxed text-slate-500'>
-                    THANKS! YOU HAVE BEEN ADDED TO OUR MAILING LIST!
+                    You have been added to our mailing list.
                   </p>
                 </div>
                 {/*footer*/}
