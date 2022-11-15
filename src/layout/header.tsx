@@ -38,7 +38,7 @@ const navigation: btnProps[] = [
   {
     name: 'Social',
     link: '/social',
-    href: 'https://www.twitter.com/@CascadiaSystems',
+    href: 'https://www.twitter.com/CascadiaSystems',
   },
 ];
 
@@ -80,17 +80,7 @@ const Header = (): JSX.Element => {
                     {/* Mobile menu button */}
                     <Disclosure.Button className='z-30 inline-flex items-center justify-center rounded-md border border-primary-500 bg-transparent p-2 text-primary-500 hover:border-primary-500/70 hover:text-primary-500/70 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
                       <span className='sr-only'>Open main menu</span>
-                      {open ? (
-                        <XMarkIcon
-                          className='block h-6 w-6 text-white'
-                          aria-hidden='true'
-                        />
-                      ) : (
-                        <Bars3Icon
-                          className='block h-6 w-6'
-                          aria-hidden='true'
-                        />
-                      )}
+                      {open ? <ActiveDrawer /> : <InactiveDrawer />}
                     </Disclosure.Button>
                   </div>
                 </div>
@@ -105,10 +95,7 @@ const Header = (): JSX.Element => {
                 leaveFrom='transform opacity-100'
                 leaveTo='transform opacity-0'
               >
-                <div
-                  className='h-full w-full'
-                  onClick={close}
-                ></div>
+                <div className='h-full w-full' onClick={close}></div>
               </Transition>
               <Transition
                 className='top-30 absolute inset-x-0 z-20'
@@ -126,7 +113,14 @@ const Header = (): JSX.Element => {
                         {item.href ? (
                           <a href={item.href} target='_blank' rel='noreferrer'>
                             {/* <Disclosure.Button className={`block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + ` border-t-2`}> */}
-                            <Disclosure.Button className={`pl-10 text-left block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + (item.link == '/social' ? ` border-y-2` : ` border-t-2`)}>
+                            <Disclosure.Button
+                              className={
+                                `block w-full rounded-none px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` +
+                                (item.link == '/social'
+                                  ? ` border-y-2`
+                                  : ` border-t-2`)
+                              }
+                            >
                               {item.name}
                             </Disclosure.Button>
                           </a>
@@ -134,7 +128,7 @@ const Header = (): JSX.Element => {
                           <Link href={item.link}>
                             <Disclosure.Button
                               className={clsx(
-                                'pl-10 text-left block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 border-t-2',
+                                'block w-full rounded-none border-t-2 px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900',
                                 pathname === item.link && 'text-white'
                               )}
                             >
@@ -153,6 +147,16 @@ const Header = (): JSX.Element => {
       </div>
     </>
   );
+};
+
+const ActiveDrawer = () => {
+  document.body.style.overflow = 'hidden';
+  return <XMarkIcon className='block h-6 w-6 text-white' aria-hidden='true' />;
+};
+
+const InactiveDrawer = () => {
+  document.body.style.overflow = '';
+  return <Bars3Icon className='block h-6 w-6' aria-hidden='true' />;
 };
 
 export default Header;

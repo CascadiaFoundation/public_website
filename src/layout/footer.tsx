@@ -57,7 +57,7 @@ const itemList = [
       },
       {
         name: 'Twitter',
-        link: 'https://www.twitter.com/@CascadiaSystems',
+        link: 'https://www.twitter.com/CascadiaSystems',
       },
     ],
   },
