@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react';
 
 // import React, { useState } from 'react';
@@ -37,6 +38,10 @@ const Faucet = (): JSX.Element => {
 
   return (
     <div className='bg-faucet-background bg-cover'>
+      <Head>
+        <title>Faucet | Cascadia Foundation</title>
+        <meta property="faucet:title" content="First Page" key="title" />
+      </Head>
       <Header />
       {/* <video
         loop
@@ -73,7 +78,7 @@ const Faucet = (): JSX.Element => {
                 placeholder='0x1a3e...cc4f'
                 // onChange={handleChangeInput}
                 maxLength={42}
-                // value={inputAddress}
+              // value={inputAddress}
               />
             </div>
             {/* <Btn
@@ -97,7 +102,7 @@ const Faucet = (): JSX.Element => {
                 placeholder='0x1a3e...cc4f'
                 // onChange={handleChangeInput}
                 maxLength={42}
-                // value={inputAddress}
+              // value={inputAddress}
               />
               {/* <Btn
                 label='Claim'

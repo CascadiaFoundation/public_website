@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -53,6 +54,10 @@ const Ecosystem = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
+      <Head>
+        <title>Ecosystem | Cascadia Foundation</title>
+        <meta property="ecosystem:title" content="First Page" key="title" />
+      </Head>
       <EcoSubHeader />
       <div className='md:px-10'>
         {/* <div className='m-auto flex max-w-[1300px] flex-col overflow-hidden pb-16 md:my-6 lg:my-14'> */}
@@ -78,9 +83,8 @@ const Ecosystem = (): JSX.Element => {
                     'flex w-full flex-col items-start justify-center overflow-hidden px-10 transition-all duration-1000 ease-out lg:px-16',
                     animation[index]
                       ? 'translate-x-0 opacity-100 delay-200'
-                      : `${
-                          direction ? '-translate-x-full' : 'translate-x-full'
-                        } opacity-0`
+                      : `${direction ? '-translate-x-full' : 'translate-x-full'
+                      } opacity-0`
                   )}
                 >
                   <h2 className='pb-6 text-2xl font-bold text-primary-900 md:pb-0'>

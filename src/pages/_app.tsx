@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { keyframes } from '@emotion/react';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import Image from 'next/image';
@@ -64,6 +65,11 @@ function MyApp({ Component, pageProps }) {
               <RecoilRoot>
                 <Provider>
                   <Guard>
+                    <Head>
+                      <title>Cascadia Foundation</title>
+                      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                      <meta property="first:title" content="First Page" key="title" />
+                    </Head>
                     <Component {...pageProps} />
                   </Guard>
                 </Provider>

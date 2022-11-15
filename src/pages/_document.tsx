@@ -16,8 +16,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <title>Cascadia Foundation</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
