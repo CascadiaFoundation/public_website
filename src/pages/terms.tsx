@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '@/layout';
 
 const ContentList = [
@@ -300,6 +301,10 @@ const ContentList = [
 const Privacy = (): JSX.Element => {
   return (
     <div>
+      <Head>
+        <title>Terms of Use | Cascadia Foundation</title>
+        <meta property="ecosystem:title" content="First Page" key="title" />
+      </Head>
       <Layout>
         <div className='space-y-10 px-10 py-48 lg:px-32'>
           <div className='text-base font-black text-primary-900'>

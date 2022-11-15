@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -59,6 +60,10 @@ const Learn = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
+      <Head>
+        <title>Learn | Cascadia Foundation</title>
+        <meta property="learn:title" content="First Page" key="title" />
+      </Head>
       <LearnSubHeader />
       <div className='m-auto px-10 lg:px-32'>
         <div className='mt-12 lg:mt-24'>

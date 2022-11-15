@@ -1,5 +1,6 @@
 // import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Head from 'next/head'
 import clsx from 'clsx';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -49,6 +50,10 @@ const Esg = (): JSX.Element => {
   const [animation, setAnimation] = useState<animationProps>({});
   return (
     <Layout>
+      <Head>
+        <title>ESG | Cascadia Foundation</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
       <ESGSubHeader />
       <div className='m-auto bg-white px-10 lg:px-32'>
         <div className='flex flex-col items-center justify-center pt-12 md:pt-24'>
@@ -200,9 +205,8 @@ const Esg = (): JSX.Element => {
                       'h-full w-full transition-all delay-200 duration-500 ease-out',
                       animation[index]
                         ? 'translate-x-0 opacity-100'
-                        : `${
-                            direction ? '-translate-x-full' : 'translate-x-full'
-                          } opacity-0`
+                        : `${direction ? '-translate-x-full' : 'translate-x-full'
+                        } opacity-0`
                     )}
                   >
                     <p className='w-full pb-12 text-2xl font-semibold text-primary-900 sm:text-left md:pb-6'>
