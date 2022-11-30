@@ -10,7 +10,7 @@ const itemList = [
     list: [
       {
         name: 'Whitepaper',
-        link: '',
+        link: 'https://drive.google.com/file/d/1lnZwSqrwYKe6Pp9wOMxM76gQbfqqFTHH/view',
       },
       {
         name: 'Technology',
