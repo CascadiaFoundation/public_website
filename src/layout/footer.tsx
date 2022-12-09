@@ -40,7 +40,7 @@ const itemList = [
       },
       {
         name: 'Contact Us',
-        link: '',
+        link: 'mailto:contact@cascadia.foundation',
       },
     ],
   },
