@@ -1,5 +1,5 @@
 # Cascadia Public Website
-Cascadia is a Layer-1 blockchain built to explore the nature of <h4>incentives on network effects</h4>, starting with ve-tokenomics.
+Cascadia is a Layer-1 blockchain built to explore the nature of **incentives on network effects**, starting with ve-tokenomics.
 
 **This repo contains the UI of Cascadia Public Website only**
 
