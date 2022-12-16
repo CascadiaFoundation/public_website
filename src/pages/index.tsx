@@ -39,6 +39,7 @@ export default function Home() {
       <video
         loop
         autoPlay
+        playsInline
         muted
         className='absolute left-0 right-0 top-0 bottom-0 -z-10 h-screen w-screen object-cover'
       >

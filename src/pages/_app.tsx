@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import { keyframes } from '@emotion/react';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import Head from 'next/head';
 import Image from 'next/image';
 import NextNProgress from 'nextjs-progressbar';
 import { Fragment, useEffect, useState } from 'react';
