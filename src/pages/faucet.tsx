@@ -1,40 +1,43 @@
 import Head from 'next/head'
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
-// import React, { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
+
+import Btn from '@/components/btn';
+import toast from '@/components/toast';
 
 import Footer from '@/layout/footer';
 import Header from '@/layout/header';
+
 const Faucet = (): JSX.Element => {
-  // const [inputAddress, setInputAddress] = useState<string>('');
-  // const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
+  const [inputAddress, setInputAddress] = useState<string>('');
+  const [checkedAddress, setCheckedAddress] = useState<boolean>(false);
 
-  // const notify = React.useCallback((type: string, message: string) => {
-  //   toast({ type, message });
-  // }, []);
+  const notify = React.useCallback((type: string, message: string) => {
+    toast({ type, message });
+  }, []);
 
-  // const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const value = event.target.value;
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
 
-  //   if (value.includes('0x') && value.length === 42) setCheckedAddress(true);
-  //   else setCheckedAddress(false);
+    if (value.includes('0x') && value.length === 42) setCheckedAddress(true);
+    else setCheckedAddress(false);
 
-  //   setInputAddress(value);
-  // };
+    setInputAddress(value);
+  };
 
-  // const handleSubmit = useCallback(() => {
-  //   if (!checkedAddress) return;
+  const handleSubmit = useCallback(() => {
+    if (!checkedAddress) return;
 
-  //   fetch(`/api/getFaucet/${inputAddress}`)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       notify('dark', res.message);
-  //     })
-  //     .catch(() => {
-  //       notify('dark', 'Network Error');
-  //     });
-  // }, [checkedAddress, inputAddress, notify]);
+    fetch(`/api/getFaucet/${inputAddress}`)
+      .then((res) => res.json())
+      .then((res) => {
+        notify('dark', res.message);
+      })
+      .catch(() => {
+        notify('dark', 'Network Error');
+      });
+  }, [checkedAddress, inputAddress, notify]);
 
   return (
     <div className='bg-faucet-background bg-cover'>
@@ -76,23 +79,23 @@ const Faucet = (): JSX.Element => {
               <input
                 className='h-full w-4/5 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-left placeholder:text-primary-500 focus:outline-none md:w-3/5 xl:w-1/3'
                 placeholder='0x1a3e...cc4f'
-                // onChange={handleChangeInput}
+                onChange={handleChangeInput}
                 maxLength={42}
-              // value={inputAddress}
+              value={inputAddress}
               />
             </div>
-            {/* <Btn
+            <Btn
               label='Claim'
               onClick={handleSubmit}
               className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
-            /> */}
+            />
 
-            <button
+            {/* <button
               className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/3'
               disabled
             >
               Claim
-            </button>
+            </button> */}
           </div>
 
           <div className='hidden xl:block'>
@@ -100,9 +103,9 @@ const Faucet = (): JSX.Element => {
               <input
                 className='h-full w-9/12 overflow-hidden text-ellipsis border border-primary-500 bg-primary-500/10 p-2 text-base font-normal placeholder:text-left placeholder:text-primary-500 focus:outline-none'
                 placeholder='0x1a3e...cc4f'
-                // onChange={handleChangeInput}
+                onChange={handleChangeInput}
                 maxLength={42}
-              // value={inputAddress}
+              value={inputAddress}
               />
               {/* <Btn
                 label='Claim'
