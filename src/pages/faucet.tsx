@@ -107,17 +107,17 @@ const Faucet = (): JSX.Element => {
                 maxLength={42}
               value={inputAddress}
               />
-              {/* <Btn
+              <Btn
                 label='Claim'
                 onClick={handleSubmit}
                 className='w-4/5 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all md:w-3/5 xl:w-1/4'
-              /> */}
-              <button
+              />
+              {/* <button
                 className='w-3/12 flex-none border-0 border bg-primary-500 px-3 py-2 text-base font-normal text-background transition-all transition-all'
                 disabled
               >
                 Claim
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
