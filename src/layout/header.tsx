@@ -40,6 +40,16 @@ const navigation: btnProps[] = [
     link: '/social',
     href: 'https://www.twitter.com/CascadiaSystems',
   },
+  {
+    name: 'Validator',
+    link: '/validator',
+    href: 'https://validator.cascadia.foundation',
+  },
+  {
+    name: 'Explorer',
+    link: '/explorer',
+    href: 'https://explorer.cascadia.foundation',
+  },
 ];
 
 const Header = (): JSX.Element => {
@@ -70,13 +80,13 @@ const Header = (): JSX.Element => {
                         </div>
                       </Link>
                     </div>
-                    <div className='ml-10 hidden h-full items-baseline md:flex lg:space-x-4'>
+                    <div className='ml-10 hidden h-full items-baseline xl:flex lg:space-x-4'>
                       {navigation.map((item: btnProps) => (
                         <NavBtn key={item.name} {...item} />
                       ))}
                     </div>
                   </div>
-                  <div className='-mr-2 flex md:hidden'>
+                  <div className='-mr-2 flex xl:hidden'>
                     {/* Mobile menu button */}
                     <Disclosure.Button className='z-30 inline-flex items-center justify-center rounded-md border border-primary-500 bg-transparent p-2 text-primary-500 hover:border-primary-500/70 hover:text-primary-500/70 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-white'>
                       <span className='sr-only'>Open main menu</span>
@@ -106,8 +116,8 @@ const Header = (): JSX.Element => {
                 leaveFrom='transform translate-y-0 h-fit opacity-100'
                 leaveTo='transform -translate-y-full h-0 opacity-0'
               >
-                <Disclosure.Panel className='duration-3000 h-screen w-full bg-white transition-all md:hidden'>
-                  <div className='sm:px-3'>
+                <Disclosure.Panel className='duration-3000 h-screen w-full bg-white transition-all xl:hidden'>
+                  <div>
                     {navigation.map((item) => (
                       <div key={item.name}>
                         {item.href ? (
@@ -115,8 +125,8 @@ const Header = (): JSX.Element => {
                             {/* <Disclosure.Button className={`block w-full rounded-none px-3 py-4 text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` + ` border-t-2`}> */}
                             <Disclosure.Button
                               className={
-                                `block w-full rounded-none px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900` +
-                                (item.link == '/social'
+                                `block w-full rounded-none px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 lg:px-32` +
+                                (item.link == '/explorer'
                                   ? ` border-y-2`
                                   : ` border-t-2`)
                               }
@@ -128,7 +138,7 @@ const Header = (): JSX.Element => {
                           <Link href={item.link}>
                             <Disclosure.Button
                               className={clsx(
-                                'block w-full rounded-none border-t-2 px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900',
+                                'block w-full rounded-none border-t-2 px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 lg:px-32',
                                 pathname === item.link && 'text-white'
                               )}
                             >
