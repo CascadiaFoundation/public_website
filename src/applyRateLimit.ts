@@ -9,26 +9,11 @@ const applyMiddleware = (middleware: any) => (request: any, response: any) =>
 
 export const getIP = (request: any) => {
     const ip = request.ip ||
-    request.headers['x-forwarded-for'] ||
-    request.headers['x-real-ip'] ||
-    request.connection.remoteAddress
-
-    return ip;
-}
-
-export const getIP1 = (request: any) => {
-    return request.ip
-}
-
-export const getIP2 = (request: any) => {
-    return request.headers['x-forwarded-for']
-}
-
-export const getIP3 = (request: any) => {
-    return request.headers['x-real-ip']
-}
-export const getIP4 = (request: any) => {
-    return request.connection.remoteAddress
+        request.headers['x-forwarded-for'] ||
+        request.headers['x-real-ip'] ||
+        request.connection.remoteAddress
+    
+    return ip.split(',')[0]
 }
 
 export const getRateLimitMiddlewares = ({
