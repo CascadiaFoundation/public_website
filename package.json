@@ -28,6 +28,7 @@
     "@heroicons/react": "^2.0.10",
     "@reduxjs/toolkit": "^1.8.5",
     "clsx": "^1.2.1",
+    "express-rate-limit": "^6.7.0",
     "lottie-react": "^2.3.1",
     "next": "^12.2.5",
     "nextjs-progressbar": "^0.0.14",

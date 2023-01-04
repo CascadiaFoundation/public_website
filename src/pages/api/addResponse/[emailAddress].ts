@@ -18,7 +18,7 @@ export default async function addResponse(
     const formBodyStr: string = formBody.join('&');
 
     const faucetBackendUrl =
-        process.env.FAUCET_BACKEND_URL || 'http://18.211.35.61:3001';
+        process.env.FAUCET_BACKEND_URL || 'https://api.cascadia.foundation';
 
     await fetch(`${faucetBackendUrl}/api/add-response`, {
         method: 'POST',

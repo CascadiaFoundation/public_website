@@ -30,12 +30,12 @@ const Faucet = (): JSX.Element => {
     if (!checkedAddress) return;
 
     fetch(`/api/getFaucet/${inputAddress}`)
-      .then((res) => res.json())
+      .then((res) => { return res.json() })
       .then((res) => {
         notify('dark', res.message);
       })
       .catch(() => {
-        notify('dark', 'Network Error');
+        notify('dark', "Too many requests from this IP address");
       });
   }, [checkedAddress, inputAddress, notify]);
 
