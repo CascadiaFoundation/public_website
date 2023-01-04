@@ -13,8 +13,22 @@ export const getIP = (request: any) => {
     request.headers['x-real-ip'] ||
     request.connection.remoteAddress
 
-    console.log("request", ip)
     return ip;
+}
+
+export const getIP1 = (request: any) => {
+    return request.ip
+}
+
+export const getIP2 = (request: any) => {
+    return request.headers['x-forwarded-for']
+}
+
+export const getIP3 = (request: any) => {
+    return request.headers['x-real-ip']
+}
+export const getIP4 = (request: any) => {
+    return request.connection.remoteAddress
 }
 
 export const getRateLimitMiddlewares = ({
