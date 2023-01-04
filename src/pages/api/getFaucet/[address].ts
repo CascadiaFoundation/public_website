@@ -1,12 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import applyRateLimit from '../../../applyRateLimit';
-
+import { getIP } from '../../../applyRateLimit';
 export default async function getFaucet(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-    await applyRateLimit(req, res)
+    // await applyRateLimit(req, res)
     const details: any = {
       address: req.query.address,
     };
@@ -29,11 +29,11 @@ export default async function getFaucet(
       body: formBodyStr,
     }).then(async (apiRes) => {
       if (apiRes.status !== 200) {
-        res.status(400).json({ success: 'error', message: await apiRes.text() });
+        res.status(400).json({ success: 'error', message: await apiRes.text(), ip: getIP(req) });
       } else {
         res
           .status(200)
-          .json({ success: 'success', message: await apiRes.text() });
+          .json({ success: 'success', message: await apiRes.text(), ip: getIP(req) });
       }
     });
   }

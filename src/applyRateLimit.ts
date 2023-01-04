@@ -7,11 +7,15 @@ const applyMiddleware = (middleware: any) => (request: any, response: any) =>
         )
     })
 
-const getIP = (request: any) =>
-    request.ip ||
+export const getIP = (request: any) => {
+    const ip = request.ip ||
     request.headers['x-forwarded-for'] ||
     request.headers['x-real-ip'] ||
     request.connection.remoteAddress
+
+    console.log("request", ip)
+    return ip;
+}
 
 export const getRateLimitMiddlewares = ({
     limit = 1,
