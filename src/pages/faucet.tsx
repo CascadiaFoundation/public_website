@@ -27,7 +27,48 @@ const Faucet = (): JSX.Element => {
   };
 
   const handleSubmit = useCallback(async () => {
-    if (!checkedAddress) return;
+    if (typeof window.ethereum == 'undefined') {
+      notify('dark', "Please install Metamask");
+      return;
+    }
+    try {
+      //@ts-ignore
+      await ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x2328' }],
+      });
+    } catch (switchError:any) {
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (switchError.code === 4902) {
+        try {
+          //@ts-ignore
+          await ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainId: '0x2328', //9000 in hex
+                chainName: 'Cascadia Testnet',
+                rpcUrls: ['https://devnet.cascadia.foundation'],
+                nativeCurrency: {
+                  name: "CC",
+                  symbol: "CC",
+                  decimals: 18
+                },
+                blockExplorerUrls: ["https://explorer.cascadia.foundation/"]
+              },
+            ],
+          });
+        } catch (addError) {
+          // handle "add" error
+        }
+      }
+      // handle other "switch" errors
+    }
+
+    if (!checkedAddress) {
+      notify('dark', "Please input valid wallet address");
+      return;
+    }
 
     const details: any = {
       address: inputAddress,
