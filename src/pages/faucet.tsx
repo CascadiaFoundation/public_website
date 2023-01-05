@@ -26,13 +26,40 @@ const Faucet = (): JSX.Element => {
     setInputAddress(value);
   };
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     if (!checkedAddress) return;
 
-    fetch(`/api/getFaucet/${inputAddress}`)
-      .then((res) => { return res.json() })
-      .then((res) => {
-        notify('dark', res.message);
+    const details: any = {
+      address: inputAddress,
+    };
+
+    const formBody: string[] = [];
+    for (const property in details) {
+      const encodedKey = encodeURIComponent(property);
+      const encodedValue = encodeURIComponent(details[property]);
+      formBody.push(encodedKey + '=' + encodedValue);
+    }
+    const formBodyStr: string = formBody.join('&');
+
+    for (const property in details) {
+      const encodedKey = encodeURIComponent(property);
+      const encodedValue = encodeURIComponent(details[property]);
+      formBody.push(encodedKey + '=' + encodedValue);
+    }
+    const faucetBackendUrl =
+      process.env.FAUCET_BACKEND_URL || 'https://api.cascadia.foundation';
+      // process.env.FAUCET_BACKEND_URL || 'http://18.191.140.67:3002';
+
+    await fetch(`${faucetBackendUrl}/api/get-faucet`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+      },
+      body: formBodyStr,
+    })
+      .then(async (apiRes) => { console.log("step1", apiRes); return apiRes.text(); })
+      .then((apiRes) => {
+        notify('dark', apiRes);
       })
       .catch(() => {
         notify('dark', "Too many requests from this IP address");
