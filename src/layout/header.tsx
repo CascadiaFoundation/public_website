@@ -40,16 +40,16 @@ const navigation: btnProps[] = [
     link: '/social',
     href: 'https://www.twitter.com/CascadiaSystems',
   },
-  {
-    name: 'Validator',
-    link: '/validator',
-    href: 'https://validator.cascadia.foundation',
-  },
-  {
-    name: 'Explorer',
-    link: '/explorer',
-    href: 'https://explorer.cascadia.foundation',
-  },
+  // {
+  //   name: 'Validator',
+  //   link: '/validator',
+  //   href: 'https://validator.cascadia.foundation',
+  // },
+  // {
+  //   name: 'Explorer',
+  //   link: '/explorer',
+  //   href: 'https://explorer.cascadia.foundation',
+  // },
 ];
 
 const Header = (): JSX.Element => {
@@ -126,7 +126,7 @@ const Header = (): JSX.Element => {
                             <Disclosure.Button
                               className={
                                 `block w-full rounded-none px-3 py-4 pl-10 text-left text-base font-medium text-primary-900 transition-all hover:bg-white hover:text-main-900 lg:px-32` +
-                                (item.link == '/explorer'
+                                (item.link == '/social'
                                   ? ` border-y-2`
                                   : ` border-t-2`)
                               }
